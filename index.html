@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  
+  <!-- bootstrap -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">    offline -->
+  
+  <title>BrightYouth.Org</title>
+</head>
+<body>
+  
+<header>
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="#">Remember<span>That</span></a>
+
+      <img id="mobile-cta" class="mobile-menu" src="icons/menu.svg" alt="open menu">
+
+      <!-- <div class="navMenu mobile-menu-hide"> -->
+        <nav id="navMenu" class="navMenu">
+          <img id="mobile-exit" class="mobile-menu-exit" src="icons/cancel.svg" alt="close menu">
+          
+          <ul class="primary-nav">
+            <li class="current"><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+          <ul class="secondary-nav">
+            <li><a href="#">Contact</a></li>
+            <li class="go-premium-cta"><a href="#">Go Premium</a></li>
+          </ul>
+        </nav>
+
+      <!-- </div> -->
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="left-col">
+      <p class="sub-head">It's Nitty &amp; Gritty</p>
+      <h1>A Task App That Doesn't Stink</h1>
+      
+      <div class="hero-cta">
+        <a href="#" class="primary-cta">Try for free</a>
+        <a href="#" class="watch-video-cta">
+          <img src="icons/camera.svg" alt="watch a video">
+          <span>Watch a Video</span>
+        </a>
+      </div>
+    </div>
+    <div class="right-col">
+      <img class="hero-img" src="img/illustration_learning2.svg" alt="illustration">
+    </div>  
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <ul class="features-list">
+      <li>Unlimited Tasks</li>
+      <li>SMS Task Reminders</li>
+      <li>Confetti Explosions upont Task Completions</li>
+      <li>Social Media Announements</li>
+      <li>Real Time Collaboration</li>
+      <li>Other Awesome Features</li>
+    </ul>
+
+    <img src="img/Determination.jpg" alt="Determination photo">
+
+
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+    <ul>
+      <li>
+        <img src="img/person.png" alt="person photo">
+        <blockquote>"London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants."</blockquote>
+        <cite> - Jane Doe</cite>
+      </li>
+      <li>
+        <img src="img/person.png" alt="person photo">
+        <blockquote>"London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants."</blockquote>
+        <cite> - Jane Doe</cite>
+      </li>
+      <li>
+        <img src="img/person.png" alt="person photo">
+        <blockquote>"London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants."</blockquote>
+        <cite> - Jane Doe</cite>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-left">
+      <h2>Contact</h2>
+      <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email address">
+        
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+        <input type="submit" class="send-message-cta" value="Send Message">
+
+      </form>
+    </div>
+
+    <div class="contact-right">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28948.143959316392!2d67.09453413619674!3d24.914417808443933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338c41059ace9%3A0x59f6e847f82104b2!2sSafari%20Park!5e0!3m2!1sen!2s!4v1652618788763!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section>
+   
+  <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article>
+</section> -->
+
+
+
+
+<script>
+    const mobileMenu = document.getElementById('mobile-cta')
+      mobileMenuExit = document.getElementById('mobile-exit');
+    const navMenu = document.getElementById('navMenu');
+
+      mobileMenu.addEventListener('click', () => {
+        navMenu.style.display = "block";
+      })
+
+      mobileMenuExit.addEventListener('click', () => {
+        navMenu.style.display = "none";
+      })
+
+</script>
+
+<!-- bootstrap -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> -->
+<!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script>    offline -->
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,406 @@
+:root {
+  --primary-color:#007AF3;
+}
+
+body {
+  background: #f2f2f2;
+  margin: 0;
+}
+
+a {
+  color: #444444;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+header .navbar {
+  background: white;
+  height: 25px;
+  padding: 10px;
+}
+
+header .navbar .logo {
+  text-decoration: none;
+  font-weight: 900;
+  color: black;
+  font-size: 1.2em;
+  margin: auto 0;
+}
+
+header .navbar .logo span {
+  color: var(--primary-color);
+}
+
+header .navbar .mobile-menu {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+header .navbar .mobile-menu-exit {
+  width: 5%;
+  float: right;
+  margin: .5em;
+  cursor: pointer;
+  padding: .3em;
+  border: 1px solid grey;
+  border-radius: .5em;
+}
+
+header .navbar nav {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 66%;
+  right: 0;
+  top: 0;
+  background-color: #20272E;
+  height: 100vh;
+  padding: 1em;
+}
+
+header .navbar nav ul.primary-nav {
+  margin-top: 5em;
+}
+
+header .navbar nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+header .navbar nav li a:hover {
+  font-weight: bold;
+}
+
+header .navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+section.hero {
+  text-align: center;
+}
+
+section.hero .left-col .sub-head {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+  letter-spacing: 0.3em;
+}
+
+section.hero .left-col h1 {
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-top: 0.2em;
+}
+
+section.hero .left-col .hero-cta .primary-cta {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6em 1.3em;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 5em;
+  display: inline-block;
+}
+
+section.hero .left-col .hero-cta .watch-video-cta {
+  display: block;
+  margin-top: 1em;
+}
+
+section.hero .left-col .hero-cta .watch-video-cta img {
+  width: 20px;
+  height: 20px;
+}
+
+section.hero .left-col .hero-cta .watch-video-cta span {
+  padding-bottom: 0em;
+}
+
+section.hero .right-col .hero-img {
+  width: 60%;
+  margin-top: 3em;
+  height: 50vh;
+}
+
+section.features-section {
+  background-color: #20272E;
+  color: white;
+}
+
+section.features-section ul.features-list {
+  margin: 0;
+  padding-left: 0.1em;
+}
+
+section.features-section ul.features-list li {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  position: relative;
+}
+
+section.features-section ul.features-list li::before {
+  content: '';
+  left: -2em;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("../icons/bullet.svg");
+  background-size: contain;
+  margin-right: .5em;
+}
+
+section.features-section img {
+  display: none;
+}
+
+section.testimonials-section {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+section.testimonials-section li {
+  background-color: #006BD6;
+  text-align: center;
+  padding: 2em 1em;
+  width: 80%;
+  margin: 0 auto 5em auto;
+  border-radius: 1em;
+}
+
+section.testimonials-section li img {
+  width: 5em;
+  height: 5em;
+  background-color: #f2f2f2;
+  border: 5px solid #006BD6;
+  border-radius: 50%;
+  margin-top: -4.5em;
+}
+
+section.contact-section .contact-left h2 {
+  font-size: 2em;
+}
+
+section.contact-section .contact-left label {
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+
+section.contact-section .contact-left input, section.contact-section .contact-left textarea {
+  width: 100%;
+  padding: .8em;
+  margin-bottom: 1em;
+  border-radius: .3em;
+  border: 1px solid gray;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section.contact-section .contact-left input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  border: none;
+  margin-bottom: 5em;
+  border-radius: 5em;
+  display: inline-block;
+  padding: .8em 2em;
+  width: unset;
+  cursor: pointer;
+}
+
+section.contact-section .contact-right iframe {
+  width: 100%;
+  height: 500px;
+}
+
+@media only screen and (min-width: 768px) {
+  header .navbar {
+    padding: 0.4em 1em;
+    height: 25px;
+  }
+  header .navbar .mobile-menu,
+  header .navbar .mobile-menu-exit {
+    display: none;
+  }
+  header .navbar .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  header .navbar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    position: unset;
+    height: 25px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  header .navbar nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .navbar nav ul li a {
+    color: black;
+    font-size: 1em;
+    padding: .1em 1em;
+  }
+  header .navbar nav ul.primary-nav {
+    margin: 0;
+  }
+  header .navbar nav ul.secondary-nav li.go-premium-cta a {
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -0.2em;
+  }
+  header .navbar nav ul.secondary-nav li.go-premium-cta a:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  section.contact-section {
+    position: relative;
+    height: 600px;
+  }
+  section.contact-section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.contact-section .container .contact-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: auto;
+    padding: 50px 20px 0px 20px;
+  }
+  section.contact-section .container .contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+  }
+  section.contact-section .container .contact-right iframe {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 970px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  section {
+    padding: 5em 4em;
+  }
+  section.hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+  }
+  section.hero .container .left-col {
+    margin: 3em 2em 0 5em;
+  }
+  section.hero .container .left-col h1 {
+    font-size: 3em;
+    width: 90%;
+  }
+  section.hero .container .left-col .hero-cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.hero .container .left-col .hero-cta a.primary-cta {
+    margin-right: 1em;
+  }
+  section.hero .container .left-col .hero-cta a.watch-video-cta {
+    position: relative;
+  }
+  section.hero .container .left-col .hero-cta a.watch-video-cta img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -5px;
+  }
+  section.hero .container .left-col .hero-cta a.watch-video-cta span {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    width: 300px;
+  }
+  section.hero .container .right-col .hero-img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  section.features-section {
+    position: relative;
+  }
+  section.features-section .container ul.features-list {
+    display: block;
+  }
+  section.features-section .container ul.features-list li {
+    font-size: 1.4em;
+  }
+  section.features-section .container ul.features-list li::before {
+    width: 30px;
+    height: 30px;
+  }
+  section.features-section .container img {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 350px;
+    bottom: -2em;
+  }
+  section.testimonials-section {
+    padding-top: 160px;
+  }
+  section.testimonials-section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.testimonials-section ul li {
+    margin: 0 1em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

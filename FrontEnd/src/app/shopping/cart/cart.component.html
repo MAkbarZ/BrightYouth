@@ -1,0 +1,136 @@
+<ng-container *ngIf="productsArray.length !=0">
+<!-- <ng-container *ngIf="productsArray.length !=0"> -->
+    <div class="container-fluid by-cartHasProducts">
+        <span class="by-yourProducts">Your Products</span>
+        <div class="card-table">
+            <div class="cart-product by-cart-product">                
+                <table class="table table-responsive">
+                   
+                    <thead>
+                        <tr>
+                            <!-- <th>Product No.</th> -->
+                            <th></th>
+                            <!-- <th>Product Image</th> -->
+                            <th></th>
+                            <th>Price</th>
+                            <!-- <th>Quantity</th> -->
+                            <!-- <th>Total</th> -->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="by-data-row" *ngFor="let product of productMoke; let i = index"> -->
+                        <tr class="by-data-row" *ngFor="let product of productsArray;">
+
+                            <td  class="by-col-photo">
+                                <img src="{{product.image}}" alt="">
+                            </td>
+
+                            <td class="by-col-product">
+                                <span class="by-prod-code">Product Code: {{product.id}}</span>
+                                <h5>{{product.productName}}</h5>
+                                <hr>
+                                <app-description-col 
+                                    [text]="product.description"
+                                    [wordLimit]="150">
+                                </app-description-col>
+                                <!-- <p [ngClass]="{'limitTextHeight': isReadMore, 'by-prod-desc': true}"> {{product['description']}}</p> -->
+                                <!-- <button class="btn btn-secondary" (click)="readMore(product.description)">{{ isReadMore ? 'Read More': 'Read Less' }}</button> -->
+                            </td>
+                            <td class="by-col-price"><span>Rs. {{product.price | number: '1.2-3'}}</span></td>
+                            <!-- <td>{{product['quantity']}}</td> -->
+                            <!-- <td class="col-qty">2</td> -->
+                            <!-- <td>{{product['total']}}</td> -->
+                            <!-- <td class="col-totalprice">Rs. {{product['price'] | number: '1.2-3'}}</td> -->
+
+                            <td class="by-col-action">
+                                <button class="btn by-btn-trash" (click)="removeItem(product.id)">
+                                    <img src="../../../assets/trash.svg" alt="search icon"> remove
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bottom-row">
+                            <!-- <td colspan="3"></td> -->
+                            <td></td>
+                            <td class="d-flex justify-content-end by-grandTotal-Label"><strong>Grand Total: </strong></td>
+                            <td class="by-grandTotalPrice"><strong>Rs. {{numGrandTotal | number: '1.0-0'}}</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <div class="container by-Decison">
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                        <div class="col">
+                            <button class="btn me-5 by-RedButton" (click)="emptyCart()">Empty Cart</button>
+                            <button class="btn me-5 by-OrangeButton" routerLink="/shopping">Shope More</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn me-5 by-PrimaryButton" (click)="hasCheckedOut=true">Checkout</button>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <div class="row by-summary" *ngIf="hasCheckedOut">
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <span class="by-summary-Invoice">Invoice</span>
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <span class="by-summary-mobile"><strong>Mobile No. </strong> 0321 846 0310 </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <table class="table table-responsive">
+                   
+                            <thead>
+                                <tr>
+                                    <th>Product Code.</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="by-data-row" *ngFor="let product of productsArray; let i = index">
+                
+                                    <td class="by-summary-col-product-id">
+                                        <span class="by-prod-code">{{product.id}}</span>
+                                    </td>
+                                    <td class="by-summary-col-product-title">
+                                        <h5>{{product.productName}}</h5>
+                                    </td>
+                                    <td class="by-summary-col-product-price"><span>Rs. {{product.price | number: '1.2-3'}}</span></td>
+                                </tr>
+                                <tr class="bottom-row">
+                                    <td></td>
+                                    <td class="d-flex justify-content-end by-summary-grandTotal-Label"><strong>Grand Total: </strong></td>
+                                    <td class="by-summary-grandTotalPrice"><strong>Rs. {{numGrandTotal | number: '1.0-0'}}</strong></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="productsArray.length ==0">
+    <div class="container mt-5 by-cartHasNoProducts">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="../../../assets/EmptyCart.jpg" alt="">
+            <h4>Your Cart is Empty!</h4>
+            <h6>Add item to it now.</h6>
+            <button class="btn btn-primary" routerLink="/shopping">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

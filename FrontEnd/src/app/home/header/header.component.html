@@ -1,0 +1,94 @@
+<nav class="navbar by-navbar navbar-expand-sm navbar-light bg-light fixed-top">
+    <div class="container-fluid by-navbar-container">
+
+      <a class="navbar-brand by-brand" href="#"> 
+        <img src="../../../assets/icon.svg" alt="Bright Youth Icon">
+        Bright<span>Youth</span><span class="org">.org</span>
+      </a>
+
+      <button class="navbar-toggler by-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse by-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item by-nav-item">
+            <a class="nav-link by-nav-link-menu by-bolder-font active" aria-current="page" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item by-nav-item">
+            <a class="nav-link by-nav-link-menu by-bolder-font" href="#">About Us</a>
+          </li>
+          <li class="nav-item by-nav-item">
+            <a class="nav-link by-nav-link-menu by-bolder-font" [routerLink]="'/shopping'">Shop Now</a>
+            <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
+          </li>
+          
+          <li class="nav-item by-nav-item by-dropdown dropdown">
+            <a class="nav-link by-nav-link-dropdown by-bolder-font dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Courses ▼
+            </a>
+            <ul class="dropdown-menu by-dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="CourseCategoryDropDown">Marketing</li>
+              <li><a class="dropdown-item by-dropdown-link" href="#">Know Your Customer</a></li>
+              <!-- <li><a class="dropdown-item" href="#">PHP</a></li> -->
+              <!-- <li><a class="dropdown-item" href="#">JavaScript</a></li> -->
+              <!-- <li><a class="dropdown-item" href="#">HTML</a></li> -->
+
+              <!-- <li class="CourseCategoryDropDown">Web Development</li>
+              <li><a class="dropdown-item" href="#">Angular</a></li>
+              <li><a class="dropdown-item" href="#">PHP</a></li>
+              <li><a class="dropdown-item" href="#">JavaScript</a></li>
+              <li><a class="dropdown-item" href="#">HTML</a></li> -->
+              <li><hr class="dropdown-divider"></li>
+              <li class="CourseCategoryDropDown">MS Office</li>
+              <li><a class="dropdown-item by-dropdown-link" href="#">MS Excel</a></li>
+              <li><a class="dropdown-item by-dropdown-link" href="#">MS Word</a></li>
+              <li><a class="dropdown-item by-dropdown-link" href="#">MS Powerpoint</a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item by-nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+
+          <li class="nav-item by-nav-useritem">
+            <div class="d-flex registrationContainer"  *ngIf="blnUserLogin===false">
+              <a class=" registerButton" routerLink="/Register">Register</a>
+              <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
+              <a class=" loginButton" routerLink="/Login">Login</a>
+            </div>
+
+            <div class="d-flex registrationContainer"  *ngIf="blnUserLogin===true">
+              <a class=" registerButton" routerLink="/Profile">Profile</a>
+              <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
+              <a class=" loginButton" (click)="logout()">Logout</a>
+            </div>
+
+            <!-- <button class="btn btn-outline-primary registerButton">Register</button> -->
+          </li>
+          <!-- <li class="nav-item">
+          </li>
+          <li class="nav-item"> -->
+            <!-- <button class="btn btn-outline-primary loginButton">Login</button> -->
+          <!-- </li> -->
+
+        </ul>  <!-- ========== END OF NAVBAR LIST -->
+        
+
+
+        <a class="btn by-cartButton" [routerLink]="'/shopping/cart'">
+          <!-- <i class="fas fa-cart-plus" style="font-size:20px"></i> -->
+          <img src="../../../assets/cartIcon.svg" alt="cart icon">
+          <!-- <span>|</span> -->
+          <span class="totalItem">{{strTotalItem}}</span>
+          <!-- <div class="badge bg-danger totalItem">{{totalItem}}</div> -->
+        </a>
+
+        <!-- <form class="d-flex">
+          <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+
+      </div> <!-- ========== END OF NAVBAR - COLLAPSE -->
+    </div> <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
+  </nav> <!-- ========== END OF NAVBAR -->

@@ -1,0 +1,214 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'myOpenSans' !important;
+    src: url('/OpenSans-Regular.ttf') format('embedded-opentype'),
+        /* Internet Explorer */
+        url('/OpenSans-Regular.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('/OpenSans-Regular.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('/OpenSans-Regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('/OpenSans-Regular.ttf') format('svg');
+    /* Legacy iOS */
+}
+
+:root {
+    // --Bright-Color:rgba(197,90,17,0);
+    --by-rgba-Youth-Color: rgba(0, 32, 96, 0.7); //7% opacity
+
+    --Bright-Color: #C55A11;
+    --Bright-Hover-Color: #fa934e;
+    --Bright-Dim-Color: #d4c6bd;
+    --Youth-Color: #002060;
+    --Youth-Grey-Color: #26488b;
+    --Youth-Dim-Color: #b1bdd5;
+    --Youth-Dim2-Color: #f4f8ff;
+    --Org-Color: #525252;
+    // --Org-Color2: #6e6e6e;
+
+    --BY-box-shadow: 1.6px 1.6px 1.6px 1px rgba(0, 0, 0, 0.2);
+    --BY-box-shadowY: 0px 1.6px 30px rgba(0, 0, 0, 0.1);
+
+    --BY-Text46: 2.875rem;
+    --BY-Text32: 2rem;
+    --BY-Text24: 1.5rem;
+    --BY-Text20: 1.25rem;
+    --BY-Text17: 1.0625rem;
+    --BY-Text16: 1rem;
+    --BY-Text15: 0.96875rem;
+    --BY-Text14: 0.875rem; //default text
+    --BY-Text13: 0.8125rem;
+    --BY-Text12: 0.75rem;
+
+
+}
+
+body {
+    font-family: 'myOpenSans', sans-serif !important;
+    box-sizing: border-box;
+}
+
+a { cursor: pointer; }
+
+label { color: var(--Org-Color); }
+.app-container {
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.btn-delete-user {
+    width: 40px;
+    text-align: center;
+    box-sizing: content-box;
+}
+
+.by-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.by-PrimaryButton {
+    border-radius: 5px !important;
+    border-color: #dbd6d6 !important;
+    background-color: var(--Youth-Color) !important;
+    color: white !important;
+    font-size: var(--BY-Text16) !important;
+    padding: 0px 15px !important;
+    height: 35px !important;
+
+
+    &:hover {
+        // box-shadow: var(--BY-box-shadow);
+        background-color: var(--Bright-Hover-Color) !important;
+        color: white !important;
+    }
+
+}
+
+.by-OrangeButton {
+    border-radius: 5px !important;
+    border-color: #dbd6d6 !important;
+    background-color: var(--Bright-Color) !important;
+    color: white !important;
+    font-size: var(--BY-Text16) !important;
+    padding: 0px 15px !important;
+    height: 35px !important;
+
+
+    &:hover {
+        // box-shadow: var(--BY-box-shadow);
+        background-color: var(--Bright-Hover-Color-Color) !important;
+        color: white !important;
+    }
+
+}
+
+.by-RedButton {
+    border-radius: 5px !important;
+    border-color: #dbd6d6 !important;
+    background-color: rgb(173, 0, 0) !important;
+    color: white !important;
+    font-size: var(--BY-Text16) !important;
+    padding: 0px 15px !important;
+    height: 35px !important;
+
+    &:hover {
+        // box-shadow: var(--BY-box-shadow);
+        background-color: rgb(255, 93, 93) !important;
+        color: white !important;
+    }
+
+}
+
+//TODO: not used till now
+.by-WhiteButton-Small {
+    border-radius: 3px !important;
+    border-color: #dbd6d6 !important;
+    // background-color: rgb(173, 0, 0) !important;
+    // color: white !important;
+    font-size: var(--BY-Text13) !important;
+    padding: 0px 10px !important;
+    // height: 35px !important;
+
+    &:hover {
+        background: None !important;
+        box-shadow: var(--BY-box-shadow);
+    }
+
+}
+
+.by-H-Text46BoldBright {
+        // font-size: 2.875rem;
+        font-size: var(--BY-Text46);
+        font-weight: bold;
+        color: var(--Bright-Color);
+}
+
+.by-H-Text32BoldBright {
+    font-size: var(--BY-Text32);
+    font-weight: bold;
+    color: var(--Bright-Color);
+}
+
+.by-H-Text24BoldBright {
+    font-size: var(--BY-Text24);
+    font-weight: bold;
+    color: var(--Bright-Color);
+}
+
+
+.by-Text20Bright {
+    font-size: var(--BY-Text20);
+    color: var(--Bright-Color);
+}
+
+.by-Text16Bright {
+    font-size: var(--BY-Text16);
+    color: var(--Bright-Color);
+}
+
+.by-Text32 {
+    font-size: var(--BY-Text32) !important;
+}
+
+.by-Text24 {
+    font-size: var(--BY-Text24) !important;
+}
+
+.by-Text20 {
+    font-size: var(--BY-Text20) !important;
+}
+
+.by-Text17 {
+    font-size: var(--BY-Text17) !important;
+}
+
+.by-Text16 {
+    font-size: var(--BY-Text16) !important;
+}
+
+.by-Text14 {
+    font-size: var(--BY-Text14) !important;
+}
+
+.by-Text13 {
+ 
+    font-size: var(--BY-Text13) !important;
+}
+
+.by-Text12 {
+    font-size: var(--BY-Text12) !important;
+}
+
+
+.by-icon-size36 {
+    width: 36px;
+    height: 36px;
+}
+.by-icon-size22 {
+    width: 22px;
+    height: 22px;
+}
+

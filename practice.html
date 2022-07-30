@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="stylesheet" href="css/main.css">
+ 
+  <title>BrightYouth.Org</title>
+</head>
+<body>
+
+<span id="testHTML" class="test-color">Test Html CSS</span>
+
+<header>
+    <div class="navbar">
+      <div class="container">
+          <img id="mobile-cta" class="mobile-menu" src="icons/menu.svg" alt="open menu">
+          <img id="mobile-exit" class="mobile-menu" src="icons/menu.svg" alt="open menu">
+          
+        
+        </div>
+    </div>
+</header>
+
+<script>
+    const span = document.getElementById('testHTML');
+    const mobileMenu = document.getElementById('mobile-cta')
+        mobileMenuExit = document.getElementById('mobile-exit');
+   
+    mobileMenu.addEventListener('click', () => {
+        // nav.classlist.add('mobile-menu-show');
+        console.log(span.outerHTML);
+        span.classList.remove("test-color");
+        span.classList.add("test");
+        console.log(span.outerHTML);
+      })
+
+
+      mobileMenuExit.addEventListener('click', () => {
+        console.log(span.outerHTML);
+        span.classList.remove("test");
+        span.classList.add("test-color");
+        console.log(span.outerHTML);
+      })
+// our starting state: <div class="foo"></div>
+
+// use the classList API to remove and add classes
+
+// <div class="anotherclass"></div>
+
+// if visible is set remove it, otherwise add it
+// span.classList.toggle("test-color");
+
+// add/remove visible, depending on test conditional, i less than 10
+// span.classList.toggle("visible", i < 10 );
+
+// console.log(span.classList.contains("test"));
+
+// add or remove multiple classes
+// span.classList.add("test", "test-color", "baz");
+// span.classList.remove("test", "test-color", "baz");
+
+
+// add or remove multiple classes using spread syntax
+// const cls = ["foo", "bar"];
+// div.classList.add(...cls);
+// div.classList.remove(...cls);
+
+// replace class "foo" with class "bar"
+// div.classList.replace("foo", "bar");
+
+</script>
+
+</body>

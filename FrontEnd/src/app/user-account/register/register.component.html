@@ -1,0 +1,79 @@
+<div class="container-fluid pt-5 by-register-container">
+    <div class="by-background"></div>
+    <div class="by-background2"></div>
+    <div class="by-background3"></div>
+    <div class="by-background4"></div>
+    <div class="row">
+
+        <div class="col-md-3"></div><!-- ========== END OF Col 01 -->
+
+        <div class="card col-md-4">
+            <!-- <h4 class="card-header">Register</h4> -->
+            <h4 class="by-H-Text24BoldBright register">Register</h4>
+
+            <div class="card-body">
+                <form [formGroup]="registerForm"  #formDir="ngForm" (ngSubmit)="onSubmit()"> <!--(ngSubmit)="onSubmit()" -->
+
+                    <!-- <div [hidden]="formDir.submitted"> -->
+
+                        <!-- <div class="cross-validation" 
+                            [class.cross-validation-error]="
+                            (registerForm.touched || registerForm.dirty)"> -->
+
+                    <div class="form-group mt-2 by-Text14">
+                        <label for="mobileNumberInput">Mobile Number - 10 digits (e.g. 3218476361)</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrependCountryCode">+92</span>
+                            <input type="text" formControlName="mobileNumberControl" class="form-control"
+                                autocomplete="off" id="mobileNumberInput" maxlength="11"
+                                 />
+                                <!-- [ngClass]="{ 'is-invalid': submitted && thisFormControls['mobileNumberControl'].errors }" /> -->
+                        </div>
+                        <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)"
+                        class="invalid-feedback"> <!--    class="alert alert-danger"> -->
+                            <div *ngIf="mobileNumber.errors?.['required']">Mobile Number is required</div>
+                            <div *ngIf="mobileNumber.errors?.['minlength']">Mobile Number must be 11 digits</div>
+                            <!-- <div *ngIf="mobileNumber.errors?.['maxlength']">Mobile Number must be 11 digits max </div> -->
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2 by-Text14">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="usernameControl" class="form-control" autocomplete="off"
+                        maxlength="20"
+                            [ngClass]="{ 'is-invalid': submitted && thisFormControls['usernameControl'].errors }" />
+                        <div *ngIf="submitted && thisFormControls['usernameControl'].errors" class="invalid-feedback">
+                            <div *ngIf="thisFormControls['usernameControl'].errors['required']">Username is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2 by-Text14">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="passwordControl" class="form-control" autocomplete="off"
+                        maxlength="20"
+                            [ngClass]="{ 'is-invalid': submitted && thisFormControls['passwordControl'].errors }" />
+                        <div *ngIf="submitted && thisFormControls['passwordControl'].errors" class="invalid-feedback">
+                            <div *ngIf="thisFormControls['passwordControl'].errors['required']">Password is required
+                            </div>
+                            <div *ngIf="thisFormControls['passwordControl'].errors['minlength']">Password must be at
+                                least 6 characters</div>
+                        </div>
+                    </div>
+
+                    <!-- </div> -->
+                    <div class="form-group mt-3">
+                        <button [disabled]="loading" type="submit" class="btn by-PrimaryButton me-5">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Register
+                        </button>
+                        <a routerLink="../login" class="btn btn-link">Cancel</a>
+                    </div>
+                    <!-- </div> -->
+                </form>
+            </div>
+        </div> <!-- ========== END OF COL 2 - REGISTER BOX -->
+        <div class="col-md-3"></div> <!-- ========== END OF COL 3 -->
+
+    </div> <!-- ========== END OF Main Row -->
+
+</div> <!-- ========== END OF MAIN CONTAINER -->
