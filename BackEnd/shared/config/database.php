@@ -4,8 +4,8 @@ class Database{
     // specify your own database credentials
     private $host = "localhost";
     private $db_name = "azainorg_by";
-    private $username = "root";
-    private $password = "";
+    private $username = "azainorg_by";
+    private $password = "1Q6n5h.WFmZ!4nw69@#$asdfaserQWERW8761erwt2345";
     public $conn;
   
     // get the database connectionchanged
