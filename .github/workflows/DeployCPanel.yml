@@ -2,8 +2,7 @@ on:
   push:
     branches:
       - main
-      
-name: Deploy website on push
+name: Deploy to Cpanel on Push
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
@@ -18,3 +17,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./BackEnd/
+        server-dir: public_html/brightyouth.org/BackEnd/
