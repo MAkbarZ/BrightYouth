@@ -2,8 +2,7 @@ on:
   push:
     branches:
       - main
-      
-name: Deploy website on push
+name: Deploy to Cpanel on Push
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
@@ -15,6 +14,6 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
