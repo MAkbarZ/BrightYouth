@@ -20,10 +20,10 @@ export class UserAccountComponent implements OnInit {
       if (this.userAccountService.userValue.id > 0) {
         // console.log(this.userAccountService.userValue);
         this.router.navigate(['/userAccount/profile']);
-        console.log('logged in');
+        // console.log('logged in');
         // console.log(userVal);
       } else {
-        console.log('not logged in');
+        // console.log('not logged in');
         this.router.navigate(['/userAccount/register']);
       }
     }
