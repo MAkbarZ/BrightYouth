@@ -1,7 +1,74 @@
-.is-invalid {
-    color:red;
-}
+// .is-invalid {
+//     color:red;
+// }
 
-.card {
-    margin-top: 150px;
+
+.by-login-container {
+    position: relative;
+    padding-top: 7rem;
+    height: 100vh;
+ 
+    
+    .by-background {
+        position: absolute;
+        background-image: url("../../../assets/icon.svg");
+        background-repeat: no-repeat;
+        width: 22rem;
+        height: 51rem;
+        top: 94px;
+        right: -82px;
+        opacity: 1;
+        z-index: 99;
+    }
+
+    .by-background2 {
+        position: absolute;
+        background-image: url("../../../assets/icon.svg");
+        background-repeat: no-repeat;
+        width: 22rem;
+        height: 51rem;
+        top: 114px;
+        right: -53px;
+        opacity: .25;
+
+        z-index: 98;
+    }
+
+    .by-background3 {
+        position: absolute;
+        background-image: url("../../../assets/icon.svg");
+        background-repeat: no-repeat;
+        width: 22rem;
+        height: 51rem;
+        top: 155px;
+        right: -25px;
+        opacity: .15;
+        z-index: 97;
+    }
+
+    .by-background4 {
+        position: absolute;
+        background-image: url("../../../assets/icon.svg");
+        background-repeat: no-repeat;
+        width: 22rem;
+        height: 51rem;
+        // top: 193px;
+        // right: 8px;
+        top: 300px;
+        left: -35px;
+        opacity: .08;
+
+        z-index: 96;
+    }
+
+    .card {
+        padding: 2rem;
+
+        .register {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    
+    }
+
 }

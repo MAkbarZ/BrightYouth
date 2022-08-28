@@ -3,7 +3,7 @@ export class User {
     username: string;
     password?: string;
     mobile: string;
-    token: string;
+    // token: string;
 
     constructor() 
     {
@@ -11,6 +11,6 @@ export class User {
         this.username= '';
         this.password= '';
         this.mobile= '';
-        this.token= '';
+        // this.token= '';
    }
 }

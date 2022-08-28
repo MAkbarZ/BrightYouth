@@ -8,12 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DescriptionColComponent implements OnInit {
 
 
-  @Input() text: string;
+  @Input() descriptionText: string;
   @Input() wordLimit: number;
   showMore:boolean;
 
   constructor() {
-    this.text = '';
+    this.descriptionText = '';
     this.wordLimit = 0;
     this.showMore = false;
    }

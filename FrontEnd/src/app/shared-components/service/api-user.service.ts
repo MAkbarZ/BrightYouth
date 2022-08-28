@@ -5,9 +5,9 @@ import { GlobalConstant } from '../types/globaltypes';
 
 const headers = new HttpHeaders({ 
   'Content-Type': 'application/json',
-  // "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE,OPTIONS",
-  "Access-Control-Allow-Headers": "Access-Control-Allow-Methods,X-Requested-With,Content-Type,Accept"
+  "Access-Control-Allow-Headers": "Access-Control-Allow-Origin,Access-Control-Allow-Methods,X-Requested-With,Content-Type,Accept,Origin"
   // 'authentication-token':'12134'
 });
 
@@ -27,11 +27,12 @@ export class ApiUserService {
   // }
 
   
-  login(username: string, password: string) {
-    return this.http.post<User>(this.baseUrl + 'user/authenticate', {
-        username,
-        password,
-      });
+  login(user: User) {
+    // return this.http.post<User>(this.baseUrl + 'user/authenticate', {
+    //     username,
+    //     password,
+    //   });
+    return this.http.post<User>(this.baseUrl + 'user/create.php', user, {headers: headers});
   }
 
   /*

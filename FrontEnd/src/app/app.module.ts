@@ -6,15 +6,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-import { fakeBackendProvider } from './shared-components/interceptor/fake-backend.interceptor';
 import { JwtInterceptor } from './shared-components/interceptor/jwt.interceptor';
 import { ErrorInterceptor } from './shared-components/interceptor/error.interceptor';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found/page-not-found.component';
 import { AlertComponent } from './shared-components/alert/alert.component';
-import { HomeComponent } from './home/home/home.component';
-import { UsersComponent } from './user/users/users.component';
+// import { PaginationModule } from './shared-components/pagination/pagination.module';
 // import { FilterProductPipe } from './shared-components/pipes/filter-product.pipe';
 
 @NgModule({
@@ -23,7 +21,8 @@ import { UsersComponent } from './user/users/users.component';
     AlertComponent,
     // HomeComponent, //I will user Users Component instead.
     // UsersComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -31,11 +30,12 @@ import { UsersComponent } from './user/users/users.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    // PaginationModule,
     RouterModule
   ],
   providers: [ 
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
     // fakeBackendProvider

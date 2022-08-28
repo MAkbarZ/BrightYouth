@@ -14,14 +14,13 @@ export class AppComponent implements OnInit {
   // title = 'FrontEnd';
   title = GlobalConstant.siteTitle;
 
-  strTotalItem!: string;
-  blnUserLogin!: boolean;
+   blnUserLogin!: boolean;
 
   user!: User;
 
   constructor(
     private userAccountService: UserAccountService,
-    private shoppingService: ShoppingService
+    
   ) {
     this.userAccountService.user$.subscribe((x) => (this.user = x));
 
@@ -29,25 +28,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.srvGetAllProducts();
+    
   } // ========== end of ngOnInit()
 
-  srvGetAllProducts() {
-    this.shoppingService.getProducts().subscribe({
-      next: (res: any) => {
-        this.strTotalItem = res.length;
-        // console.log("total Item "+this.totalItem);
-        // console.log("res "+res);
-        // console.log("lenght "+res.length);
-      },
-      error: (err: any) => {
-        console.log(`Unable to get Products from Shopping Service ${err}`);
-      },
-      complete: () => {
-        console.log('Products loaded successfully.');
-      },
-    });
-  } // ========== end of srvGetAllProducts()
+ 
 
   logout() {
     this.userAccountService.logout();

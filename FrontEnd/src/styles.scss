@@ -44,9 +44,14 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'myOpenSans', sans-serif !important;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 a { cursor: pointer; }

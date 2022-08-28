@@ -1,7 +1,7 @@
 <ng-container *ngIf="productsArray.length !=0">
 <!-- <ng-container *ngIf="productsArray.length !=0"> -->
     <div class="container-fluid by-cartHasProducts">
-        <span class="by-yourProducts">Your Products</span>
+        <span class="by-yourProducts">Your Cart</span>
         <div class="card-table">
             <div class="cart-product by-cart-product">                
                 <table class="table table-responsive">
@@ -9,13 +9,13 @@
                     <thead>
                         <tr>
                             <!-- <th>Product No.</th> -->
-                            <th></th>
+                            <th><br><br></th>
                             <!-- <th>Product Image</th> -->
-                            <th></th>
-                            <th>Price</th>
+                            <th><br><br></th>
+                            <th>Price<br></th>
                             <!-- <th>Quantity</th> -->
                             <!-- <th>Total</th> -->
-                            <th></th>
+                            <th><br><br></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,11 +31,16 @@
                                 <h5>{{product.productName}}</h5>
                                 <hr>
                                 <app-description-col 
-                                    [text]="product.description"
+                                    [descriptionText]="product.description"
                                     [wordLimit]="150">
                                 </app-description-col>
                                 <!-- <p [ngClass]="{'limitTextHeight': isReadMore, 'by-prod-desc': true}"> {{product['description']}}</p> -->
                                 <!-- <button class="btn btn-secondary" (click)="readMore(product.description)">{{ isReadMore ? 'Read More': 'Read Less' }}</button> -->
+                                <hr>
+                                <span class="by-merchantName">{{product.merchantName}}</span>
+                                <span>send product code to <span class="by-merchantMobile">{{product.merchantMobile}}</span> via SMS</span>
+                                <br>
+                                <br>
                             </td>
                             <td class="by-col-price"><span>Rs. {{product.price | number: '1.2-3'}}</span></td>
                             <!-- <td>{{product['quantity']}}</td> -->

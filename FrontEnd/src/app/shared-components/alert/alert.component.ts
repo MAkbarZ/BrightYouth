@@ -17,34 +17,34 @@ export class AlertComponent implements OnInit, OnDestroy {
   alertSubscription: Subscription = new Subscription();
   routeSubscription: Subscription = new Subscription();
   alertKept: Boolean = false;
-
+  iconType: string = 'infoIcon';
   constructor(private router: Router, private alertService: AlertService) {}
 
   ngOnInit(): void {
     // subscribe to new alert notifications
     this.alertSubscription = this.alertService
       .onAlert(this.id)
-      .subscribe((alert) => {
+      .subscribe((alertres) => {
         // clear alerts when an empty alert is received
-        if (!alert.message) {
+        if (!alertres.message) {
           // filter out alerts without 'keepAfterRouteChange' flag
           this.alertsArray = this.alertsArray.filter(
-            (alert) => alert.keepAfterRouteChange
+            (alertres) => alertres.keepAfterRouteChange
           );
 
           // remove 'keepAfterRouteChange' flag on the rest
           this.alertsArray.forEach(
-            (alert) => delete alert.keepAfterRouteChange
+            (alertres) => delete alertres.keepAfterRouteChange
           );
           return;
         }
 
         // add alert to array
-        this.alertsArray.push(alert);
+        this.alertsArray.push(alertres);
 
         // auto close alert if required
-        if (alert.autoClose) {
-          setTimeout(() => this.removeAlert(alert), 3000);
+        if (alertres.autoClose) {
+          setTimeout(() => this.removeAlert(alertres), 2000);
         }
       });
 
@@ -83,7 +83,8 @@ export class AlertComponent implements OnInit, OnDestroy {
   cssClass(alert: Alert) {
     if (!alert) return;
 
-    const classes = ['alert', 'alert-dismissable', 'mt-4', 'container'];
+    // const classes = ['alert', 'alert-dismissable', 'mt-4', 'container'];
+    const classes = ['alert', 'alert-dismissible', 'col-md-6 col-sm-12', 'mt-4', 'container'];
 
     const alertTypeClass = {
       [AlertType.Success]: 'alert alert-success',
@@ -100,4 +101,9 @@ export class AlertComponent implements OnInit, OnDestroy {
 
     return classes.join(' ');
   }
+
+  getIconType(): string {
+    return this.iconType;
+  }
+
 }

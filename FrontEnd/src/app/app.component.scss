@@ -1,12 +1,13 @@
-.header{
+.header {
     height: 20%;
 }
-.drawer{
+
+.drawer {
     // width: 100px;
     height: 80%;
     // margin: 10px;
     // border: 1px solid #555;
-    
+
 }
 
 .footer {
@@ -34,29 +35,60 @@
 .by-navbar {
     background-color: white !important;
     box-shadow: var(--BY-box-shadowY);
+
     .by-navbar-container {
+        position: relative;
+
         .by-brand {
-            color: var(--Bright-Color);
+            position: absolute;
+            text-decoration: none;
+
             font-size: 1.5rem !important;
             margin-left: 15px;
 
-            img {
-                width: 35px;
+            top: 0px;
+            left: 20px;
+            z-index: 9999;
+
+            .by-brand-icon img {
+                position: absolute;
+                width: 70px;
                 height: auto;
+                text-decoration: none !important;
+                // margin-top: -10px;
+
+                top: 0px;
+                left: 20px;
             }
 
-            span {
+            .by-brand-Bright {
+                text-decoration: none !important;
+                color: var(--Bright-Color);
+                position: absolute;
+                top: 6px;
+                left: 70px;
+            }
+
+            .by-brand-Youth {
+                text-decoration: none !important;
                 color: var(--Youth-Color);
+                position: absolute;
+                top: 6px;
+                left: 135px;
             }
 
-            .org {
+            .by-brand-Org {
+                text-decoration: none !important;
                 color: var(--Org-Color);
                 font-size: 0.95rem !important;
+                position: absolute;
+                top: 15px;
+                left: 197px;
             }
         }
 
         .by-collapse {
-            margin-left: 100px;
+            margin-left: 350px;
             font-size: 0.95rem !important;
 
             .by-navbar-nav {
@@ -89,17 +121,18 @@
                     .by-bolder-font {
                         // color: green;
                         font-size: var(--BY-Text15);
+
                         &:hover {
                             color: var(--Bright-Color);
                             font-weight: 400;
                         }
                     }
-                    
+
                 }
 
                 .by-nav-useritem {
                     margin-left: 145px !important;
-                    
+
                     .registrationContainer {
                         margin-top: 5px;
                         margin-bottom: 0px;
@@ -115,6 +148,7 @@
                             // margin-left: 20px;
                             margin-right: 20px !important;
                             width: 70px;
+
                             &:hover {
                                 font-weight: 600;
                                 // background-color: var(--Bright-Dim-Color) !important;
@@ -128,11 +162,11 @@
                                 background: var(--Bright-Color);
                                 left: 0;
                                 bottom: 0;
-    
+
                                 transform: scale(0, 1);
                                 transition: transform 0.3s ease;
                             }
-    
+
                             &:hover::after {
                                 transform: scale(1, 1);
                             }
@@ -154,6 +188,7 @@
                             margin-left: 20px;
                             margin-right: 10px !important;
                             width: 70px;
+
                             &:hover {
                                 font-weight: 600;
                                 // background-color: var(--Bright-Dim-Color) !important;
@@ -167,17 +202,18 @@
                                 background: var(--Bright-Color);
                                 left: 0;
                                 bottom: 0;
-    
+
                                 transform: scale(0, 1);
                                 transition: transform 0.3s ease;
                             }
-    
+
                             &:hover::after {
                                 transform: scale(1, 1);
                             }
                         }
                     }
                 }
+
                 .by-dropdown {
                     position: relative;
                     background: none;
@@ -210,7 +246,7 @@
 
                         .by-dropdown-link {
                             position: relative;
-                            font-size: var(--BY-Text15)!important;
+                            font-size: var(--BY-Text15) !important;
                             background: none;
 
                             &::after {
@@ -246,31 +282,6 @@
             }
         }
 
-        .by-cartButton {
-            // position: relative;
-            // border-radius: 0px !important;
-            border-color: #dbd6d6 !important;
-            padding: 8;
 
-            &:hover {
-                box-shadow: var(--BY-box-shadow);
-            }
-
-            img {
-                width: 25px;
-                // height:20px;
-            }
-
-            .totalItem {
-                // position: absolute;
-                // z-index: 99;
-                // right: 2px;
-                // top: 2px;
-
-                color: var(--Org-Color);
-                margin-left: 10px;
-                font-size: 20px;
-            }
-        }
     }
 }

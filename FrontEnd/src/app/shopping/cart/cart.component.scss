@@ -8,10 +8,12 @@
 
     .by-yourProducts {
         position: absolute;
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 2rem;
+        font-style: italic;
+        // font-weight: bold;
         color: var(--Bright-Color);
-        top: 10px;
+        // top: 10px;
+        top: -70px;
         left: 26px;
         z-index: 70;
     }
@@ -49,16 +51,29 @@
                         }
                     }
 
-                    .by-prod-code {
-                        // font-weight: bold;
-                        color: var(--Youth-Color);
-                    }
+                    
 
                     .by-col-product {
                         width: 600px;
 
                         h5 {
                             font-weight: bold;
+                        }
+
+                        .by-prod-code {
+                            // font-weight: bold;
+                            color: var(--Youth-Color);
+                        }
+
+                        .by-merchantName {
+                            color: var(--Bright-Color);
+                            font-weight: bold;
+                            margin-right: 20px;
+                        }
+
+                        .by-merchantMobile {
+                            font-weight: bold;
+                            
                         }
                     }
 

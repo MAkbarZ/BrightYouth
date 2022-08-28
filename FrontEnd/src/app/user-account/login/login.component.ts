@@ -17,10 +17,22 @@ import { UserAccountService } from 'src/app/shared-components/service/user-accou
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   loginForm: FormGroup;
+  inputUser: User = new User();
   loading = false;
   submitted = false;
+
+  get mobileNumber() {
+    return this.loginForm.get('mobileNumberControl')!;
+  }
+
+  get username() {
+    return this.loginForm.get('usernameControl')!;
+  }
+
+  get password() {
+    return this.loginForm.get('passwordControl')!;
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,15 +46,14 @@ export class LoginComponent implements OnInit {
       usernameControl: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(20)
+        // Validators.maxLength(20)
       ]),
       passwordControl: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(20)
+        // Validators.maxLength(20)
       ]),
     });
-    
   }
 
   ngOnInit(): void {}
@@ -66,27 +77,60 @@ export class LoginComponent implements OnInit {
     this.loading = true;
 
     // let userPassword = this.thisFormControls['passwordControl'].value || '';
-    let userPassword = this.thisFormControls['passwordControl'].value || '';
+    let objFormValues = this.loginForm.value;
+    this.inputUser.mobile = objFormValues.mobileNumberControl;
+    this.inputUser.username = objFormValues.usernameControl;
+    this.inputUser.password = objFormValues.passwordControl;
+    
+    this.userAccountService
+      .login(this.inputUser)
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          // get return url from query parameters or default to home page
+          this.alertService.success('Registration successful', {
+            keepAfterRouteChange: true,
+          });
+          console.log('Success: ------------');
+          console.log(res);
 
-    if (userPassword !== '') {
-      this.userAccountService
-        .login(this.thisFormControls['usernameControl'].value, userPassword)
-        .pipe(first())
-        .subscribe({
-          next: () => {
-            // get return url from query parameters or default to home page
-            const returnUrl =
-              this.route.snapshot.queryParams['returnUrl'] || '/';
-            this.router.navigateByUrl(returnUrl);
-          },
-          error: (error) => {
-            this.alertService.error(error);
-            this.loading = false;
-          },
-        });
+          // const returnUrl =
+          //   this.route.snapshot.queryParams['returnUrl'] || '/';
+          // this.router.navigateByUrl(returnUrl);
+
+          this.router.navigate(['../profile'], { relativeTo: this.route });
+        },
+        error: (err) => {
+          this.alertService.error('Mobile Number or Username already exist.');
+          console.log('Error: ------------');
+          console.log(err);
+          console.log('Error: Error');
+          console.log(err.error);
+          console.log('Error: Passed');
+          console.log(err.error.passed);
+          console.log('Error: Result');
+          console.log(err.error.result);
+          if (err.error.result == 23000) {
+            console.log('Mobile Number or Username already exist.');
+          }
+          console.log('Error: Response');
+          console.log(err.error.Response);
+          console.log(err.status);
+          this.loading = false;
+        },
+      });
+  }
+
+  // Only Integer Numbers
+  // https://www.freakyjolly.com/angular-allow-only-numbers-or-alphanumeric-in-input-restrict-other-characters-using-keypress-event/
+  keyPressNumbers(event: any) {
+    var charCode = event.which ? event.which : event.keyCode;
+    // Only Numbers 0-9
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+      return false;
     } else {
-        this.alertService.error('Please enter your password.');
-        this.loading = false;
+      return true;
     }
   }
 }

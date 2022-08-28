@@ -1,9 +1,9 @@
-<span *ngIf="text.length <= wordLimit" class="by-prod-desc">{{text}}</span>
+<span *ngIf="descriptionText.length <= wordLimit" class="by-prod-desc">{{descriptionText}}</span>
 
-<span *ngIf="text.length > wordLimit && !showMore" class="by-prod-desc">{{text.substring(0,wordLimit)}}...
-    <span (click)="showMore = true" class="text-primary">Show more</span>
+<span *ngIf="descriptionText.length > wordLimit && !showMore" class="by-prod-desc">{{descriptionText.substring(0,wordLimit)}}...
+    <span (click)="showMore = true" class="text-primary"> [+ more]</span>
 </span>
 
-<span *ngIf="text.length > wordLimit && showMore" class="by-prod-desc">{{text}}
-    <span (click)="showMore = false" class="text-primary">Show less</span>
+<span *ngIf="descriptionText.length > wordLimit && showMore" class="by-prod-desc">{{descriptionText}}
+    <span (click)="showMore = false" class="text-primary">[- more]</span>
 </span>

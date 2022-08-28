@@ -9,12 +9,21 @@ export class Product {
   // private image: string;
 
   id: number;
-  category: string;
+  categoryId: number;
+  categoryName: string;
   productName: string;
   description: string;
   price: number;
   image: string;
   ratingCount: number;
+  
+  merchantId: number;
+  merchantName: string;
+  merchantMobile: string;
+
+  // Response: string = "200 OK";
+  // passed: boolean = true;
+
 
 /* sample data
 
@@ -33,13 +42,19 @@ export class Product {
 
   constructor() 
    {
-    this.id = 0;
-    this.category = '';
+    this.id = 0;    
+    this.categoryId = 0;
+    this.categoryName = '';
+
     this.productName = '';
     this.description = '';
     this.price = 0;
     this.image = '';
     this.ratingCount = 0;
+
+    this.merchantId = 0;
+    this.merchantName = '';
+    this.merchantMobile = '';
   }
 
   // get productId(): number { return this.id; }

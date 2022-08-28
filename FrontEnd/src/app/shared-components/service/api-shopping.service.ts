@@ -4,6 +4,12 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Product } from '../model/product.model';
 import { GlobalConstant } from '../types/globaltypes';
 
+export interface Products {
+  Response: string;
+passed: boolean;
+result: {}
+}
+
 
 @Injectable({
   providedIn: 'root',
@@ -20,12 +26,17 @@ export class ApiShoppingService {
     
     const headers = new HttpHeaders({ 
       'Content-Type': 'application/json',
+      "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE,OPTIONS",
+      "Access-Control-Allow-Headers": "Access-Control-Allow-Methods,X-Requested-With,Content-Type,Accept"
       // 'authentication-token':'12134'
     });
 
     // console.log("loading data from: this.http.get<Product>('https://fakestoreapi.com/products', {headers: headers})");
     // return this.http.get<Product>('https://fakestoreapi.com/products', {headers: headers});
-    return this.http.get<Product>(this.baseUrl + 'product/products.php', {headers: headers});
+    // console.log(this.baseUrl + 'product/products.php');
+    // return this.http.get<Product>(this.baseUrl + 'product/products.php', {headers: headers});
+    // return this.http.get<Products>(this.baseUrl + 'product/products.php', {headers: headers});
+    return this.http.get<Products>(this.baseUrl + 'userQueries/productsByCatByMerchant.php', {headers: headers});
 
     //   const param = new HttpParams().set('pageNum','10').set('pageSize', '100');
     //   // return this.http.get('https://www.brightyouth.com/api/User/id=????');

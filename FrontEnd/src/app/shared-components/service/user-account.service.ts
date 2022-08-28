@@ -21,8 +21,8 @@ export class UserAccountService {
     return this.userSubjectInLocalStorage$.value;
   }
 
-  login(username: string, password: string) {
-    return this.apiUserService.login(username, password).pipe(
+  login(user: User) {
+    return this.apiUserService.login(user).pipe(
       map((user: User) => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));

@@ -24,7 +24,8 @@ export class UserAccountComponent implements OnInit {
         // console.log(userVal);
       } else {
         // console.log('not logged in');
-        this.router.navigate(['/userAccount/register']);
+        // this.router.navigate(['/userAccount/register']);
+        this.router.navigate(['/userAccount/login']);
       }
     }
 

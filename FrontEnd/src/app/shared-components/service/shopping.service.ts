@@ -58,12 +58,15 @@ export class ShoppingService {
     this.productsInCartArray.push(product);
     this.productsArray$.next(this.productsInCartArray);
     this.getTotalPrice();
+    // console.log(this.numGrandTotal);
   }
 
   getTotalPrice():number {
     let grandTotal = 0;
     this.productsInCartArray.map((a:any)=>{
-      grandTotal += a.total;
+      // console.log(this.productsInCartArray);
+      grandTotal += <number>(parseInt(a.total));
+      // console.log(grandTotal);
     });
     return grandTotal;
   }
