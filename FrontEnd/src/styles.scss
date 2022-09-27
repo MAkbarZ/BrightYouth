@@ -20,6 +20,7 @@
     --Bright-Color: #C55A11;
     --Bright-Hover-Color: #fa934e;
     --Bright-Dim-Color: #d4c6bd;
+    
     --Youth-Color: #002060;
     --Youth-Grey-Color: #26488b;
     --Youth-Dim-Color: #b1bdd5;
@@ -27,6 +28,11 @@
     --Org-Color: #525252;
     // --Org-Color2: #6e6e6e;
 
+  
+    --Bright-Light-Color: #FFF2CC; //for table heading
+    --Youth-Light-Color: #D9E2F3; //for table column heading 
+  
+  
     --BY-box-shadow: 1.6px 1.6px 1.6px 1px rgba(0, 0, 0, 0.2);
     --BY-box-shadowY: 0px 1.6px 30px rgba(0, 0, 0, 0.1);
 
@@ -205,6 +211,35 @@ label { color: var(--Org-Color); }
 
 .by-Text12 {
     font-size: var(--BY-Text12) !important;
+}
+
+
+// ARTICLE
+.by-article-heading {
+    font-size: var(--BY-Text24) !important;
+}
+
+.by-article-para {
+    font-size: var(--BY-Text16) !important;
+}
+
+
+// TABLE
+.by-table-heading {
+   background-color: var(--Bright-Light-Color);
+   font-size: var(--BY-Text16) !important;
+   font-weight: bold;
+}
+
+.by-table-column-heading {
+   background-color: var(--Youth-Light-Color);
+   font-size: var(--BY-Text12) !important;
+   font-weight: bold;
+}
+
+.by-table-cell-heading {
+   font-size: var(--BY-Text12) !important;
+   font-weight: bold;
 }
 
 
