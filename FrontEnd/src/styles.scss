@@ -14,19 +14,28 @@
 }
 
 :root {
-    // --Bright-Color:rgba(197,90,17,0);
-    --by-rgba-Youth-Color: rgba(0, 32, 96, 0.7); //7% opacity
+
+/* 
+--Bright-Color:rgba(197,90,17,0); 
+*/    
+ 
+    --by-rgba-Youth-Color: rgba(0, 32, 96, 0.7); /*7% opacity*/
 
     --Bright-Color: #C55A11;
     --Bright-Hover-Color: #fa934e;
     --Bright-Dim-Color: #d4c6bd;
+  
     --Youth-Color: #002060;
     --Youth-Grey-Color: #26488b;
     --Youth-Dim-Color: #b1bdd5;
     --Youth-Dim2-Color: #f4f8ff;
     --Org-Color: #525252;
-    // --Org-Color2: #6e6e6e;
+    --Org-Color2: #6e6e6e;
 
+    --Bright-Light-Color: #f7ece5; /* for table heading - little darker is #FFF2CC */
+    --Youth-Light-Color: #eaf0fb; /*for table column heading - little darker is #D9E2F3 */
+  
+  
     --BY-box-shadow: 1.6px 1.6px 1.6px 1px rgba(0, 0, 0, 0.2);
     --BY-box-shadowY: 0px 1.6px 30px rgba(0, 0, 0, 0.1);
 
@@ -37,9 +46,15 @@
     --BY-Text17: 1.0625rem;
     --BY-Text16: 1rem;
     --BY-Text15: 0.96875rem;
-    --BY-Text14: 0.875rem; //default text
+    --BY-Text14: 0.875rem; /* default text */
     --BY-Text13: 0.8125rem;
     --BY-Text12: 0.75rem;
+
+   --BY-Table-Border-color-Dim: var(--Youth-Dim-Color);
+    --BY-Table-Border-Top: 1px solid var(--BY-Table-Border-color-Dim);
+    --BY-Table-Border-Right: 1px solid var(--BY-Table-Border-color-Dim);
+    --BY-Table-Border-Bottom: 1px solid var(--BY-Table-Border-color-Dim);
+    --BY-Table-Border-Left: 1px solid var(--BY-Table-Border-color-Dim);
 
 
 }
@@ -61,6 +76,67 @@ label { color: var(--Org-Color); }
     min-height: 320px;
     overflow: hidden;
 }
+
+table, thead, tbody, tfoot, tr, td {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    border-collapse: collapse;
+}
+
+
+/* ======================= COLORS ======================= */
+.by-color-bright {
+	color: var(--Bright-Color);
+}
+
+.by-color-youth {
+	color: var(--Youth-Color);
+}
+
+.by-bg-color-bright {
+	background-color: var(--Bright-Color);
+}
+
+.by-bg-color-bright-dim {
+	background-color: var(--Bright-Dim-Color);
+}
+
+.by-bg-color-bright-light {
+	background-color: var(--Bright-Light-Color);
+}
+
+.by-bg-color-youth {
+	background-color: var(--Youth-Color);
+}
+
+.by-bg-color-youth-dim {
+	background-color: var(--Youth-Dim-Color);
+}
+
+.by-bg-color-youth-dim2 {
+	background-color: var(--Youth-Dim2-Color);
+}
+
+.by-bg-color-org {
+	background-color: var(--Org-Color);
+}
+
+/* ======================= TEXT ALIGN ======================= */
+
+.by-Text-Align-Center {
+	text-align: center;
+}
+
+
+.by-Text-Align-Left {
+	text-align: left;
+}
+
+.by-Text-Align-Right {
+	text-align: right;
+}
+
+
 
 .btn-delete-user {
     width: 40px;
@@ -85,7 +161,6 @@ label { color: var(--Org-Color); }
 
 
     &:hover {
-        // box-shadow: var(--BY-box-shadow);
         background-color: var(--Bright-Hover-Color) !important;
         color: white !important;
     }
@@ -103,7 +178,6 @@ label { color: var(--Org-Color); }
 
 
     &:hover {
-        // box-shadow: var(--BY-box-shadow);
         background-color: var(--Bright-Hover-Color-Color) !important;
         color: white !important;
     }
@@ -120,22 +194,21 @@ label { color: var(--Org-Color); }
     height: 35px !important;
 
     &:hover {
-        // box-shadow: var(--BY-box-shadow);
         background-color: rgb(255, 93, 93) !important;
         color: white !important;
     }
 
 }
 
-//TODO: not used till now
+/* TODO: not used till now */
 .by-WhiteButton-Small {
     border-radius: 3px !important;
     border-color: #dbd6d6 !important;
-    // background-color: rgb(173, 0, 0) !important;
-    // color: white !important;
+    /* background-color: rgb(173, 0, 0) !important;
+     color: white !important; */
     font-size: var(--BY-Text13) !important;
     padding: 0px 10px !important;
-    // height: 35px !important;
+    
 
     &:hover {
         background: None !important;
@@ -145,7 +218,6 @@ label { color: var(--Org-Color); }
 }
 
 .by-H-Text46BoldBright {
-        // font-size: 2.875rem;
         font-size: var(--BY-Text46);
         font-weight: bold;
         color: var(--Bright-Color);
@@ -207,6 +279,98 @@ label { color: var(--Org-Color); }
     font-size: var(--BY-Text12) !important;
 }
 
+/* ARTICLE */
+
+.by-article-title {
+    font-size: var(--BY-Text32) !important;
+   color: var(--Bright-Color) !important;
+}
+
+
+.by-article-heading {
+    font-size: var(--BY-Text20) !important;
+color: var(--Youth-Color) !important;
+}
+
+.by-article-para {
+    font-size: var(--BY-Text16) !important;
+margin-bottom: 10px;
+}
+
+.by-aside {
+  width: 35%;
+  padding-left: 15px;
+  margin-left: 15px;
+margin-right:50px;
+  float: right;
+  background-color: #DAE3F3;
+}
+
+/* LIST */
+.by-list-heading {
+	
+    font-size: var(--BY-Text16) !important;
+}
+
+.by-list-item {
+	margin-bottom: 5px;
+}
+
+
+/* TABLE */
+
+.by-table-heading {
+   background-color: var(--Bright-Light-Color) !important;
+   color: var(--Bright-Color) !important;
+   font-weight: bold;
+}
+
+tr:hover {background-color: var(--Youth-Dim2-Color);}
+
+.by-table-column-heading {
+   background-color: var(--Youth-Dim2-Color);
+   font-size: var(--BY-Text14) !important;
+   font-weight: bold;
+   color: var(--Youth-Color);
+}
+
+.by-table-column-heading th {
+	padding: 5px;
+   	margin: 0;
+
+	border-top: var(--BY-Table-Border-Top);
+	border-right: var(--BY-Table-Border-Right);
+	border-bottom: var(--BY-Table-Border-Bottom);
+	border-left: var(--BY-Table-Border-Left);
+}
+
+.by-table-cell {
+   font-size: var(--BY-Text14) !important;
+}
+
+.by-table-cell td {
+	padding: 5px;
+   	margin: 0;
+
+	border-top: var(--BY-Table-Border-Top);
+	border-right: var(--BY-Table-Border-Right);
+	border-bottom: var(--BY-Table-Border-Bottom);
+	border-left: var(--BY-Table-Border-Left);
+}
+
+
+.by-number-cell {
+	text-align: right;
+}
+
+
+.by-table-OutsideBorder {
+	border-top: var(--BY-Table-Border-Top);
+	border-right: var(--BY-Table-Border-Right);
+	border-bottom: var(--BY-Table-Border-Bottom);
+	border-left: var(--BY-Table-Border-Left);
+}
+
 
 .by-icon-size36 {
     width: 36px;
@@ -217,3 +381,6 @@ label { color: var(--Org-Color); }
     height: 22px;
 }
 
+.by-image-accountingCycle {
+	width: 700px;
+}

@@ -14,7 +14,6 @@ export class ShoppingService {
   
   public productsInCartArray: Product[] = [];
 
-  private totalItem:number = 0;
 
   constructor(private api: ApiShoppingService) {
    }

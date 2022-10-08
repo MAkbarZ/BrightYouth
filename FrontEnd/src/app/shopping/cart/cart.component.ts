@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared-components/model/product.model';
 import { ShoppingService } from 'src/app/shared-components/service/shopping.service';
+import { GlobalConstant } from 'src/app/shared-components/types/globaltypes';
 
 @Component({
   selector: 'app-cart',
@@ -8,6 +9,9 @@ import { ShoppingService } from 'src/app/shared-components/service/shopping.serv
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+
+  baseUrlImage:string = GlobalConstant.apiBaseURLImage;
+  
   public productsArray: Product[] = [];
   public numGrandTotal: number = 0;
 

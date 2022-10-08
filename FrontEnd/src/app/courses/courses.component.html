@@ -1,1 +1,261 @@
-<p>courses works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div class="by-course-sidebar">
+        <div class="flex-shrink-0 p-3" style="width: 280px">
+          <a
+            routerLink="./"
+            class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+          >
+            <!-- <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg> -->
+            <span class="by-course-title">Courses</span>
+          </a>
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="true"
+              >
+                Programming
+              </button>
+              <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a
+                      routerLink="./programming"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >Programming Overview</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >Javascript</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >PHP</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >Angular</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false"
+              >
+                Database
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >MS Access</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >MySQL</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse"
+                aria-expanded="false"
+              >
+                MS Office
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >MS Word</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >MS Excel</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      routerLink="./"
+                      class="link-dark d-inline-flex text-decoration-none rounded"
+                      >MS Powerpoint</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                [ngClass]="{ activeMenu:basicAccountingActive }"
+                data-bs-toggle="collapse"
+                data-bs-target="#account-collapse"
+                aria-expanded="false"
+              >
+                Accounting
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a routerLink="./accounting/toc" name="AccountingToc" (click)="disableMe($event)" class="link-dark d-inline-flex text-decoration-none rounded">Basic Accounting</a></li>
+                 
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END OF SIDEBAR -->
+
+    <div class="col-9">
+      <div class="by-course-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!-- ========== END OF CONTENT -->
+  </div>
+</div>
+
+<!-- <div class="accordion" id="accordionCourse">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBasicAccounting">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseBasicAccounting"
+                aria-expanded="true"
+                aria-controls="collapseBasicAccounting"
+              >
+                Accounting
+              </button>
+            </h2>
+            <div
+              id="collapseBasicAccounting"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingBasicAccounting"
+              data-bs-parent="#accordionCourse"
+            >
+              <div class="accordion-body">
+                              <div class="row">
+                  <a
+                    name="basicAccounting"
+                    class="by-course-a"
+                    routerLink="./accounting"
+                    (click)="disableMe($event)"
+                    >Basic Accounting</a
+                  >
+                </div>
+                <div class="row">
+                  <a
+                    name="basicAccounting"
+                    class="by-course-a"
+                    routerLink="./basicAccounting"
+                    (click)="disableMe($event)"
+                    >Basic Accounting</a
+                  >
+                </div>
+                <div class="row">
+                  <a
+                    name="basicAccounting"
+                    class="by-course-a"
+                    routerLink="./basicAccounting"
+                    (click)="disableMe($event)"
+                    >Basic Accounting</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingProgramming">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseProgramming"
+                aria-expanded="false"
+                aria-controls="collapseProgramming"
+              >
+                Programming
+              </button>
+            </h2>
+            <div
+              id="collapseProgramming"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingProgramming"
+              data-bs-parent="#accordionCourse"
+            >
+              <div class="accordion-body">
+                <a
+                  name="programming"
+                  class="by-course-a"
+                  routerLink="./programming"
+                  (click)="disableMe($event)"
+                  >Understanding Programming</a
+                ><br /><br />
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+<!-- <div class="container ">
+    <nav class="navbar navbar-light bg-light shadow-sm ">
+        <div class="container-fluid d-flex">
+
+            <span class="by-Courses-title">Courses</span>
+
+            <div class="form-group search-group searchContainer me-4">
+                    placeholder="search product">
+                <img src="../../assets/searchIcon.svg" alt="search icon">
+            </div>
+
+            <a class="btn by-cartButton" [routerLink]="'/shopping/cart'">
+                <img src="../assets/cartIcon.svg" alt="cart icon">
+            </a>
+        </div>
+    </nav>
+</div> -->
+
+<!-- 
+<div class="productContainer">
+
+    <div class="by-background"></div>
+
+
+    <div class="container">
+    </div>
+</div> -->

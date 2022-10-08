@@ -1,7 +1,7 @@
 nav {
     display: flex;
     align-items: center;
-
+    z-index: 9999;
     ul {
       display: flex;
       justify-content: flex-end;
@@ -19,6 +19,7 @@ nav {
       }
     
       a {
+        text-decoration: none;
         display: grid;
         justify-items: center;
         align-items: center;
@@ -52,7 +53,8 @@ nav {
         place-items: center;
         font-size: 18px;
         border-radius: 4px;
-        color: #007acc;
+        // color: #007acc;
+        color: var(--Bright-Color);
         padding: 8px 16px;
       }
       
@@ -70,8 +72,10 @@ nav {
       
 
     }
+
   }
   
+
   
   
   

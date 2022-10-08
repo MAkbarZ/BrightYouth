@@ -1,0 +1,35 @@
+<table class="by-table-OutsideBorder by-toc-table">
+  <thead class="by-table-column-heading">
+    <tr>
+      <th
+        class="by-table-column-heading by-Text-Align-Center by-table-first-col"
+        style="padding-right: 0px"
+      >
+        #
+      </th>
+      <th class="by-table-column-heading">Topic</th>
+    </tr>
+  </thead>
+
+  <tbody class="by-table-cell" *ngFor="let courseName of courseNameArray">
+    <tr>
+      <td class="by-color-bright by-Text-Align-Center">
+        {{ courseName.serial }}
+      </td>
+      <td class="by-table-second-col">
+        <a
+          class="by-a"
+          name="{{ courseName.title}"
+          (click)="topicChange($event, courseName.serial)"
+          routerLink="/courses/accounting/{{ courseName.name }}"
+          >{{ courseName.title }}</a
+        >
+      </td>
+    </tr>
+  </tbody>
+
+  <!--   
+  <tfoot class="by-table-cell by-bg-color-bright-light by-color-bright">
+      <tr><td class="by-color-bright by-Text-Align-Left "><b>Total</b></td>  <td class="by-number-cell"><b>758,000</b></td><td class="by-number-cell"><b>758,000</b></td></tr>
+  </tfoot> -->
+</table>

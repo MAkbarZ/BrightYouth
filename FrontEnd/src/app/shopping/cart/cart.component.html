@@ -23,7 +23,7 @@
                         <tr class="by-data-row" *ngFor="let product of productsArray;">
 
                             <td  class="by-col-photo">
-                                <img src="{{product.image}}" alt="">
+                                <img src="{{this.baseUrlImage}}{{product.image}}" alt="">
                             </td>
 
                             <td class="by-col-product">

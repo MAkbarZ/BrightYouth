@@ -1,0 +1,71 @@
+<div class="container-fluid by-container-main">
+  <div class="row">
+    <div class="col-3">
+      <!-- PROGRAMMING - 1ST VIDEO - https://youtu.be/ZFKcwZF5z1o -->
+
+      <!-- Example single danger button -->
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn by-PrimaryButton by-btn-addToCart dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Table of Contents
+        </button>
+        <ul class="dropdown-menu">
+
+          <!-- <tr><td class="by-color-bright by-Text-Align-Center">{{ courseName.serial }}</td> <td class="by-table-second-col"><a class="by-a" name="{{courseName.name}}" (click)="topicChange($event)" routerLink="/courses/accounting/{{courseName.name}}">{{courseName.title}}</a></td></tr> -->
+
+          <li *ngFor="let courseName of courseNameArray">
+            <a class="dropdown-item by-a {{courseName.active}}" name="{{courseName.name}}" routerLink="./{{courseName.name}}" (click)="disableMe($event, courseName.serial)">{{courseName.title}}</a>
+          </li>
+        </ul>
+      </div>
+      <!-- ========== END OF btn-group -->
+    </div>
+    <!-- ========== END OF 1st Column -->
+    <div class="col-9">
+      <div class="d-flex flex-row">
+        <span class="by-HeadingMain" (click)="disableMe($event, -1)"
+          >ACCOUNTING</span
+        >
+        <span class="by-HeadingPipe"> | </span>
+        <span class="by-HeadingTopicName">{{ topicTitle }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- ========== END OF TOP ROW -->
+
+  <!-- ========== END OF SIDEBAR -->
+
+  <div class="row">
+    <div class="by-course-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="row bottom-row">
+    <div class="bottom-container d-flex flex-row justify-content-center">
+      <div *ngIf="prevLessonActive === true">
+        <span class="by-prevLesson" (click)="gotoPrev($event)"
+          ><span>&laquo;</span> Previous Lesson - <b>{{ prevLessonTitle}}</b></span
+        >
+      </div>
+      <!-- <div class="div"> ||| </div> -->
+      <div *ngIf="nextLessonActive === true">
+        <span class="by-nextLesson" (click)="gotoNext($event)"
+          >Next Lesson - <b>{{ nextLessonTitle }} </b><span>&raquo;</span></span
+        >
+      </div>
+
+      <!-- <div class="btn-group" role="group" aria-label="Default button group">
+                <button type="button" class="btn btn-outline-dark by-btn-prev"> <span></span></button>
+                <button type="button" class="btn btn-outline-dark by-btn-next" routerLink="./overview"> Definition of Programming <span>&raquo;</span></button>
+              </div> -->
+    </div>
+  </div>
+  <!-- ========== END OF CONTENT -->
+</div>
+<!-- </div> -->
+  

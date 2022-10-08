@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './shared-components/interceptor/error.intercep
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found/page-not-found.component';
 import { AlertComponent } from './shared-components/alert/alert.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 // import { PaginationModule } from './shared-components/pagination/pagination.module';
 // import { FilterProductPipe } from './shared-components/pipes/filter-product.pipe';
 
@@ -21,7 +22,8 @@ import { AlertComponent } from './shared-components/alert/alert.component';
     AlertComponent,
     // HomeComponent, //I will user Users Component instead.
     // UsersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AboutUsComponent
     
   ],
   imports: [

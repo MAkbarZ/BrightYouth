@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './shared-components/page-not-found/page-n
 
 const routes: Routes = [
   { path: '', component:HomeComponent },
+  // { path: '/', component:HomeComponent },
   { path: 'home', component:HomeComponent },
   { path: 'user', 
       loadChildren: () => import('./user/user.module').then(m => m.UserModule), 
@@ -16,12 +17,13 @@ const routes: Routes = [
   // { path: 'register', redirectTo: "userAccount", pathMatch:'full' },
   { path: 'courses', loadChildren: ()=> import('./courses/courses.module').then(m=> m.CoursesModule)},
   { path: 'shopping', loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule) },
+  { path: 'infozime', loadChildren: () => import('./infozime/infozime.module').then(m => m.InfozimeModule) },
   // { path: 'product', loadChildren: () => import('./business/product/product.module').then(m => m.ProductModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

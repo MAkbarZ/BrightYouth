@@ -1,0 +1,188 @@
+<div class="container-fluid by-container-main">
+  <div class="row">
+    <div class="col-3">
+      <!-- PROGRAMMING - 1ST VIDEO - https://youtu.be/ZFKcwZF5z1o -->
+
+      <!-- Example single danger button -->
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn by-PrimaryButton by-btn-addToCart dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Table of Contents
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="overview"
+              [ngClass]="{ activeMenu: overviewActive }"
+              routerLink="./Overview"
+              (click)="disableMe($event)"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="DefinitionOfProgramming"
+              [ngClass]="{ activeMenu: DefinitionOfProgrammingActive }"
+              routerLink="./DefinitionOfProgramming"
+              (click)="disableMe($event)"
+              >Definition of Programming</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="DefinitionOfProgram"
+              [ngClass]="{ activeMenu: DefinitionOfProgramActive }"
+              routerLink="./DefinitionOfProgram"
+              (click)="disableMe($event)"
+              >Definition of Program</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="DefinitionOfProgrammingExp"
+              [ngClass]="{ activeMenu: DefinitionOfProgrammingExpActive }"
+              routerLink="./DefinitionOfProgrammingExp"
+              (click)="disableMe($event)"
+              >Definition of Program - Expanded</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="ProgramAsSimpleTask"
+              [ngClass]="{ activeMenu: ProgramAsSimpleTaskActive }"
+              routerLink="./ProgramAsSimpleTask"
+              (click)="disableMe($event)"
+              >Program as a Simple Task</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="ProgramAsImproveProg"
+              [ngClass]="{ activeMenu: ProgramAsImproveProgActive }"
+              routerLink="./ProgramAsImproveProg"
+              (click)="disableMe($event)"
+              >Program as a Large Improvement Program</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item by-a"
+              name="ProgramAsCompProg"
+              [ngClass]="{ activeMenu: ProgramAsCompProgActive }"
+              routerLink="./ProgramAsCompProg"
+              (click)="disableMe($event)"
+              >Program means a Computer Program?</a
+            >
+          </li>
+          <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+          <!-- <li><hr class="dropdown-divider" /></li> -->
+          <!-- <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+        </ul>
+      </div>
+      <!-- ========== END OF btn-group -->
+    </div>
+    <!-- ========== END OF 1st Column -->
+    <div class="col-9">
+      <div class="d-flex flex-row">
+        <span class="by-HeadingMain" (click)="disableMe($event)"
+          >Programming</span
+        >
+        <span class="by-HeadingPipe"> | </span>
+        <span class="by-HeadingTopicName">{{ topicName }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- ========== END OF TOP ROW -->
+
+  <!-- ========== END OF SIDEBAR -->
+
+  <div class="row">
+    <div class="by-course-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="row bottom-row">
+    <div class="bottom-container d-flex flex-row justify-content-center">
+      <div *ngIf="prevLessonActive === true">
+        <span class="by-prevLesson"
+          ><span>&laquo;</span> Previous Lesson - {{ prevLesson }}</span
+        >
+      </div>
+
+      <div *ngIf="nextLessonActive === true">
+        <span class="by-nextLesson"
+          >Next Lesson - {{ nextLesson }} <span>&raquo;</span></span
+        >
+      </div>
+
+      <!-- <div class="btn-group" role="group" aria-label="Default button group">
+                <button type="button" class="btn btn-outline-dark by-btn-prev"> <span></span></button>
+                <button type="button" class="btn btn-outline-dark by-btn-next" routerLink="./overview"> Definition of Programming <span>&raquo;</span></button>
+              </div> -->
+    </div>
+  </div>
+  <!-- ========== END OF CONTENT -->
+</div>
+<!-- </div> -->
+
+<!-- <div class="by-course-sidebar">
+    <div class="accordion" id="accordionCourse">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingBasicAccounting">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseBasicAccounting"
+            aria-expanded="true"
+            aria-controls="collapseBasicAccounting"
+          >
+            Accounting
+          </button>
+        </h2>
+        <div
+          id="collapseBasicAccounting"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingBasicAccounting"
+          data-bs-parent="#accordionCourse"
+        >
+          <div class="accordion-body">
+            <a
+              name="basicAccounting"
+              class="by-course-a"
+              routerLink="./accounting"
+              (click)="disableMe($event)"
+              >Basic Accounting</a
+            >
+            <br /><a
+              name="basicAccounting"
+              class="by-course-a"
+              routerLink="./basicAccounting"
+              (click)="disableMe($event)"
+              >Basic Accounting</a
+            >
+            <br /><a
+              name="basicAccounting"
+              class="by-course-a"
+              routerLink="./basicAccounting"
+              (click)="disableMe($event)"
+              >Basic Accounting</a
+            >
+          </div>
+        </div>
+      </div>
+    
+     
+    </div>
+  </div> -->

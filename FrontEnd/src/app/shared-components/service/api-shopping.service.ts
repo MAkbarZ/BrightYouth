@@ -7,6 +7,7 @@ import { GlobalConstant } from '../types/globaltypes';
 export interface Products {
   Response: string;
 passed: boolean;
+count: number;
 result: {}
 }
 
@@ -22,7 +23,7 @@ export class ApiShoppingService {
   
   constructor(private http: HttpClient) {}
 
-  getProducts() {
+  getProducts(page:number, recPerPage:number) {
     
     const headers = new HttpHeaders({ 
       'Content-Type': 'application/json',
@@ -36,7 +37,10 @@ export class ApiShoppingService {
     // console.log(this.baseUrl + 'product/products.php');
     // return this.http.get<Product>(this.baseUrl + 'product/products.php', {headers: headers});
     // return this.http.get<Products>(this.baseUrl + 'product/products.php', {headers: headers});
-    return this.http.get<Products>(this.baseUrl + 'userQueries/productsByCatByMerchant.php', {headers: headers});
+
+    //https://brightyouth.org/BackEnd/api/userQueries/productsByCatByMerchant.php?page=1&recPerPage=4
+
+    return this.http.get<Products>(this.baseUrl + 'userQueries/productsByCatByMerchant.php?page=' + page +'&recPerPage='+recPerPage, {headers: headers});
 
     //   const param = new HttpParams().set('pageNum','10').set('pageSize', '100');
     //   // return this.http.get('https://www.brightyouth.com/api/User/id=????');

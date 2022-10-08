@@ -1,5 +1,62 @@
 .header {
     height: 20%;
+    position: relative;
+
+    .activeMenu {
+        font-weight: bold;
+        color: var(--Bright-Color);
+    }
+    
+    .by-brand {
+        // position: absolute;
+        // box-shadow: var(--BY-box-shadowY) !important;
+        text-decoration: none;
+
+        font-size: 1.5rem !important;
+        margin-top: 15px;
+        margin-left: 15px;
+
+        // top: 0px;
+        // left: 20px;
+        z-index: 9999;
+        position: fixed;
+
+        .by-brand-icon img {
+            position: absolute;
+            width: 70px;
+            height: auto;
+            text-decoration: none !important;
+            // margin-top: -10px;
+
+            top: 0px;
+            left: 20px;
+        }
+
+        .by-brand-Bright {
+            text-decoration: none !important;
+            color: var(--Bright-Color);
+            position: absolute;
+            top: 6px;
+            left: 70px;
+        }
+
+        .by-brand-Youth {
+            text-decoration: none !important;
+            color: var(--Youth-Color);
+            position: absolute;
+            top: 6px;
+            left: 135px;
+        }
+
+        .by-brand-Org {
+            text-decoration: none !important;
+            color: var(--Org-Color);
+            font-size: 0.95rem !important;
+            position: absolute;
+            top: 15px;
+            left: 197px;
+        }
+    }
 }
 
 .drawer {
@@ -18,6 +75,7 @@
     width: 100%;
     height: 100%;
     padding-top: 65px;
+    padding-bottom: 50px;
 }
 
 
@@ -32,67 +90,29 @@
 
 // ----------------------------------------------------------------------------------
 
+
+
 .by-navbar {
     background-color: white !important;
-    box-shadow: var(--BY-box-shadowY);
+    // box-shadow: var(--BY-box-shadowY);
+
+    .activeUserOption {
+        font-weight: bold;
+    }
 
     .by-navbar-container {
         position: relative;
-
-        .by-brand {
-            position: absolute;
-            text-decoration: none;
-
-            font-size: 1.5rem !important;
-            margin-left: 15px;
-
-            top: 0px;
-            left: 20px;
-            z-index: 9999;
-
-            .by-brand-icon img {
-                position: absolute;
-                width: 70px;
-                height: auto;
-                text-decoration: none !important;
-                // margin-top: -10px;
-
-                top: 0px;
-                left: 20px;
-            }
-
-            .by-brand-Bright {
-                text-decoration: none !important;
-                color: var(--Bright-Color);
-                position: absolute;
-                top: 6px;
-                left: 70px;
-            }
-
-            .by-brand-Youth {
-                text-decoration: none !important;
-                color: var(--Youth-Color);
-                position: absolute;
-                top: 6px;
-                left: 135px;
-            }
-
-            .by-brand-Org {
-                text-decoration: none !important;
-                color: var(--Org-Color);
-                font-size: 0.95rem !important;
-                position: absolute;
-                top: 15px;
-                left: 197px;
-            }
-        }
+        margin-bottom: 5px;
+       
 
         .by-collapse {
             margin-left: 350px;
-            font-size: 0.95rem !important;
+            // margin-left: 290px;
+            // font-size: 0.80rem !important;
+            font-size: var(--BY-Text15);
 
             .by-navbar-nav {
-
+                margin-top: 5px;
                 .by-nav-item {
                     margin-right: 30px;
 
@@ -103,7 +123,7 @@
                         &::after {
                             position: absolute;
                             content: "";
-                            width: 100%;
+                            width: 20%;
                             height: 2.5px !important;
                             background: var(--Bright-Color);
                             left: 0;
@@ -120,11 +140,11 @@
 
                     .by-bolder-font {
                         // color: green;
-                        font-size: var(--BY-Text15);
+                        //font-size: var(--BY-Text14);
 
                         &:hover {
                             color: var(--Bright-Color);
-                            font-weight: 400;
+                            // font-weight: 400;
                         }
                     }
 
@@ -133,6 +153,9 @@
                 .by-nav-useritem {
                     margin-left: 145px !important;
 
+                   
+
+                   
                     .registrationContainer {
                         margin-top: 5px;
                         margin-bottom: 0px;
@@ -144,29 +167,30 @@
                             // text-align: center;
                             color: var(--Bright-Color) !important;
                             font-size: 1.05rem;
-                            font-weight: 520;
+                            // font-weight: 520;
                             // margin-left: 20px;
                             margin-right: 20px !important;
                             width: 70px;
 
                             &:hover {
-                                font-weight: 600;
+                                // font-weight: 600;
+                                font-size: 1.07rem;
                                 // background-color: var(--Bright-Dim-Color) !important;
                             }
 
                             &::after {
                                 position: absolute;
                                 content: "";
-                                width: 100%;
+                                width: 20%;
                                 height: 2.5px !important;
                                 background: var(--Bright-Color);
                                 left: 0;
                                 bottom: 0;
 
-                                transform: scale(0, 1);
+                                transform: scale(0, 2);
                                 transition: transform 0.3s ease;
                             }
-
+// 
                             &:hover::after {
                                 transform: scale(1, 1);
                             }
@@ -183,27 +207,28 @@
                             text-decoration: none;
                             color: var(--Youth-Color);
                             text-align: center;
-                            font-size: 1.05 rem;
-                            font-weight: 520;
+                            font-size: 1.05rem;
+                            // font-weight: 520;
                             margin-left: 20px;
                             margin-right: 10px !important;
                             width: 70px;
 
                             &:hover {
-                                font-weight: 600;
+                                // font-weight: 600;
+                                font-size: 1.07rem;
                                 // background-color: var(--Bright-Dim-Color) !important;
                             }
 
                             &::after {
                                 position: absolute;
                                 content: "";
-                                width: 100%;
+                                width: 20%;
                                 height: 2.5px !important;
                                 background: var(--Bright-Color);
                                 left: 0;
                                 bottom: 0;
 
-                                transform: scale(0, 1);
+                                transform: scale(0, 2);
                                 transition: transform 0.3s ease;
                             }
 
@@ -222,12 +247,12 @@
 
                         &::after {
                             color: var(--Bright-Color);
-                            font-weight: bold;
+                            // font-weight: bold;
 
                             position: absolute;
                             content: "";
-                            width: 100%;
-                            height: 2.5px !important;
+                            width: 20%;
+                            height: 2px !important;
                             background: var(--Bright-Color);
                             bottom: 0;
                             left: 0;
@@ -246,7 +271,7 @@
 
                         .by-dropdown-link {
                             position: relative;
-                            font-size: var(--BY-Text15) !important;
+                            // font-size: var(--BY-Text14) !important;
                             background: none;
 
                             &::after {
@@ -256,7 +281,7 @@
 
                                 position: absolute;
                                 content: "";
-                                width: 80%;
+                                width: 20%;
                                 height: 2px !important;
                                 background: var(--Bright-Color);
                                 bottom: 0;

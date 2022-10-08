@@ -1,5 +1,18 @@
 <div class="header">
   <!-- <app-header></app-header> -->
+
+  <!-- navbar-brand  -->
+
+  <div class="by-brand">
+    <a class="by-brand-icon" href="#">
+      <img src="../assets/icon.svg" alt="Bright Youth Icon">
+    </a>
+    <a class="by-brand-Bright" href="#">Bright</a>
+    <a class="by-brand-Youth" href="#">Youth</a>
+    <a class="by-brand-Org" href="#">.org</a>
+  </div>
+
+
   <nav class="navbar by-navbar navbar-expand-sm navbar-light bg-light fixed-top">
     <div class="container-fluid by-navbar-container">
 
@@ -8,40 +21,47 @@
         Bright<span>Youth</span><span class="org">.org</span>
       </a> -->
 
-      <div class="navbar-brand by-brand">
-        <a class="by-brand-icon" href="#"> 
-          <img src="../assets/icon.svg" alt="Bright Youth Icon">
-        </a>
-        <a class="by-brand-Bright" href="#">Bright</a>
-        <a class="by-brand-Youth" href="#">Youth</a>
-        <a class="by-brand-Org" href="#">.org</a>
-      </div>
+      
 
-      <button class="navbar-toggler by-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler by-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse by-collapse" id="navbarSupportedContent">
+<!-- collapse navbar-collapse -->
+      <div class=" by-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item by-nav-item">
-            <a class="nav-link by-nav-link-menu by-bolder-font active" aria-current="page" routerLink="home">Home</a>
+            <a name="home" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': homeActive}" routerLink="./home" (click)="disableMe($event)">Home</a>
           </li>
+          <!-- <li class="nav-item by-nav-item">
+            <a name="aboutUs" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': aboutUsActive}" routerLink="/aboutUs" (click)="disableMe($event)">About Us</a>
+          </li> -->
           <li class="nav-item by-nav-item">
-            <a class="nav-link by-nav-link-menu by-bolder-font" href="#">About Us</a>
-          </li>
-          <li class="nav-item by-nav-item">
-            <a class="nav-link by-nav-link-menu by-bolder-font" [routerLink]="'/shopping'">Shop Now</a>
+            <a name="shopping" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': shoppingActive}" routerLink="./shopping" (click)="disableMe($event)" >Shop Now</a>
             <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
           </li>
           
-          <li class="nav-item by-nav-item by-dropdown dropdown">
-            <a class="nav-link by-nav-link-dropdown by-bolder-font dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item by-nav-item">
+            <a name="courses" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)" >Courses</a>
+            <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
+          </li>
+
+          <li class="nav-item by-nav-item by-dropdown dropdown d-none">
+            <a name="courses" class="nav-link by-nav-link-dropdown by-bolder-font dropdown-toggle" href="#" id="navbarDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)">
               Courses ▼
             </a>
             <ul class="dropdown-menu by-dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <li><a name="coursesHome" class="dropdown-item by-dropdown-link" routerLink="./courses" (click)="disableMe($event)">BrightYouth Courses</a></li> -->
+              <li><a name="coursesHome" class="dropdown-item by-dropdown-link" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)">BrightYouth Courses</a></li>
+              
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li class="CourseCategoryDropDown">Marketing</li>
-              <li><a class="dropdown-item by-dropdown-link" href="#">Know Your Customer</a></li>
+              <li><a name="kyCustomer" class="dropdown-item by-dropdown-link" routerLink="./kyCustomer" (click)="disableMe($event)">Know Your Customer</a></li>
               <!-- <li><a class="dropdown-item" href="#">PHP</a></li> -->
               <!-- <li><a class="dropdown-item" href="#">JavaScript</a></li> -->
               <!-- <li><a class="dropdown-item" href="#">HTML</a></li> -->
@@ -51,28 +71,30 @@
               <li><a class="dropdown-item" href="#">PHP</a></li>
               <li><a class="dropdown-item" href="#">JavaScript</a></li>
               <li><a class="dropdown-item" href="#">HTML</a></li> -->
-              <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li class="CourseCategoryDropDown">MS Office</li>
-              <li><a class="dropdown-item by-dropdown-link" href="#">MS Excel</a></li>
-              <li><a class="dropdown-item by-dropdown-link" href="#">MS Word</a></li>
-              <li><a class="dropdown-item by-dropdown-link" href="#">MS Powerpoint</a></li>
+              <li><a name="msExcel" class="dropdown-item by-dropdown-link" routerLink="./msExcel" (click)="disableMe($event)">MS Excel</a></li>
+              <li><a name="msWord" class="dropdown-item by-dropdown-link" routerLink="./msWord" (click)="disableMe($event)">MS Word</a></li>
+              <li><a name="msPowerPoint" class="dropdown-item by-dropdown-link" routerLink="./msPowerPoint" (click)="disableMe($event)">MS Powerpoint</a></li>
             </ul>
           </li>
-          <!-- <li class="nav-item by-nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
 
+          <li class="nav-item by-nav-item">
+            <a name="infozime" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': infozimeActive}" routerLink="./infozime" (click)="disableMe($event)">Infozime</a>
+          </li>
+       
           <li class="nav-item by-nav-useritem">
-            <div class="d-flex registrationContainer"  *ngIf="blnUserLogin===true">
-              <a class=" registerButton" routerLink="./userAccount/register" routerLinkActive="active">Register</a>
+            <div class="d-flex registrationContainer" *ngIf="blnUserLogin===true">
+              <a name="register" class="registerButton" [ngClass]="{'activeUserOption': registerActive}"  routerLink="./userAccount/register" (click)="disableMe($event)">Register</a>
               <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
-              <a class=" loginButton" routerLink="./userAccount/login" routerLinkActive="active">Login</a>
+              <a name="login" class="loginButton" [ngClass]="{'activeUserOption': loginActive}" routerLink="./userAccount/login" (click)="disableMe($event)">Login</a>
             </div>
 
-            <div class="d-flex registrationContainer"  *ngIf="blnUserLogin===false">
-              <a class="nav-item nav-link" routerLink="/" 
-                                          routerLinkActive="active" 
-                                          [routerLinkActiveOptions]="{exact: true}">User Home</a>
+            <div class="d-flex registrationContainer" *ngIf="blnUserLogin===false">
+              <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">User Home</a>
               <a class=" registerButton" routerLink="/Profile">Profile</a>
               <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
               <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
@@ -84,14 +106,14 @@
           <!-- <li class="nav-item">
           </li>
           <li class="nav-item"> -->
-            <!-- <button class="btn btn-outline-primary loginButton">Login</button> -->
+          <!-- <button class="btn btn-outline-primary loginButton">Login</button> -->
           <!-- </li> -->
 
-        </ul>  <!-- ========== END OF NAVBAR LIST -->
-        
+        </ul> <!-- ========== END OF NAVBAR LIST -->
 
 
-      
+
+
 
         <!-- <form class="d-flex">
           <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
@@ -103,7 +125,7 @@
   </nav> <!-- ========== END OF NAVBAR -->
 
   <!-- <a  href="https://brightyouth.org">  -->
-    <!-- <div class="by-brand d-flex fixed-top">
+  <!-- <div class="by-brand d-flex fixed-top">
       <a class="by-brand-icon" href="#"> 
         <img src="../assets/icon.svg" alt="Bright Youth Icon">
       </a>
@@ -111,17 +133,19 @@
       <a class="by-brand-Youth" href="#">Youth</a>
       <a class="by-brand-org" href="#">.org</a>
     </div> -->
-</div>
+</div> <!-- ========== END OF HEADER -->
+
 <div class="body">
   <!-- <router-outlet></router-outlet> -->
   <!-- main app container -->
-<div class="app-container" [ngClass]="{ 'bg-light': user }">
-  <app-alert></app-alert>
-  <router-outlet></router-outlet>
-</div>
-    
+  <div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <app-alert></app-alert>
+    <router-outlet></router-outlet>
+  </div>
 
-</div>
+
+</div> <!-- ========== END OF BODY -->
+
 <div class="footer">
   footer is not ready
   <!-- <app-footer></app-footer> -->

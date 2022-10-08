@@ -1,82 +1,7 @@
-.container {
-
-    .navbar {
-        // position: absolute;
-
-        position: fixed;
-        top: 55px;
-        width: 95% !important;
-        z-index: 20;
-
-        .by-shopping-title {
-            color: var(--Bright-Color);
-            font-size: 2rem;
-            font-style: italic;
-        }
-
-        .searchContainer {
-            position: relative;
-            width: 400px;
-            margin-top: 10px;
-            margin-left: 25px;
-            margin-bottom: 10px;
-            // padding: 0,0,0,0;
-    
-            .inputSearchProduct {
-    
-                &:hover {
-                    box-shadow: var(--BY-box-shadow);
-                }
-            }
-    
-            img {
-                position: absolute;
-                z-index: 99;
-                // left: 4px;
-                right: 15px;
-                top: 9px;
-                // color: blue;
-    
-                width: 20px;
-    
-            }
-        }
-
-
-        .by-cartButton {
-            // position: relative;
-            // border-radius: 0px !important;
-            border-color: #dbd6d6 !important;
-            padding: 3px 10px;
-    
-            &:hover {
-                box-shadow: var(--BY-box-shadow);
-            }
-    
-            img {
-                width: 23px;
-                // height:20px;
-            }
-    
-            .totalItem {
-                // position: absolute;
-                // z-index: 99;
-                // right: 2px;
-                // top: 2px;
-    
-                color: var(--Org-Color);
-                margin-left: 10px;
-                font-size: 20px;
-            }
-        }
-
-    }
-
-
-}
-
-.productContainer {
-    margin-top: 70px;
+.by-container {
+    // border-radius: 50px;
+    // margin: 0;
+    background-color: white !important;
 
     position: relative;
     // padding-top: 7rem;
@@ -98,119 +23,233 @@
         z-index: 0;
     }
 
+    .by-navbar {
+        position: absolute;
+        background-color: white !important;
+        top: 70px;
+        position: fixed;
+        width: 100% !important;
+        z-index: 80;
 
+        .by-shopping-title {
+            color: var(--Youth-Color);
+            // color: #4604aa;
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: bolder;
+            margin-left: 20px;
+        }
 
-
-    .row {
-        .card {
-            // padding: 20px;
+        .searchContainer {
             position: relative;
+            width: 400px;
+            margin-top: 3px;
+            margin-left: 90px;
+            margin-bottom: 10px;
+            // padding: 0,0,0,0;
+            
+            border-radius: 8px;
+            border: solid 2px var(--Bright-Color);
+            
+            // &:hover {
+            //     box-shadow: var(--BY-box-shadow);
+            // }
+            // 
+            .inputSearchProduct {
+
+                
+
+                width: 85%;
+                border: none;
+                margin: 8px;
+                // stroke: none;
+              
+                // &:focus {
+                //     border: none !important;
+                // }
+                // &::after {
+                //     border: none !important;
+                // }
+            }
+
+            img {
+                position: absolute;
+                z-index: 99;
+                // left: 4px;
+                right: 15px;
+                top: 15px;
+                // color: blue;
+
+                width: 20px;
+
+            }
+        }
+
+
+        .by-cartButton {
+            position: relative;
+            // border-radius: 0px !important;
+            border-color: #dbd6d6 !important;
+            padding: 0px 20px;
+            margin-bottom: 13px;
+            margin-top: 3px;
+            margin-left: 30px;
+            
+            width: 90px;
+            height: 55px;
 
             &:hover {
                 box-shadow: var(--BY-box-shadow);
-                z-index: 99;
-                transition: 0.3s ease-in-out;
-                transform: scale(1.1);
-                // align-items: center;
             }
 
-            .by-merchantName {
-                color: var(--Org-Color);
-                font-size: 0.92rem;
-                margin-left: 20px;
-                margin-top: 11px;
-                font-style: italic;
-
+            img {
+                width: 25px;
+                // height:20px;
+                margin-top: 15px;
+                margin-left: -20px;
             }
 
-            .by-btn-addToCart {
-                font-size: 0.9rem !important;
-                padding: 0px 8px !important;
+            .totalItem {
                 position: absolute;
-                top: 2px;
-                right: 2px;
+                // z-index: 99;
+                right: 10px;
+                top: 5px;
+
+                color: var(--Org-Color);
+                // margin-left: 10px;
+                font-size: 30px;
             }
+        }
 
-            //deleted
-            .by-product-title {
-                // color: var(--Org-Color);
-                color: var(--Bright-Color);
-                max-width: 260px;
-                font-size: 1.3rem;
-                margin-left: 0 !important;
-                margin-top: 12px;
-                text-align: center;
-            }
+    }
 
-            .by-card-header {
-                background-color: var(--Youth-Dim2-Color);
-            }
+    .productContainer {
+        margin: 90px 50px 0 50px;
 
-            .by-card-body {
-                // background-color: var(--Youth-Dim2-Color);
-                // text-align: center;
-                height: 300px;
+        .row {
 
-                .centerImage {
-                    width: 90%;
-                    height: 70%;
-                    // text-align: center !important;
-                    margin-bottom: 20px;
 
-                    img {
-                        height: 100% !important;
+            .card {
+                // padding: 20px;
+                position: relative;
+                margin-bottom: 40px;
 
-                        // transition: 0.3s ease-in-out;
-
-                        // &:hover {
-                        //     transition: 0.3s ease-in-out;
-                        //     transform: scale(1.8);
-                        // }
-
-                    }
+                &:hover {
+                    box-shadow: var(--BY-box-shadow);
+                    z-index: 79;
+                    transition: 0.3s ease-in-out;
+                    transform: scale(1.1);
+                    // align-items: center;
                 }
 
-                p {
-                    text-align: center !important;
-                    color: var(--Bright-Color);
-                    font-size: .85rem;
-                    margin: 0 !important;
+                .by-merchantName {
+                    color: var(--Org-Color);
+                    font-size: 0.92rem;
+                    margin-left: 20px;
+                    margin-top: 11px;
+                    font-style: italic;
 
-                    .by-price {
-                        color: var(--Youth-Color);
-                        font-size: 1.2rem;
-                        text-align: left;
-                        margin-left: 0 !important;
+                }
+
+                .by-btn-addToCart {
+                    font-size: 0.9rem !important;
+                    padding: 0px 8px !important;
+                    position: absolute;
+                    top: 2px;
+                    right: 2px;
+                }
+
+                //deleted
+                .by-product-title {
+                    // color: var(--Org-Color);
+                    color: var(--Bright-Color);
+                    max-width: 260px;
+                    font-size: 1.3rem;
+                    margin-left: 0 !important;
+                    margin-top: 12px;
+                    text-align: center;
+                }
+
+                .by-card-header {
+                    background-color: var(--Youth-Dim2-Color);
+                }
+
+                .by-card-body {
+                    // background-color: var(--Youth-Dim2-Color);
+                    // text-align: center;
+                    height: 300px;
+
+                    .centerImage {
+                        width: 90%;
+                        height: 70%;
+                        // text-align: center !important;
+                        margin-bottom: 20px;
+
+                        img {
+                            height: 100% !important;
+
+                            // transition: 0.3s ease-in-out;
+
+                            // &:hover {
+                            //     transition: 0.3s ease-in-out;
+                            //     transform: scale(1.8);
+                            // }
+
+                        }
                     }
 
-                    .by-tax {
-                        color: var(--Org-Color);
+                    p {
+                        text-align: center !important;
+                        color: var(--Bright-Color);
                         font-size: .85rem;
+                        margin: 0 !important;
+
+                        .by-price {
+                            color: var(--Youth-Color);
+                            font-size: 1.2rem;
+                            text-align: left;
+                            margin-left: 0 !important;
+                        }
+
+                        .by-tax {
+                            color: var(--Org-Color);
+                            font-size: .85rem;
+                            font-style: italic;
+                        }
+                    }
+
+
+                    .by-card-description {
+                        text-align: left !important;
+                        padding: 0 !important;
+                        margin-top: 10px !important;
+                        max-width: 210px !important;
+                        font-size: .8rem !important;
                         font-style: italic;
                     }
+
+
                 }
 
-
-                .by-card-description {
-                    text-align: left !important;
-                    padding: 0 !important;
-                    margin-top: 10px!important;
-                    max-width: 210px !important;
-                    font-size: .8rem !important;
-                    font-style: italic;
-                }
+                // .by-card-footer {
+                //     padding-bottom: 0 !important;
 
 
+                // }
             }
-
-            // .by-card-footer {
-            //     padding-bottom: 0 !important;
-
-
-            // }
         }
+
     }
+
+    app-pagination {
+        z-index: 79;
+        margin-bottom: 50px;
+    }
+    
+
 }
+
+
 
 .bg-modal {
     position: absolute;

@@ -1,115 +1,108 @@
-<div class="container ">
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid d-flex">
+<div class="by-container">
+  <nav class="by-navbar shadow-sm">
+    <div class="container-fluid d-flex">
+      <a routerLink="./" class="text-decoration-none">
+        <!-- <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg> -->
+        <span class="by-shopping-title">Shopping</span>
+      </a>
+      
+      <div class="form-group search-group searchContainer me-4">
+        <input
+          type="text"
+          class="form-control inputSearchProduct"
+          (keyup)="searchProduct($event)"
+          placeholder="search product"
+        />
+        <img src="../../assets/searchIcon.svg" alt="search icon" />
+      </div>
 
-            <span class="by-shopping-title">Shopping</span>
+      <a class="btn by-cartButton" [routerLink]="'/shopping/cart'">
+        <img src="../assets/cartIcon.svg" alt="cart icon" />
+        <span class="totalItem">{{ strTotalItem }}</span>
+      </a>
+    </div>
+  </nav>
 
-            <div class="form-group search-group searchContainer me-4">
-                <input type="text" class="form-control inputSearchProduct" (keyup)="searchProduct($event)" placeholder="search product">
-                <img src="../../assets/searchIcon.svg" alt="search icon">
-            </div>
-            
-            <a class="btn by-cartButton" [routerLink]="'/shopping/cart'">
-                <img src="../assets/cartIcon.svg" alt="cart icon">
-                <span class="totalItem">{{strTotalItem}}</span>
-              </a>
-        </div>
-      </nav>
-</div>
-
-
-
-<div class="productContainer">
-
+  <div class="productContainer">
     <div class="by-background"></div>
 
-    <!-- <div class="row">
-        <div class="col-md-4">
-            <button class="btn btn-primary" (click)="apiGetAllProducts()">Refresh</button>
-        </div>
-    </div> -->
+        <div class="row gx-5">
+        <ng-container
+          *ngFor="let product of products | filterProduct: strSearchKey:'title'"
+        >
+          <div class="col-xl-3 col-lg-3 col-m-3 col-sm-6 col-xs-8">
+            <div class="card">
+             
+                <span class="by-merchantName">
+                {{ product.merchantName }}
+              </span>
 
-    <div class="container">
+              <button
+                class="btn by-PrimaryButton by-btn-addToCart"
+                (click)="addToCart(product)"
+              >
+                + Cart
+              </button>
 
+              <h5 class="by-product-title by-overflow">
+                {{ product.productName }}
+              </h5>
 
-       <ul>
-            <li *ngFor="let item of itemsToDisplay">{{ item }}</li>
-          </ul>
-          
-        
+              <div class="card-body by-card-body">
+                <div class="centerImage mx-auto">
+                  <img
+                    class="card-img-top"
+                    src="{{ this.baseUrlImage }}{{ product.image }}"
+                    alt="product image"
+                  />
 
-
-
-        <div class="row g-5">
-            <!-- <ng-container *ngFor="let product of productMoke | filterProduct:strSearchKey:'title' "> -->
-            <ng-container *ngFor="let product of products | filterProduct:strSearchKey:'title'">
-                <div class="col-3">
-                    <div class="card">
-                        <!-- <div class="card-header by-card-header">
-                            <h5 class="by-product-title by-overflow">
-                                {{product['title']}}
-                            </h5>
-                        </div> -->
-                        <span class="by-merchantName">
-                            {{product.merchantName}}
-                        </span>
-
-                        <button class="btn by-PrimaryButton by-btn-addToCart " (click)="addToCart(product)">
-                            + Cart
-                        </button>
-
-                        <h5 class="by-product-title by-overflow">
-                            {{product.productName}}
-                        </h5>
-
-                        <div class="card-body by-card-body">
-                            <div class="centerImage mx-auto">
-
-                                <img class="card-img-top " 
-                                src="{{product.image}}" alt="product image">
-    
-                                <!-- <img class="card-img-top" 
+                  <!-- <img class="card-img-top" 
                                 src="{{product.image}}" alt="product image"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 (click)="openModal()"> -->
-                            </div>
+                </div>
 
-                           
-
-                            <!-- <p class="by-card-description by-overflow">
+                <!-- <p class="by-card-description by-overflow">
                                 {{product.description}}
                             </p> -->
 
-                            <p><strong>Rs. </strong><span class="by-price">{{product['price'] | number:'0.0-0'}}</span><span class="by-tax"> + tax</span></p>
-                           
-                            <span class="by-card-description d-inline-block text-truncate">{{product.description}}</span>
-                            <!-- <div>
+                <p>
+                  <strong>Rs. </strong
+                  ><span class="by-price">{{
+                    product["price"] | number: "0.0-0"
+                  }}</span
+                  ><span class="by-tax"> + tax</span>
+                </p>
+
+                <span
+                  class="by-card-description d-inline-block text-truncate"
+                  >{{ product.description }}</span
+                >
+                <!-- <div>
                                 <app-description-col class="by-card-description"
                                         [descriptionText]="product.description"
                                         [wordLimit]="50">
                                     </app-description-col>
                             </div> -->
+              </div>
 
-                        </div>
-                       
-                        <!-- <div class="card-footer by-card-footer">
+              <!-- <div class="card-footer by-card-footer">
                             
                         </div> -->
+            </div>
+          </div>
+        </ng-container>
 
-                    </div>
-                </div>
-            </ng-container>
-
-            <app-pagination
-                [current]="current"
-                [total]="total"
-                (goTo)="onGoTo($event)"
-                (next)="onNext($event)"
-                (previous)="onPrevious($event)"
-          ></app-pagination>
-        </div>
-
-    </div>
+        <app-pagination
+          [current]="current"
+          [total]="total"
+          (goTo)="onGoTo($event)"
+          (next)="onNext($event)"
+          (previous)="onPrevious($event)"
+        ></app-pagination>
+      </div>
+    <!-- </div> -->
+  </div>
 </div>
 
 <!-- <div class="modal-dialog modal-xl">...</div>
@@ -120,9 +113,9 @@
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button> -->
-  
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -135,7 +128,6 @@
                     <img class="by-modal-image" 
                     src="{{product.image}}" alt="product image"
                     data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
-              
 
 <!-- 
         </div>
