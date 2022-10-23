@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit {
     {
       serial: '0',
       active: 'activeMenu',
-      name: 'toc',
+      courseName: 'toc',
       title: 'Table of Content',
     },
   ];
@@ -41,9 +41,7 @@ export class CoursesComponent implements OnInit {
   constructor(private courseAccountingService: CourseAccountingService) { }
 
   ngOnInit(): void {
-    // this.courseAccountingService.strTopicName$.subscribe(
-    //   (res) => (alert(res))
-    // );
+  
   }
 
   disableMe(event: any) {

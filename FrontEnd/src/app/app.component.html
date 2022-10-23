@@ -84,6 +84,10 @@
           <li class="nav-item by-nav-item">
             <a name="infozime" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': infozimeActive}" routerLink="./infozime" (click)="disableMe($event)">Infozime</a>
           </li>
+
+          <li class="nav-item by-nav-item">
+            <a name="tools" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': toolsActive}" routerLink="./tools" (click)="disableMe($event)">Tools</a>
+          </li>
        
           <li class="nav-item by-nav-useritem">
             <div class="d-flex registrationContainer" *ngIf="blnUserLogin===true">
@@ -93,8 +97,8 @@
             </div>
 
             <div class="d-flex registrationContainer" *ngIf="blnUserLogin===false">
-              <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">User Home</a>
+              <!-- <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">User Home</a> -->
               <a class=" registerButton" routerLink="/Profile">Profile</a>
               <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
               <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->

@@ -23,7 +23,7 @@ export class TocComponent implements OnInit {
     {
       serial: '0',
       active: 'activeMenu',
-      name: 'toc',
+      courseName: 'toc',
       title: 'Table of Content',
     },
   ];
@@ -47,113 +47,125 @@ export class TocComponent implements OnInit {
     // this.nextLesson = 'Bookeeping, Financial Transaction & Event';
 
     this.courseAccountingService.strTopicTitle$.subscribe(
-      (res) => (this.topicTitle = res)
+      (res) => {this.topicTitle = res;}
     );
     this.courseAccountingService.strPrevLessonTitle$.subscribe(
-      (res) => (this.prevLessonTitle = res)
+      (res) => {this.prevLessonTitle = res;}
     );
     this.courseAccountingService.strNextLessonTitle$.subscribe(
-      (res) => (this.nextLessonTitle = res)
+      (res) => {this.nextLessonTitle = res;}
     );
     this.courseAccountingService.strTopicName$.subscribe(
-      (res) => (this.topicName = res)
+      (res) => {this.topicName = res;}
     );
     this.courseAccountingService.strPrevLessonName$.subscribe(
-      (res) => (this.prevLessonName = res)
+      (res) => {this.prevLessonName = res;}
     );
     this.courseAccountingService.strNextLessonName$.subscribe(
-      (res) => (this.nextLessonName = res)
+      (res) => {this.nextLessonName = res;}
     );
     this.courseAccountingService.blnPrevLessonActive$.subscribe(
-      (res) => (this.prevLessonActive = res)
+      (res) => {this.prevLessonActive = res;}
     );
     this.courseAccountingService.blnNextLessonActive$.subscribe(
-      (res) => (this.nextLessonActive = res)
+      (res) => {this.nextLessonActive = res;}
     );
+
+    // this.courseAccountingService.setTopicName(this.courseName, '0');
+    
   }
 
-  topicChange(event: any, serial: any) {
-    switch (event.target.name) {
-      case navMenuNames.toc:
-        this.courseAccountingService.setTopicName(this.courseName, '0');
-        break;
-      case navMenuNames.BKeepFTransFEvent:
-        this.courseAccountingService.setTopicName(this.courseName, '1');
-        break;
-      case navMenuNames.RecordingAndTrack:
-        this.courseAccountingService.setTopicName(this.courseName, '2');
-        break;
-      case navMenuNames.GAAP:
-        this.courseAccountingService.setTopicName(this.courseName, '3');
-        break;
-      case navMenuNames.AccPrinciples:
-        this.courseAccountingService.setTopicName(this.courseName, '4');
-        break;
-      case navMenuNames.Assumptions:
-        this.courseAccountingService.setTopicName(this.courseName, '5');
-        break;
-      case navMenuNames.Constraints:
-        this.courseAccountingService.setTopicName(this.courseName, '6');
-        break;
-      case navMenuNames.TheWordAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '7');
-        break;
-      case navMenuNames.AccTypes:
-        this.courseAccountingService.setTopicName(this.courseName, '8');
-        break;
-      case navMenuNames.ChartOfAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '9');
-        break;
-      case navMenuNames.WhatIsAccounting:
-        this.courseAccountingService.setTopicName(this.courseName, '10');
-        break;
-      case navMenuNames.DefProcMethodSys:
-        this.courseAccountingService.setTopicName(this.courseName, '11');
-        break;
-      case navMenuNames.AccSystem:
-        this.courseAccountingService.setTopicName(this.courseName, '12');
-        break;
-      case navMenuNames.HistoryAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '13');
-        break;
-      case navMenuNames.TyesOfAccounting:
-        this.courseAccountingService.setTopicName(this.courseName, '14');
-        break;
-      case navMenuNames.CashAccrual:
-        this.courseAccountingService.setTopicName(this.courseName, '15');
-        break;
-      case navMenuNames.ImpactBusinessStra:
-        this.courseAccountingService.setTopicName(this.courseName, '16');
-        break;
-
-      default:
-      case navMenuNames.AccCycle:
-        this.courseAccountingService.setTopicName(this.courseName, '17');
-        break;
-    }
+  // topicChange(event: any, serial: string) {
+  topicChange(serial: string) {
+    // console.log(event.target.name);
+    // console.log(serial);
+    // console.log('------------------------');
+    this.courseAccountingService.setTopicName(this.courseName, serial);
+//     switch (event.target.name) {
+// 
+//       case navMenuNames.toc:
+//         this.courseAccountingService.setTopicName(this.courseName, '0');
+//         break;
+//       case navMenuNames.BKeepFTransFEvent:
+//         this.courseAccountingService.setTopicName(this.courseName, '1');
+//         break;
+//       case navMenuNames.RecordingAndTrack:
+//         this.courseAccountingService.setTopicName(this.courseName, '2');
+//         break;
+//       case navMenuNames.GAAP:
+//         this.courseAccountingService.setTopicName(this.courseName, '3');
+//         break;
+//       case navMenuNames.AccPrinciples:
+//         this.courseAccountingService.setTopicName(this.courseName, '4');
+//         break;
+//       case navMenuNames.Assumptions:
+//         this.courseAccountingService.setTopicName(this.courseName, '5');
+//         break;
+//       case navMenuNames.Constraints:
+//         this.courseAccountingService.setTopicName(this.courseName, '6');
+//         break;
+//       case navMenuNames.TheWordAcc:
+//         this.courseAccountingService.setTopicName(this.courseName, '7');
+//         break;
+//       case navMenuNames.AccTypes:
+//         this.courseAccountingService.setTopicName(this.courseName, '8');
+//         break;
+//       case navMenuNames.ChartOfAcc:
+//         this.courseAccountingService.setTopicName(this.courseName, '9');
+//         break;
+//       case navMenuNames.WhatIsAccounting:
+//         this.courseAccountingService.setTopicName(this.courseName, '10');
+//         break;
+//       case navMenuNames.DefProcMethodSys:
+//         this.courseAccountingService.setTopicName(this.courseName, '11');
+//         break;
+//       case navMenuNames.AccSystem:
+//         this.courseAccountingService.setTopicName(this.courseName, '12');
+//         break;
+//       case navMenuNames.HistoryAcc:
+//         this.courseAccountingService.setTopicName(this.courseName, '13');
+//         break;
+//       case navMenuNames.TyesOfAccounting:
+//         this.courseAccountingService.setTopicName(this.courseName, '14');
+//         break;
+//       case navMenuNames.CashAccrual:
+//         this.courseAccountingService.setTopicName(this.courseName, '15');
+//         break;
+//       case navMenuNames.ImpactBusinessStra:
+//         this.courseAccountingService.setTopicName(this.courseName, '16');
+//         break;
+//         case navMenuNames.AccCycle:
+//         this.courseAccountingService.setTopicName(this.courseName, '17');
+//         break;
+// 
+//       default:
+//         case navMenuNames.toc:
+//         this.courseAccountingService.setTopicName(this.courseName, '0');
+//         break;
+//     }
   }
 }
 
-enum navMenuNames {
-  toc = 'toc',
-  BKeepFTransFEvent = 'BKeepFTransFEvent',
-  RecordingAndTrack = 'RecordingAndTrack',
-  GAAP = 'GAAP',
-  AccPrinciples = 'AccPrinciples',
-  Assumptions = 'Assumptions',
-  Constraints = 'Constraints',
-  TheWordAcc = 'TheWordAcc',
-  AccTypes = 'AccTypes',
-  ChartOfAcc = 'ChartOfAcc',
-  WhatIsAccounting = 'WhatIsAccounting',
-  DefProcMethodSys = 'DefProcMethodSys',
-  AccSystem = 'AccSystem',
-  HistoryAcc = 'HistoryAcc',
-  TyesOfAccounting = 'TyesOfAccounting',
-  CashAccrual = 'CashAccrual',
-  ImpactBusinessStra = 'ImpactBusinessStra',
-  AccCycle = 'AccCycle',
-}
+// enum navMenuNames {
+//   toc = 'toc',
+//   BKeepFTransFEvent = 'BKeepFTransFEvent',
+//   RecordingAndTrack = 'RecordingAndTrack',
+//   GAAP = 'GAAP',
+//   AccPrinciples = 'AccPrinciples',
+//   Assumptions = 'Assumptions',
+//   Constraints = 'Constraints',
+//   TheWordAcc = 'TheWordAcc',
+//   AccTypes = 'AccTypes',
+//   ChartOfAcc = 'ChartOfAcc',
+//   WhatIsAccounting = 'WhatIsAccounting',
+//   DefProcMethodSys = 'DefProcMethodSys',
+//   AccSystem = 'AccSystem',
+//   HistoryAcc = 'HistoryAcc',
+//   TyesOfAccounting = 'TyesOfAccounting',
+//   CashAccrual = 'CashAccrual',
+//   ImpactBusinessStra = 'ImpactBusinessStra',
+//   AccCycle = 'AccCycle',
+// }
 
 // switch (event.target.name) {
 //   case navMenuNames.toc:

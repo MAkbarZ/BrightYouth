@@ -1,0 +1,74 @@
+<div class="by-container ">
+
+    <nav class="navbar navbar-expand bg-light by-navbar by-Text18">
+
+        <div class="container-fluid by-navbar-container">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerHome" aria-controls="navbarTogglerHome" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse by-collapse" id="navbarTogglerHome">
+
+            <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item by-nav-item">
+                <a name="hazara" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': hazaraActive}" routerLink="./hazra" (click)="disableMe($event)">Hazara آزرہ</a>
+              </li>
+
+              <li class="nav-item by-nav-item">
+                <a name="islam" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': islamActive}" routerLink="./islam" (click)="disableMe($event)">Islam</a>
+              </li>
+
+              <li class="nav-item by-nav-item">
+                <a name="politics" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': politicsActive}" routerLink="./politics" (click)="disableMe($event)">Politics</a>
+              </li>
+
+              <li class="nav-item by-nav-item">
+                <a name="education" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': educationActive}" routerLink="./education" (click)="disableMe($event)">Education</a>
+              </li>
+
+              <li class="nav-item by-nav-item">
+                <a name="sports" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': sportsActive}" routerLink="./sports" (click)="disableMe($event)">Sports</a>
+              </li>
+
+              <li class="nav-item by-nav-item">
+                <a name="entertainment" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': entertainmentActive}" routerLink="./entertainment" (click)="disableMe($event)">Entertainment</a>
+              </li>
+
+            </ul> <!-- ========== END OF NAVBAR - List -->
+
+            
+          </div> <!-- ========== END OF NAVBAR - COLLAPSE -->
+
+          <div class="d-flex by-date by-Text14">
+            <p class="me-3">{{today | date:'fullDate'}}</p>
+            <!-- <p class="me-3">{{todayGreg}}</p> -->
+            <!-- <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a> -->
+            <!-- <span class="me-3">{{today | date:'shortTime' }}</span> -->
+            <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a>
+            <span class="me-3 by-TextBold">{{todayPersian}}</span>
+            <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a>
+            <span class="me-0 by-TextBold">{{todayArabic}}</span>
+          </div>  <!-- ========== END OF DATE - Div -->
+
+        </div> <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
+      </nav> <!-- ========== END OF NAVBAR -->
+
+      <div class="hero clip">
+        <div class="images">
+          <img class="babaMazari" src="../../assets/hazara/LeaderBabaMazari.jpg" alt="shaheed baba mazari picture">
+          <!-- <img class="budha" src="../../assets/hazara/budha.jpg" alt="budha picture"> -->
+          <!-- <img class="mariabad" src="../../assets/hazara/mariabad.jpg" alt="mariabad picture"> -->
+          <img class="simaSamar" src="../../assets/hazara/leaderSimaSamar.jpg" alt="sima samar picture">
+          <img class="yusufi" src="../../assets/hazara/politicsHussainAliYusufi.jpg" alt="shaheed Yusufi picture">
+          <img class="mohaqeq" src="../../assets/hazara/politicsMohaqiq2.jpg" alt="mohammad mohaqeq picture">
+          <img class="khalili" src="../../assets/hazara/politicsKhalili2.jpg" alt="karim khalili picture">
+          <img class="behjati" src="../../assets/hazara/religiousKazimBehjati.jpg" alt="kazim behjati picture">
+          <img class="khaliq" src="../../assets/hazara/politicsAbdulKhaliq3Cropped.jpg" alt="abdul khaliq picture">
+          <img class="tahirKhan" src="../../assets/hazara/politicsTahirKhanCropped.jpg" alt="marhoom tahir khan picture">
+
+        </div>
+      </div> <!-- ========== END OF HERO -->
+
+</div>

@@ -18,7 +18,7 @@
           <!-- <tr><td class="by-color-bright by-Text-Align-Center">{{ courseName.serial }}</td> <td class="by-table-second-col"><a class="by-a" name="{{courseName.name}}" (click)="topicChange($event)" routerLink="/courses/accounting/{{courseName.name}}">{{courseName.title}}</a></td></tr> -->
 
           <li *ngFor="let courseName of courseNameArray">
-            <a class="dropdown-item by-a {{courseName.active}}" name="{{courseName.name}}" routerLink="./{{courseName.name}}" (click)="disableMe($event, courseName.serial)">{{courseName.title}}</a>
+            <a class="dropdown-item by-a {{courseName.active}}" name="{{courseName.courseName}}" routerLink="./{{courseName.courseName}}" (click)="disableMe($event, courseName.serial)">{{courseName.title}}</a>
           </li>
         </ul>
       </div>
@@ -27,7 +27,8 @@
     <!-- ========== END OF 1st Column -->
     <div class="col-9">
       <div class="d-flex flex-row">
-        <span class="by-HeadingMain" (click)="disableMe($event, -1)"
+        <span class="by-HeadingMain" (click)="disableMe($event, '0')"
+        routerLink="/courses/accounting/toc"
           >ACCOUNTING</span
         >
         <span class="by-HeadingPipe"> | </span>
@@ -48,6 +49,7 @@
   <div class="row bottom-row">
     <div class="bottom-container d-flex flex-row justify-content-center">
       <div *ngIf="prevLessonActive === true">
+        <!-- <span class="by-prevLesson" (click)="gotoPrev($event)" -->
         <span class="by-prevLesson" (click)="gotoPrev($event)"
           ><span>&laquo;</span> Previous Lesson - <b>{{ prevLessonTitle}}</b></span
         >

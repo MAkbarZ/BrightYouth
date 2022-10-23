@@ -1,0 +1,250 @@
+.by-container {
+    background-color: white !important;
+    position: relative;
+    border-top: dashed 0.2px var(--Youth-Dim-Color);
+
+    .by-background {
+        position: absolute;
+        background-image: url("../../assets/icon.svg");
+        background-repeat: no-repeat;
+        width: 60rem;
+        height: 51rem;
+        position: fixed;
+        // top: 193px;
+        // right: 8px;
+        top: 300px;
+        right: -25px;
+        opacity: .18;
+
+        z-index: 0;
+    }
+
+    .activeMenu {
+        font-weight: bold;
+        color: var(--Bright-Color);
+    }
+
+    .pipeSeparater {
+        color: var(--Bright-Color) !important;
+    }
+
+    .by-navbar {
+        // position: absolute;
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        // opacity: 0.3;
+        top: 75px;
+        position: fixed;
+        width: 100% !important;
+        z-index: 80;
+
+
+        .by-navbar-container {
+            // position: relative;
+
+            background-color: rgba(255, 255, 255, 1) !important;
+            // opacity: 1;
+            padding: 1px 5px;
+
+            .by-collapse {
+                // margin-left: 350px;
+                // font-size: var(--BY-Text15);
+
+                // z-index: 82;
+
+                .by-navbar-nav {
+
+
+                    color: var(--Youth-Color);
+
+                    .by-nav-item {
+                        margin-right: 18px !important;
+
+                        .by-nav-link-menu {
+                            position: relative;
+
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                width: 30%;
+                                height: 2.5px !important;
+                                background: var(--Bright-Color);
+                                left: 0;
+                                bottom: 0;
+
+                                transform: scale(0, 1);
+                                transition: transform 0.3s ease;
+                            }
+
+                            &:hover::after {
+                                transform: scale(1, 1);
+                            }
+                        }
+
+                        .by-bolder-font {
+
+                            &:hover {
+                                color: var(--Bright-Color);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+            .by-date {
+                color: var(--Youth-Color);
+                margin-top: 15px;
+            }
+        }
+
+
+    }
+
+    .hero {
+
+        width: 100%;
+        height: 600px;
+        background: url("../../assets/hazara/bamyanWallpaper.jpg");
+        /* background-repeat: no-repeat; */
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        position: relative;
+
+
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0%;
+
+            bottom: 0%;
+
+            left: 50%;
+
+            right: 0%;
+
+            opacity: 0.7;
+
+            // z-index: -1;
+
+
+            background: linear-gradient(90deg,
+                    rgba(250, 147, 78, 0.1) 17%,
+                    rgba(250, 147, 78, 1) 55%,
+                    rgba(197, 90, 17, 1) 100%);
+        }
+
+        .images {
+
+            img {
+                border: solid 2px white;
+
+            }
+
+            .babaMazari {
+                width: 180px;
+                position: absolute;
+                right: 400px;
+                top: 80px;
+            }
+
+            .budha {
+                width: 150px;
+                position: absolute;
+                right: 60px;
+                top: 60px;
+
+                //     diamond shape
+                // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+                //perallelogram
+                // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            }
+
+            .mariabad {
+                width: 140px;
+                position: absolute;
+                right: 50px;
+                top: 200px;
+
+                //     diamond shape
+                // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+                //perallelogram
+                // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            }
+
+            .yusufi {
+                width: 150px;
+                position: absolute;
+                right: 225px;
+                top: 89px;
+            }
+
+            .simaSamar {
+                width: 170px;
+                position: absolute;
+                right: 204px;
+                top: 248px;
+            }
+
+            .mohaqeq {
+                width: 142px;
+                position: absolute;
+                right: 387px;
+                top: 332px;
+            }
+
+            .khalili {
+                width: 139px;
+                position: absolute;
+                right: 225px;
+                top: 400px;
+            }
+
+            .behjati {
+                width: 150px;
+                position: absolute;
+                right: 44px;
+                top: 78px;
+            }
+
+            .khaliq {
+                width: 150px;
+                position: absolute;
+                right: 30px;
+                top: 255px;
+            }
+
+            .tahirKhan {
+                width: 164px;
+                position: absolute;
+                right: 43px;
+                top: 438px;
+            }
+
+
+            /* height: 100vh; */
+
+            // height: 660px;
+
+            // background: url("../../assets/hazara/budha.jpg");
+
+            /* background-repeat: no-repeat; */
+
+            // background-size: 100% 100%;
+
+            // background-attachment: fixed;
+        }
+    }
+
+    .clip {
+        // clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+    }
+
+
+
+}

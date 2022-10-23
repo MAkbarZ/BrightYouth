@@ -19,9 +19,9 @@
       <td class="by-table-second-col">
         <a
           class="by-a"
-          name="{{ courseName.title}"
-          (click)="topicChange($event, courseName.serial)"
-          routerLink="/courses/accounting/{{ courseName.name }}"
+          name="{{ courseName.title}}"
+          (click)="topicChange(courseName.serial)"
+          routerLink="/courses/accounting/{{ courseName.courseName }}"
           >{{ courseName.title }}</a
         >
       </td>

@@ -16,7 +16,7 @@ export class AccountingComponent implements OnInit {
   topicName: string = '';
   prevLessonName: string = '';
   nextLessonName: string = '';
-
+  courseSerial: number = 0;
   prevLessonActive: boolean = false;
   nextLessonActive: boolean = false;
 
@@ -24,8 +24,8 @@ export class AccountingComponent implements OnInit {
     {
       serial: '0',
       active: 'activeMenu',
-      name: 'toc',
-      title: 'c',
+      courseName: 'toc',
+      title: 'Table of Content',
     },
   ];
 
@@ -42,160 +42,111 @@ export class AccountingComponent implements OnInit {
       ...this.courseAccountingService.courseNamesArrayAccounting
     );
 
-    this.courseNameArray[0].active = 'activeMenu';
-    // this.topicName = 'Table of Contents';
-    // this.prevLesson = '';
-    // this.nextLesson = 'Bookeeping, Financial Transaction & Event';
-
+    
     this.courseAccountingService.strTopicTitle$.subscribe(
-      (res) => (this.topicTitle = res)
+      (res) => {this.topicTitle = res; }
     );
     this.courseAccountingService.strPrevLessonTitle$.subscribe(
-      (res) => (this.prevLessonTitle = res)
+      (res) => { 
+        this.prevLessonTitle = res;         
+    
+      }
     );
     this.courseAccountingService.strNextLessonTitle$.subscribe(
-      (res) => (this.nextLessonTitle = res)
+      (res) => {this.nextLessonTitle = res; }
     );
     this.courseAccountingService.strTopicName$.subscribe(
-      (res) => (this.topicName = res)
+      (res) => {this.topicName = res; }
     );
     this.courseAccountingService.strPrevLessonName$.subscribe(
-      (res) => (this.prevLessonName = res)
+      (res) => {this.prevLessonName = res; }
     );
     this.courseAccountingService.strNextLessonName$.subscribe(
-      (res) => (this.nextLessonName = res)
+      (res) => {this.nextLessonName = res; }
     );
     this.courseAccountingService.blnPrevLessonActive$.subscribe(
-      (res) => (this.prevLessonActive = res)
+      (res) => {this.prevLessonActive = res; }
     );
     this.courseAccountingService.blnNextLessonActive$.subscribe(
-      (res) => (this.nextLessonActive = res)
+      (res) => {this.nextLessonActive = res; }
     );
+
+    // this.courseNameArray[this.courseSerial - 1].active = '';
+
+    this.courseAccountingService.intCurrentTopicSerial$.subscribe(
+      (res) => {this.courseSerial = res; 
+        
+        this.courseNameArray[this.courseSerial].active = 'activeMenu';}
+    );
+
+
   }
 
-  disableMe(event: any, serial: any) {
-    // alert((parseInt(serial)+1));
+  disableMe(event: any, serial: string) {
 
-    // alert(serial + ' -- ' + (parseInt(serial)+1) + ' -- ' + this.courseNameArray[(parseInt(serial)+1)].active + ' -- ' + this.courseNameArray[(parseInt(serial)+1)].title);
-    // console.log((event.target as HTMLAnchorElement).innerHTML);
-    // console.log(event.target.name);
-    // this.makeActiveBooleanFalse();
     for (let i = 0; i < this.courseNameArray.length; i++) {
       this.courseNameArray[i].active = '';
     }
 
-    this.courseNameArray[serial].active = 'activeMenu';
-
-    switch (event.target.name) {
-      case navMenuNames.toc:
-        // this.topicName = 'Table of Contents';
-        // this.prevLesson = '';
-        // this.nextLesson = 'Bookeeping, Financial Transaction & Event';
-        // this.topicName = this.courseNameArray[0].title;
-        // this.prevLesson = '';
-        // this.nextLesson =  this.courseNameArray[1].title;
-        // this.prevLessonPath = ''; this.nextLessonPath =  this.courseNameArray[1].name;
-
-        this.courseAccountingService.setTopicName(this.courseName, '0');
-        break;
-      case navMenuNames.BKeepFTransFEvent:
-        this.courseAccountingService.setTopicName(this.courseName, '1');
-        break;
-      case navMenuNames.RecordingAndTrack:
-        this.courseAccountingService.setTopicName(this.courseName, '2');
-        break;
-      case navMenuNames.GAAP:
-        this.courseAccountingService.setTopicName(this.courseName, '3');
-        break;
-      case navMenuNames.AccPrinciples:
-        this.courseAccountingService.setTopicName(this.courseName, '4');
-        break;
-      case navMenuNames.Assumptions:
-        this.courseAccountingService.setTopicName(this.courseName, '5');
-        break;
-      case navMenuNames.Constraints:
-        this.courseAccountingService.setTopicName(this.courseName, '6');
-        break;
-      case navMenuNames.TheWordAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '7');
-        break;
-      case navMenuNames.AccTypes:
-        this.courseAccountingService.setTopicName(this.courseName, '8');
-        break;
-      case navMenuNames.ChartOfAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '9');
-        break;
-      case navMenuNames.WhatIsAccounting:
-        this.courseAccountingService.setTopicName(this.courseName, '10');
-        break;
-      case navMenuNames.DefProcMethodSys:
-        this.courseAccountingService.setTopicName(this.courseName, '11');
-        break;
-      case navMenuNames.AccSystem:
-        this.courseAccountingService.setTopicName(this.courseName, '12');
-        break;
-      case navMenuNames.HistoryAcc:
-        this.courseAccountingService.setTopicName(this.courseName, '13');
-        break;
-      case navMenuNames.TyesOfAccounting:
-        this.courseAccountingService.setTopicName(this.courseName, '14');
-        break;
-      case navMenuNames.CashAccrual:
-        this.courseAccountingService.setTopicName(this.courseName, '15');
-        break;
-      case navMenuNames.ImpactBusinessStra:
-        this.courseAccountingService.setTopicName(this.courseName, '16');
-        break;
-
-      //
-      // case navMenuNames.coursesHome:
-      // case navMenuNames.kyCustomer:
-      // case navMenuNames.msExcel:
-      // case navMenuNames.msWord:
-      // case navMenuNames.msPowerPoint:
-      //   this.coursesActive = true;
-      //   break;
-
-      default:
-      case navMenuNames.AccCycle:
-        this.courseAccountingService.setTopicName(this.courseName, '17');
-        break;
-    }
-
+    this.courseNameArray[parseInt(serial)].active = 'activeMenu';
+    this.courseAccountingService.setTopicName(this.courseName, serial);
   }
 
   gotoPrev(event: any) {
-    this.router.navigate(['courses', 'accounting', this.prevLessonName]);
-    // disableMe(event, this.prev
-    //TODO: set the selected menu to ACTIVE
+    console.log('this.courseSerial ' + this.courseSerial);
+    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+    this.courseSerial -=1
+    // this.router.navigate(['courses', 'accounting', this.prevLessonName]);
+     for (let i = 0; i < this.courseNameArray.length; i++) {
+      this.courseNameArray[i].active = '';
+    }
+
+    this.courseNameArray[this.courseSerial].active = 'activeMenu';
+    this.courseAccountingService.setTopicName(this.courseName, (this.courseSerial).toString());
+    this.router.navigate(['courses', 'accounting', this.courseNameArray[this.courseSerial].courseName]);
+    console.log('this.courseSerial ' + this.courseSerial);
+    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+
 
   }
 
   gotoNext(event: any) {
-    this.router.navigate(['courses', 'accounting', this.nextLessonName]);
+    console.log('this.courseSerial ' + this.courseSerial);
+    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+    this.courseSerial +=1
+    
+    for (let i = 0; i < this.courseNameArray.length; i++) {
+      this.courseNameArray[i].active = '';
+    }
+
+    this.courseNameArray[this.courseSerial].active = 'activeMenu';
+    this.courseAccountingService.setTopicName(this.courseName, (this.courseSerial).toString());
+    this.router.navigate(['courses', 'accounting', this.courseNameArray[this.courseSerial].courseName]);
+    console.log('this.courseSerial ' + this.courseSerial);
+    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
   }
 }
 
-enum navMenuNames {
-  toc = 'toc',
-  BKeepFTransFEvent = 'BKeepFTransFEvent',
-  RecordingAndTrack = 'RecordingAndTrack',
-  GAAP = 'GAAP',
-  AccPrinciples = 'AccPrinciples',
-  Assumptions = 'Assumptions',
-  Constraints = 'Constraints',
-  TheWordAcc = 'TheWordAcc',
-  AccTypes = 'AccTypes',
-  ChartOfAcc = 'ChartOfAcc',
-  WhatIsAccounting = 'WhatIsAccounting',
-  DefProcMethodSys = 'DefProcMethodSys',
-  AccSystem = 'AccSystem',
-  HistoryAcc = 'HistoryAcc',
-  TyesOfAccounting = 'TyesOfAccounting',
-  CashAccrual = 'CashAccrual',
-  ImpactBusinessStra = 'ImpactBusinessStra',
-  AccCycle = 'AccCycle',
-}
+// enum navMenuNames {
+//   toc = 'toc',
+//   BKeepFTransFEvent = 'BKeepFTransFEvent',
+//   RecordingAndTrack = 'RecordingAndTrack',
+//   GAAP = 'GAAP',
+//   AccPrinciples = 'AccPrinciples',
+//   Assumptions = 'Assumptions',
+//   Constraints = 'Constraints',
+//   TheWordAcc = 'TheWordAcc',
+//   AccTypes = 'AccTypes',
+//   ChartOfAcc = 'ChartOfAcc',
+//   WhatIsAccounting = 'WhatIsAccounting',
+//   DefProcMethodSys = 'DefProcMethodSys',
+//   AccSystem = 'AccSystem',
+//   HistoryAcc = 'HistoryAcc',
+//   TyesOfAccounting = 'TyesOfAccounting',
+//   CashAccrual = 'CashAccrual',
+//   ImpactBusinessStra = 'ImpactBusinessStra',
+//   AccCycle = 'AccCycle',
+// }
 
 //
 //

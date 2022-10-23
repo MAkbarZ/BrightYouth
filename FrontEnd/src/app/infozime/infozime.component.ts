@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfozimeComponent implements OnInit {
 
-  constructor() { }
+  mydate:any;
+  constructor() {
+    this.mydate = Date.now();
+   }
 
   ngOnInit(): void {
+    this.mydate = Date.now();
   }
 
 }

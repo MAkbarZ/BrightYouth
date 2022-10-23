@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseAccountingService } from 'src/app/shared-components/service/course-accounting.service';
 
 @Component({
   selector: 'app-aq-acc-cycle',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AqAccCycleComponent implements OnInit {
 
-  constructor() { }
+
+  courseName: string = 'courseNamesArrayAccounting';
+
+  constructor(private courseAccountingService: CourseAccountingService) { }
 
   ngOnInit(): void {
+    this.courseAccountingService.setTopicName(this.courseName, '17');
   }
 
 }

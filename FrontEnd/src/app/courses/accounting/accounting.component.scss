@@ -5,6 +5,7 @@
     font-size: 1.2rem;
     font-weight: bolder;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .by-HeadingTopicName {
@@ -78,7 +79,7 @@
 
 
         .by-prevLesson {
-        
+            cursor: pointer;
             // visibility: collapse;
             margin-right: 50px;
             
@@ -92,11 +93,11 @@
         }
         
         .by-nextLesson {
-    
+            cursor: pointer;
             span {
                 font-size: 1.5rem;
                 // margin-right: 50px;
-
+                
             }
             b {
                 cursor: pointer;

@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   coursesActive: boolean = false;
   coursesHomeActive: boolean = false;
   infozimeActive: boolean = false;
+  toolsActive: boolean = false;
 
   userProfileActive: boolean = false;
   loginActive: boolean = false;
@@ -70,6 +71,9 @@ export class AppComponent implements OnInit {
         case navMenuNames.infozime:
           this.infozimeActive = true;
           break;
+        case navMenuNames.tools:
+          this.toolsActive = true;
+          break;
 
       case navMenuNames.userProfile:
         this.userProfileActive = true;
@@ -97,6 +101,7 @@ export class AppComponent implements OnInit {
     this.coursesActive = false;
     this.coursesHomeActive = false;
     this.infozimeActive = false;
+    this.toolsActive = false;
 
     this.userProfileActive = false;
     this.loginActive = false;
@@ -117,6 +122,7 @@ enum navMenuNames {
   msPowerPoint = 'msPowerPoint',
   
   infozime = 'infozime',
+  tools = 'tools',
 
   userProfile = 'userProfile',
   login = 'login',
