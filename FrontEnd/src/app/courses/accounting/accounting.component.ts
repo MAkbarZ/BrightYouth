@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseAccountingService } from 'src/app/shared-components/service/course-accounting.service';
+import { CourseService } from 'src/app/shared-components/service/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
+interface courseObj {
+  serial: string;
+  active: string;
+  lessonName: string;
+  title: string;
+}
 
 @Component({
   selector: 'app-accounting',
@@ -9,121 +16,125 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AccountingComponent implements OnInit {
 
-  courseName: string = 'courseNamesArrayAccounting';
-  topicTitle: string = '';
-  prevLessonTitle: string = '';
-  nextLessonTitle: string = '';
-  topicName: string = '';
-  prevLessonName: string = '';
-  nextLessonName: string = '';
-  courseSerial: number = 0;
-  prevLessonActive: boolean = false;
-  nextLessonActive: boolean = false;
-
-  courseNameArray = [
-    {
-      serial: '0',
-      active: 'activeMenu',
-      courseName: 'toc',
-      title: 'Table of Content',
-    },
-  ];
+  strCurrentLessonSerial: string = '';
+  strCurrentLessonTitle: string = '';
+  strPrevLessonTitle: string = '';
+  strNextLessonTitle: string = '';
+  strCurrentLessonName: string = '';
+  strPrevLessonName: string = '';
+  strNextLessonName: string = '';
+  intCurrentLessonSerial: number = 0;
+  blnPrevLessonActive: boolean = false;
+  blnNextLessonActive: boolean = false;
+    
+  courseNameArray: courseObj[] = [];
 
   cssActiveMenu: string = '';
 
-  constructor(
-    private courseAccountingService: CourseAccountingService,
-    private router: Router
-  ) {}
+  constructor(private courseService: CourseService, private router: Router) {
+    
+    // this.strCourseName = localStorage.getItem('currentCourse')!;
+    // console.log("const before localStorage.getItem('currentLessonSerial') = " + localStorage.getItem('currentLessonSerial'));
+  }
 
   ngOnInit(): void {
-    this.courseNameArray = new Array();
-    this.courseNameArray.push(
-      ...this.courseAccountingService.courseNamesArrayAccounting
-    );
+    this.courseNameArray = [];
+    this.courseNameArray.push(...this.courseService.arrCourseTocAccounting);
 
+    this.strCurrentLessonSerial = localStorage.getItem('currentLessonSerial')!;
+
+    if (this.strCurrentLessonSerial=='0' || this.strCurrentLessonSerial=='' || (localStorage.getItem('currentLessonSerial') == null)) {
+      this.courseService.setBasicAccounting('0');
+        localStorage.setItem('currentLessonSerial','0');
+    } else {
+      this.courseService.setBasicAccounting(this.strCurrentLessonSerial);
+      localStorage.setItem('currentLessonSerial', this.strCurrentLessonSerial);
+    }
+
+    this.strCurrentLessonSerial = localStorage.getItem('currentLessonSerial')!;
+    // console.log("NgONIniti localStorage.getItem('currentLessonSerial') = " + localStorage.getItem('currentLessonSerial'));
+
+    this.strCurrentLessonSerial = localStorage.getItem('currentLessonSerial')!;
     
-    this.courseAccountingService.strTopicTitle$.subscribe(
-      (res) => {this.topicTitle = res; }
-    );
-    this.courseAccountingService.strPrevLessonTitle$.subscribe(
-      (res) => { 
-        this.prevLessonTitle = res;         
-    
-      }
-    );
-    this.courseAccountingService.strNextLessonTitle$.subscribe(
-      (res) => {this.nextLessonTitle = res; }
-    );
-    this.courseAccountingService.strTopicName$.subscribe(
-      (res) => {this.topicName = res; }
-    );
-    this.courseAccountingService.strPrevLessonName$.subscribe(
-      (res) => {this.prevLessonName = res; }
-    );
-    this.courseAccountingService.strNextLessonName$.subscribe(
-      (res) => {this.nextLessonName = res; }
-    );
-    this.courseAccountingService.blnPrevLessonActive$.subscribe(
-      (res) => {this.prevLessonActive = res; }
-    );
-    this.courseAccountingService.blnNextLessonActive$.subscribe(
-      (res) => {this.nextLessonActive = res; }
-    );
+    this.courseService.strCurrentLessonTitle$.subscribe((res) => {
+      this.strCurrentLessonTitle = res;
+    });
+    this.courseService.strPrevLessonTitle$.subscribe((res) => {
+      this.strPrevLessonTitle = res;
+    });
+    this.courseService.strNextLessonTitle$.subscribe((res) => {
+      this.strNextLessonTitle = res;
+    });
+    this.courseService.strCurrentLessonName$.subscribe((res) => {
+      this.strCurrentLessonName = res;
+    });
+    this.courseService.strPrevLessonName$.subscribe((res) => {
+      this.strPrevLessonName = res;
+    });
+    this.courseService.strNextLessonName$.subscribe((res) => {
+      this.strNextLessonName = res;
+    });
+    this.courseService.blnPrevLessonActive$.subscribe((res) => {
+      this.blnPrevLessonActive = res;
+    });
+    this.courseService.blnNextLessonActive$.subscribe((res) => {
+      this.blnNextLessonActive = res;
+    });
 
-    // this.courseNameArray[this.courseSerial - 1].active = '';
+    this.courseService.intCurrentLessonSerial$.subscribe((res) => {
+      this.intCurrentLessonSerial = res;
 
-    this.courseAccountingService.intCurrentTopicSerial$.subscribe(
-      (res) => {this.courseSerial = res; 
-        
-        this.courseNameArray[this.courseSerial].active = 'activeMenu';}
-    );
-
-
+      this.courseNameArray[this.intCurrentLessonSerial].active = 'active-menu';
+    });
   }
 
   disableMe(event: any, serial: string) {
-
     for (let i = 0; i < this.courseNameArray.length; i++) {
       this.courseNameArray[i].active = '';
     }
 
-    this.courseNameArray[parseInt(serial)].active = 'activeMenu';
-    this.courseAccountingService.setTopicName(this.courseName, serial);
+    this.courseNameArray[parseInt(serial)].active = 'active-menu';
+    this.courseService.setBasicAccounting(serial);
   }
 
   gotoPrev(event: any) {
-    console.log('this.courseSerial ' + this.courseSerial);
-    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
-    this.courseSerial -=1
+    // console.log('this.courseSerial ' + this.courseSerial);
+    // console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+    this.intCurrentLessonSerial -= 1;
     // this.router.navigate(['courses', 'accounting', this.prevLessonName]);
-     for (let i = 0; i < this.courseNameArray.length; i++) {
-      this.courseNameArray[i].active = '';
-    }
-
-    this.courseNameArray[this.courseSerial].active = 'activeMenu';
-    this.courseAccountingService.setTopicName(this.courseName, (this.courseSerial).toString());
-    this.router.navigate(['courses', 'accounting', this.courseNameArray[this.courseSerial].courseName]);
-    console.log('this.courseSerial ' + this.courseSerial);
-    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
-
-
-  }
-
-  gotoNext(event: any) {
-    console.log('this.courseSerial ' + this.courseSerial);
-    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
-    this.courseSerial +=1
-    
     for (let i = 0; i < this.courseNameArray.length; i++) {
       this.courseNameArray[i].active = '';
     }
 
-    this.courseNameArray[this.courseSerial].active = 'activeMenu';
-    this.courseAccountingService.setTopicName(this.courseName, (this.courseSerial).toString());
-    this.router.navigate(['courses', 'accounting', this.courseNameArray[this.courseSerial].courseName]);
-    console.log('this.courseSerial ' + this.courseSerial);
-    console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+    this.courseNameArray[this.intCurrentLessonSerial].active = 'active-menu';
+    this.courseService.setBasicAccounting(this.intCurrentLessonSerial.toString());
+    this.router.navigate([
+      'courses',
+      'accounting',
+      this.courseNameArray[this.intCurrentLessonSerial].lessonName,
+    ]);
+    // console.log('this.courseSerial ' + this.courseSerial);
+    // console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+  }
+
+  gotoNext(event: any) {
+    // console.log('this.courseSerial ' + this.courseSerial);
+    // console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
+    this.intCurrentLessonSerial += 1;
+
+    for (let i = 0; i < this.courseNameArray.length; i++) {
+      this.courseNameArray[i].active = '';
+    }
+
+    this.courseNameArray[this.intCurrentLessonSerial].active = 'active-menu';
+    this.courseService.setBasicAccounting(this.intCurrentLessonSerial.toString());
+    this.router.navigate([
+      'courses',
+      'accounting',
+      this.courseNameArray[this.intCurrentLessonSerial].lessonName,
+    ]);
+    // console.log('this.intCurrentLessonSerial ' + this.courseSerial);
+    // console.log('this.courseNameArray[this.courseSerial].title ' + this.courseNameArray[this.courseSerial].title);
   }
 }
 

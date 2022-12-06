@@ -1,64 +1,81 @@
 <div class="container-fluid by-container-main">
-  <div class="row">
-    <div class="col-3">
-      <!-- PROGRAMMING - 1ST VIDEO - https://youtu.be/ZFKcwZF5z1o -->
+  <!-- <div class="row by-top-row"> -->
+    <div class="position-fixed">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 by-first-col">
+          <!-- PROGRAMMING - 1ST VIDEO - https://youtu.be/ZFKcwZF5z1o -->
 
-      <!-- Example single danger button -->
-      <div class="btn-group">
-        <button
-          type="button"
-          class="btn by-PrimaryButton by-btn-addToCart dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Table of Contents
-        </button>
-        <ul class="dropdown-menu">
+          <!-- Example single danger button -->
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn by-primary-button by-btn-add-to-cart dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Table of Contents
+            </button>
+            <ul class="dropdown-menu">
+              <!-- <tr><td class="by-color-bright by-Text-Align-Center">{{ courseName.serial }}</td> <td class="by-table-second-col"><a class="by-a" name="{{courseName.name}}" (click)="topicChange($event)" routerLink="/courses/accounting/{{courseName.name}}">{{courseName.title}}</a></td></tr> -->
 
-          <!-- <tr><td class="by-color-bright by-Text-Align-Center">{{ courseName.serial }}</td> <td class="by-table-second-col"><a class="by-a" name="{{courseName.name}}" (click)="topicChange($event)" routerLink="/courses/accounting/{{courseName.name}}">{{courseName.title}}</a></td></tr> -->
-
-          <li *ngFor="let courseName of courseNameArray">
-            <a class="dropdown-item by-a {{courseName.active}}" name="{{courseName.courseName}}" routerLink="./{{courseName.courseName}}" (click)="disableMe($event, courseName.serial)">{{courseName.title}}</a>
-          </li>
-        </ul>
+              <li *ngFor="let lesson of courseNameArray">
+                <a
+                  class="dropdown-item by-a {{ lesson.active }}"
+                  name="{{ lesson.lessonName }}"
+                  routerLink="./{{ lesson.lessonName }}"
+                  (click)="disableMe($event, lesson.serial)"
+                >
+                  {{ lesson.title }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- ========== END OF btn-group -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+        <div class="col-lg-10 col-md-10 col-sm-10 by-second-col">
+          <div class="d-flex flex-row">
+            <span
+              class="by-heading-main"
+              (click)="disableMe($event, '0')"
+              routerLink="/courses/accounting/toc"
+            >
+              ACCOUNTING
+            </span>
+            <span class="by-heading-pipe"> | </span>
+            <span class="by-heading-topic-name">{{
+              strCurrentLessonTitle
+            }}</span>
+          </div>
+        </div>
+        <!-- ========== END OF 2nd Column -->
       </div>
-      <!-- ========== END OF btn-group -->
     </div>
-    <!-- ========== END OF 1st Column -->
-    <div class="col-9">
-      <div class="d-flex flex-row">
-        <span class="by-HeadingMain" (click)="disableMe($event, '0')"
-        routerLink="/courses/accounting/toc"
-          >ACCOUNTING</span
-        >
-        <span class="by-HeadingPipe"> | </span>
-        <span class="by-HeadingTopicName">{{ topicTitle }}</span>
-      </div>
-    </div>
-  </div>
+  <!-- </div> -->
   <!-- ========== END OF TOP ROW -->
 
-  <!-- ========== END OF SIDEBAR -->
-
-  <div class="row">
+    <!-- <div class="row by-content-row"> -->
     <div class="by-course-content">
       <router-outlet></router-outlet>
     </div>
-  </div>
+  <!-- </div> -->
+<!-- ========== END OF content ROW -->
 
-  <div class="row bottom-row">
-    <div class="bottom-container d-flex flex-row justify-content-center">
-      <div *ngIf="prevLessonActive === true">
+
+  <!-- <div class="row by-bottom-row"> -->
+    <div class="by-bottom-container d-flex flex-row justify-content-center">
+      <div *ngIf="blnPrevLessonActive === true">
         <!-- <span class="by-prevLesson" (click)="gotoPrev($event)" -->
-        <span class="by-prevLesson" (click)="gotoPrev($event)"
-          ><span>&laquo;</span> Previous Lesson - <b>{{ prevLessonTitle}}</b></span
-        >
+        <span class="by-prev-lesson" (click)="gotoPrev($event)"
+          ><span>&laquo;</span> Previous Lesson -
+          <b>{{ strPrevLessonTitle }}</b>
+        </span>
       </div>
       <!-- <div class="div"> ||| </div> -->
-      <div *ngIf="nextLessonActive === true">
-        <span class="by-nextLesson" (click)="gotoNext($event)"
-          >Next Lesson - <b>{{ nextLessonTitle }} </b><span>&raquo;</span></span
-        >
+      <div *ngIf="blnNextLessonActive === true">
+        <span class="by-next-lesson" (click)="gotoNext($event)"
+          >Next Lesson - <b>{{ strNextLessonTitle }} </b><span>&raquo;</span>
+        </span>
       </div>
 
       <!-- <div class="btn-group" role="group" aria-label="Default button group">
@@ -66,8 +83,7 @@
                 <button type="button" class="btn btn-outline-dark by-btn-next" routerLink="./overview"> Definition of Programming <span>&raquo;</span></button>
               </div> -->
     </div>
-  </div>
-  <!-- ========== END OF CONTENT -->
+  <!-- </div> -->
+  <!-- ========== END OF bottom navigation -->
 </div>
 <!-- </div> -->
-  

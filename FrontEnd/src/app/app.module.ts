@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared-components/page-not-found/page-not-found.component';
 import { AlertComponent } from './shared-components/alert/alert.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FooterComponent } from './home/footer/footer.component';
 // import { PaginationModule } from './shared-components/pagination/pagination.module';
 // import { FilterProductPipe } from './shared-components/pipes/filter-product.pipe';
 
@@ -22,6 +23,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AlertComponent,
     // HomeComponent, //I will user Users Component instead.
     // UsersComponent,
+    FooterComponent,
     PageNotFoundComponent,
     AboutUsComponent
     

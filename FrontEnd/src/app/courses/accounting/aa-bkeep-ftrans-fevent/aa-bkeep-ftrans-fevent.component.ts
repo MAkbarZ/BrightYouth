@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseAccountingService } from 'src/app/shared-components/service/course-accounting.service';
+import { CourseService } from 'src/app/shared-components/service/course.service';
 
 @Component({
   selector: 'app-aa-bkeep-ftrans-fevent',
@@ -10,10 +10,11 @@ export class AaBKeepFTransFEventComponent implements OnInit {
 
   courseName: string = 'courseNamesArrayAccounting';
 
-  constructor(private courseAccountingService: CourseAccountingService) { }
+  constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.courseAccountingService.setTopicName(this.courseName, '1');
+    // this.courseService.setBasicAccounting('1');
+    // console.log("aa BOOKEEPING = localStorage.getItem('currentLessonSerial') = " + localStorage.getItem('currentLessonSerial'));
   }
 
 }

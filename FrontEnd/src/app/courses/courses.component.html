@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-3">
+  <!-- <div class="row"> -->
+    <!-- <div class="col-2"> -->
       <div class="by-course-sidebar">
-        <div class="flex-shrink-0 p-3" style="width: 280px">
+        <div class="flex-shrink-0 p-3" style="width: 100%">
           <a
             routerLink="./"
             class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
@@ -85,12 +85,12 @@
               <button
                 class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                 data-bs-toggle="collapse"
-                data-bs-target="#orders-collapse"
+                data-bs-target="#msoffice-collapse"
                 aria-expanded="false"
               >
                 MS Office
               </button>
-              <div class="collapse" id="orders-collapse">
+              <div class="collapse" id="msoffice-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                   <li>
                     <a
@@ -120,14 +120,14 @@
             <li class="mb-1">
               <button
                 class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                [ngClass]="{ activeMenu:basicAccountingActive }"
+                [ngClass]="{ 'active-menu':basicAccountingActive }"
                 data-bs-toggle="collapse"
                 data-bs-target="#account-collapse"
-                aria-expanded="false"
+                aria-expanded="true"
               >
                 Accounting
               </button>
-              <div class="collapse" id="account-collapse">
+              <div class="collapse show" id="account-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                   <li><a routerLink="./accounting/toc" name="AccountingToc" (click)="disableMe($event)" class="link-dark d-inline-flex text-decoration-none rounded">Basic Accounting</a></li>
                  
@@ -137,16 +137,16 @@
           </ul>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <!-- ========== END OF SIDEBAR -->
 
-    <div class="col-9">
+    <!-- <div class="col-10"> -->
       <div class="by-course-content">
         <router-outlet></router-outlet>
       </div>
-    </div>
+    <!-- </div> -->
     <!-- ========== END OF CONTENT -->
-  </div>
+  <!-- </div> -->
 </div>
 
 <!-- <div class="accordion" id="accordionCourse">

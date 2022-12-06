@@ -1,28 +1,25 @@
-<table class="by-table-OutsideBorder by-toc-table">
+<table class="by-outside-border by-toc-table">
   <thead class="by-table-column-heading">
     <tr>
-      <th
-        class="by-table-column-heading by-Text-Align-Center by-table-first-col"
-        style="padding-right: 0px"
-      >
+      <th class="by-table-column-heading by-text-center by-table-first-col">
         #
       </th>
       <th class="by-table-column-heading">Topic</th>
     </tr>
   </thead>
 
-  <tbody class="by-table-cell" *ngFor="let courseName of courseNameArray">
+  <tbody class="by-table-cell" *ngFor="let lesson of courseNameArray">
     <tr>
-      <td class="by-color-bright by-Text-Align-Center">
-        {{ courseName.serial }}
+      <td class="by-color-bright by-text-center">
+        {{ lesson.serial }}
       </td>
       <td class="by-table-second-col">
         <a
           class="by-a"
-          name="{{ courseName.title}}"
-          (click)="topicChange(courseName.serial)"
-          routerLink="/courses/accounting/{{ courseName.courseName }}"
-          >{{ courseName.title }}</a
+          name="{{ lesson.title }}"
+          (click)="topicChange(lesson.serial)"
+          routerLink="/courses/accounting/{{ lesson.lessonName }}"
+          >{{ lesson.title }}</a
         >
       </td>
     </tr>

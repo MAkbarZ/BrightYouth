@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseAccountingService } from 'src/app/shared-components/service/course-accounting.service';
+import { CourseService } from 'src/app/shared-components/service/course.service';
 
 @Component({
   selector: 'app-ao-cash-accrual',
@@ -11,10 +11,10 @@ export class AoCashAccrualComponent implements OnInit {
   
   courseName: string = 'courseNamesArrayAccounting';
 
-  constructor(private courseAccountingService: CourseAccountingService) { }
+  constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.courseAccountingService.setTopicName(this.courseName, '15');
+    // this.courseService.setTopicName(this.courseName, '15');
   }
 
 }

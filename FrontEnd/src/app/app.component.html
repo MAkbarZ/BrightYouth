@@ -1,132 +1,136 @@
-<div class="header">
+<div class="header container-fluid">
   <!-- <app-header></app-header> -->
 
-  <!-- navbar-brand  -->
-
+  <div class="row">
+<div class="col-3">
   <div class="by-brand">
     <a class="by-brand-icon" href="#">
       <img src="../assets/icon.svg" alt="Bright Youth Icon">
     </a>
-    <a class="by-brand-Bright" href="#">Bright</a>
-    <a class="by-brand-Youth" href="#">Youth</a>
-    <a class="by-brand-Org" href="#">.org</a>
+    <a class="by-brand-bright" href="#">Bright</a>
+    <a class="by-brand-youth" href="#">Youth</a>
+    <a class="by-brand-org" href="#">.org</a>
+  
+    <button class="by-toggler" type="button">
+          <span class="">HELLLOOOOO</span>
+    </button>
+  </div>
+  <!-- ========== END OF NAVBAR - brand  -->
+</div>
+  <!-- ========== END OF col-1  -->
+
+  <div class="col-9">
+    <nav class="navbar by-navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container-fluid by-navbar-container">
+  
+        <!-- <a class="navbar-brand by-brand" href="#"> 
+        <img class="by-brand-icon" src="../assets/icon.svg" alt="Bright Youth Icon">
+          <span class="by-brand-bright">Bright</span>
+          <span class="by-brand-youth">Youth</span>
+          <span class="by-brand-org">.org</span>
+        </a> -->
+  
+        
+        <!-- <button class="navbar-toggler by-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+  <!-- collapse navbar-collapse -->
+        <div class=" by-collapse" id="navbarSupportedContent">
+  
+          <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item by-nav-item">
+              <a name="home" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'active-menu': homeActive}" routerLink="./home" (click)="disableMe($event, '')">Home</a>
+            </li>
+           
+            <li class="nav-item by-nav-item">
+              <a name="shopping" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'active-menu': shoppingActive}" routerLink="./shopping" (click)="disableMe($event, '')" >Shop Now</a>
+              <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
+            </li>
+            
+            <li class="nav-item by-nav-item">
+              <a name="courses" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'active-menu': coursesActive}" routerLink="./courses" (click)="disableMe($event, '')" >Courses</a>
+              <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
+            </li>
+  
+            <li class="nav-item by-nav-item by-dropdown dropdown d-none">
+              <a name="courses" class="nav-link by-nav-link-dropdown by-bolder-font dropdown-toggle" href="#" id="navbarDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'active-menu': coursesActive}" routerLink="./courses" (click)="disableMe($event, '')">
+                Courses ▼
+              </a>
+              <ul class="dropdown-menu by-dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <li><a name="coursesHome" class="dropdown-item by-dropdown-link" routerLink="./courses" (click)="disableMe($event, '')">BrightYouth Courses</a></li> -->
+                <li><a name="coursesHome" class="dropdown-item by-dropdown-link" [ngClass]="{'active-menu': coursesActive}" routerLink="./courses" (click)="disableMe($event, '')">BrightYouth Courses</a></li>
+                
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li class="by-course-category-dropdown">Marketing</li>
+                <li><a name="kyCustomer" class="dropdown-item by-dropdown-link" routerLink="./kyCustomer" (click)="disableMe($event, '')">Know Your Customer</a></li>
+                <!-- <li><a class="dropdown-item" href="#">PHP</a></li> -->
+                <!-- <li><a class="dropdown-item" href="#">JavaScript</a></li> -->
+                <!-- <li><a class="dropdown-item" href="#">HTML</a></li> -->
+  
+                <!-- <li class="CourseCategoryDropDown">Web Development</li>
+                <li><a class="dropdown-item" href="#">Angular</a></li>
+                <li><a class="dropdown-item" href="#">PHP</a></li>
+                <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                <li><a class="dropdown-item" href="#">HTML</a></li> -->
+                <li>
+                  <hr class="by-dropdown-divider">
+                </li>
+                <li class="by-course-category-dropdown">MS Office</li>
+                <li><a name="msExcel" class="dropdown-item by-dropdown-link" routerLink="./msExcel" (click)="disableMe($event, '')">MS Excel</a></li>
+                <li><a name="msWord" class="dropdown-item by-dropdown-link" routerLink="./msWord" (click)="disableMe($event, '')">MS Word</a></li>
+                <li><a name="msPowerPoint" class="dropdown-item by-dropdown-link" routerLink="./msPowerPoint" (click)="disableMe($event, '')">MS Powerpoint</a></li>
+              </ul>
+            </li>
+  
+            <li class="nav-item by-nav-item">
+              <a name="infozime" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'active-menu': infozimeActive}" routerLink="./infozime" (click)="disableMe($event, '')">Infozime</a>
+            </li>
+  
+            <li class="nav-item by-nav-item">
+              <a name="tools" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'active-menu': toolsActive}" routerLink="./tools" (click)="disableMe($event, '')">Tools</a>
+            </li>
+  
+            <li class="nav-item by-nav-item">
+              <a name="tools" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'active-menu': toolsActive}" routerLink="./aboutUs" (click)="disableMe($event, '')">About Us</a>
+            </li>
+         
+           
+            <!-- <li class="nav-item">
+            </li>
+            <li class="nav-item"> -->
+            <!-- <button class="btn btn-outline-primary loginButton">Login</button> -->
+            <!-- </li> -->
+  
+          </ul> <!-- ========== END OF NAVBAR LIST -->
+  
+  
+  
+  
+  
+          <!-- <form class="d-flex">
+            <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+  
+        </div> <!-- ========== END OF NAVBAR - COLLAPSE -->
+      </div> <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
+    </nav> <!-- ========== END OF NAVBAR -->
+  </div>
+  <!-- ========== END OF col-2  -->
+  
+
+
+
   </div>
 
 
-  <nav class="navbar by-navbar navbar-expand-sm navbar-light bg-light fixed-top">
-    <div class="container-fluid by-navbar-container">
-
-      <!-- <a class="navbar-brand by-brand" href="#"> 
-        <img src="../assets/icon.svg" alt="Bright Youth Icon">
-        Bright<span>Youth</span><span class="org">.org</span>
-      </a> -->
-
-      
-
-      <button class="navbar-toggler by-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-<!-- collapse navbar-collapse -->
-      <div class=" by-collapse" id="navbarSupportedContent">
-
-        <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item by-nav-item">
-            <a name="home" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': homeActive}" routerLink="./home" (click)="disableMe($event)">Home</a>
-          </li>
-          <!-- <li class="nav-item by-nav-item">
-            <a name="aboutUs" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': aboutUsActive}" routerLink="/aboutUs" (click)="disableMe($event)">About Us</a>
-          </li> -->
-          <li class="nav-item by-nav-item">
-            <a name="shopping" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': shoppingActive}" routerLink="./shopping" (click)="disableMe($event)" >Shop Now</a>
-            <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
-          </li>
-          
-          <li class="nav-item by-nav-item">
-            <a name="courses" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)" >Courses</a>
-            <!-- <a [routerLink]="['/edit', client.clientId]">Edit</a> -->
-          </li>
-
-          <li class="nav-item by-nav-item by-dropdown dropdown d-none">
-            <a name="courses" class="nav-link by-nav-link-dropdown by-bolder-font dropdown-toggle" href="#" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)">
-              Courses ▼
-            </a>
-            <ul class="dropdown-menu by-dropdown-menu" aria-labelledby="navbarDropdown">
-              <!-- <li><a name="coursesHome" class="dropdown-item by-dropdown-link" routerLink="./courses" (click)="disableMe($event)">BrightYouth Courses</a></li> -->
-              <li><a name="coursesHome" class="dropdown-item by-dropdown-link" [ngClass]="{'activeMenu': coursesActive}" routerLink="./courses" (click)="disableMe($event)">BrightYouth Courses</a></li>
-              
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li class="CourseCategoryDropDown">Marketing</li>
-              <li><a name="kyCustomer" class="dropdown-item by-dropdown-link" routerLink="./kyCustomer" (click)="disableMe($event)">Know Your Customer</a></li>
-              <!-- <li><a class="dropdown-item" href="#">PHP</a></li> -->
-              <!-- <li><a class="dropdown-item" href="#">JavaScript</a></li> -->
-              <!-- <li><a class="dropdown-item" href="#">HTML</a></li> -->
-
-              <!-- <li class="CourseCategoryDropDown">Web Development</li>
-              <li><a class="dropdown-item" href="#">Angular</a></li>
-              <li><a class="dropdown-item" href="#">PHP</a></li>
-              <li><a class="dropdown-item" href="#">JavaScript</a></li>
-              <li><a class="dropdown-item" href="#">HTML</a></li> -->
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li class="CourseCategoryDropDown">MS Office</li>
-              <li><a name="msExcel" class="dropdown-item by-dropdown-link" routerLink="./msExcel" (click)="disableMe($event)">MS Excel</a></li>
-              <li><a name="msWord" class="dropdown-item by-dropdown-link" routerLink="./msWord" (click)="disableMe($event)">MS Word</a></li>
-              <li><a name="msPowerPoint" class="dropdown-item by-dropdown-link" routerLink="./msPowerPoint" (click)="disableMe($event)">MS Powerpoint</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item by-nav-item">
-            <a name="infozime" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': infozimeActive}" routerLink="./infozime" (click)="disableMe($event)">Infozime</a>
-          </li>
-
-          <li class="nav-item by-nav-item">
-            <a name="tools" class="nav-link by-nav-link-menu by-bolder-font" [ngClass]="{'activeMenu': toolsActive}" routerLink="./tools" (click)="disableMe($event)">Tools</a>
-          </li>
-       
-          <li class="nav-item by-nav-useritem">
-            <div class="d-flex registrationContainer" *ngIf="blnUserLogin===true">
-              <a name="register" class="registerButton" [ngClass]="{'activeUserOption': registerActive}"  routerLink="./userAccount/register" (click)="disableMe($event)">Register</a>
-              <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
-              <a name="login" class="loginButton" [ngClass]="{'activeUserOption': loginActive}" routerLink="./userAccount/login" (click)="disableMe($event)">Login</a>
-            </div>
-
-            <div class="d-flex registrationContainer" *ngIf="blnUserLogin===false">
-              <!-- <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">User Home</a> -->
-              <a class=" registerButton" routerLink="/Profile">Profile</a>
-              <a class=" pipeSeparater" href="#" tabindex="-1"> | </a>
-              <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
-              <a class=" loginButton" (click)="logout()">Logout</a>
-            </div>
-
-            <!-- <button class="btn btn-outline-primary registerButton">Register</button> -->
-          </li>
-          <!-- <li class="nav-item">
-          </li>
-          <li class="nav-item"> -->
-          <!-- <button class="btn btn-outline-primary loginButton">Login</button> -->
-          <!-- </li> -->
-
-        </ul> <!-- ========== END OF NAVBAR LIST -->
 
 
-
-
-
-        <!-- <form class="d-flex">
-          <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
-
-      </div> <!-- ========== END OF NAVBAR - COLLAPSE -->
-    </div> <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
-  </nav> <!-- ========== END OF NAVBAR -->
 
   <!-- <a  href="https://brightyouth.org">  -->
   <!-- <div class="by-brand d-flex fixed-top">
@@ -150,7 +154,27 @@
 
 </div> <!-- ========== END OF BODY -->
 
-<div class="footer">
-  footer is not ready
+<!-- <div class="footer"> -->
+  <!-- footer is not ready -->
   <!-- <app-footer></app-footer> -->
-</div>
+<!-- </div> -->
+
+
+<!-- <li class="nav-item by-nav-user-item visually-hidden">
+  <div class="d-flex by-registration-container" *ngIf="blnUserLogin===true">
+    <a name="register" class="by-register-button" [ngClass]="{'active-user-option': registerActive}"  routerLink="./userAccount/register" (click)="disableMe($event, '')">Register</a>
+    <a class="by-pipe-separater" href="#" tabindex="-1"> | </a>
+    <a name="login" class="by-login-button" [ngClass]="{'active-user-option': loginActive}" routerLink="./userAccount/login" (click)="disableMe($event, '')">Login</a>
+  </div>
+
+  <div class="d-flex by-registration-container" *ngIf="blnUserLogin===false"> -->
+    <!-- <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">User Home</a> -->
+    <!-- <a class="by-register-button" routerLink="/Profile">Profile</a>
+    <a class="by-pipe-separater" href="#" tabindex="-1"> | </a> -->
+    <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
+    <!-- <a class="by-login-button" (click)="logout()">Logout</a>
+  </div> -->
+
+  <!-- <button class="btn btn-outline-primary registerButton">Register</button> -->
+<!-- </li> -->

@@ -1,74 +1,604 @@
-<div class="by-container ">
+<div class="by-container">
+  <nav class="navbar navbar-expand bg-light by-navbar by-text18">
+    <div class="container-fluid by-navbar-container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerHome"
+        aria-controls="navbarTogglerHome"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <nav class="navbar navbar-expand bg-light by-navbar by-Text18">
+      <div class="collapse navbar-collapse by-collapse" id="navbarTogglerHome">
+        <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item by-nav-item">
+            <a
+              name="hazara"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': hazaraActive }"
+              routerLink="./hazra"
+              (click)="disableMe($event, '')"
+              >Hazara آزرہ</a
+            >
+          </li>
 
-        <div class="container-fluid by-navbar-container">
+          <li class="nav-item by-nav-item">
+            <a
+              name="islam"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': islamActive }"
+              routerLink="./islam"
+              (click)="disableMe($event, '')"
+              >Islam</a
+            >
+          </li>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerHome" aria-controls="navbarTogglerHome" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse by-collapse" id="navbarTogglerHome">
+          <li class="nav-item by-nav-item">
+            <a
+              name="politics"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': politicsActive }"
+              routerLink="./politics"
+              (click)="disableMe($event, '')"
+              >Politics</a
+            >
+          </li>
 
-            <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item by-nav-item">
+            <a
+              name="education"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': educationActive }"
+              routerLink="./education"
+              (click)="disableMe($event, '')"
+              >Education</a
+            >
+          </li>
 
-              <li class="nav-item by-nav-item">
-                <a name="hazara" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': hazaraActive}" routerLink="./hazra" (click)="disableMe($event)">Hazara آزرہ</a>
-              </li>
+          <li class="nav-item by-nav-item">
+            <a
+              name="sports"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': sportsActive }"
+              routerLink="./sports"
+              (click)="disableMe($event, '')"
+              >Sports</a
+            >
+          </li>
 
-              <li class="nav-item by-nav-item">
-                <a name="islam" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': islamActive}" routerLink="./islam" (click)="disableMe($event)">Islam</a>
-              </li>
+          <li class="nav-item by-nav-item">
+            <a
+              name="entertainment"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ 'active-menu': entertainmentActive }"
+              routerLink="./entertainment"
+              (click)="disableMe($event, '')"
+              >Entertainment</a
+            >
+          </li>
+        </ul>
+        <!-- ========== END OF NAVBAR - List -->
+      </div>
+      <!-- ========== END OF NAVBAR - COLLAPSE -->
 
-              <li class="nav-item by-nav-item">
-                <a name="politics" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': politicsActive}" routerLink="./politics" (click)="disableMe($event)">Politics</a>
-              </li>
+      <div class="d-flex by-date by-text14">
+        <p class="me-3">{{ today | date: "fullDate" }}</p>
+        <!-- <p class="me-3">{{todayGreg}}</p> -->
+        <!-- <a class="me-3 by-pipe-separater" href="#" tabindex="-1"> | </a> -->
+        <!-- <span class="me-3">{{today | date:'shortTime' }}</span> -->
+        <a class="me-3 by-pipe-separater" href="#" tabindex="-1"> | </a>
+        <span class="me-3 by-textbold">{{ todayPersian }}</span>
+        <a class="me-3 by-pipe-separater" href="#" tabindex="-1"> | </a>
+        <span class="me-0 by-textbold">{{ todayArabic }}</span>
+      </div>
+      <!-- ========== END OF DATE - Div -->
+    </div>
+    <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
+  </nav>
+  <!-- ========== END OF NAVBAR -->
 
-              <li class="nav-item by-nav-item">
-                <a name="education" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': educationActive}" routerLink="./education" (click)="disableMe($event)">Education</a>
-              </li>
+  <div class="hero">
+    <picture class="by-hero-bg">
+      <source
+        media="(min-width:871px)"
+        srcset="../../assets/hazara/bamyanWallpaper1280x649.jpg"
+      />
+      <source
+        media="(min-width:509px)"
+        srcset="../../assets/hazara/bamyanWallpaper870x652.jpg"
+      />
+      <!-- <source media="(max-width:508px)" srcset="../../assets/hazara/bamyanWallpaper508x660.jpg"> -->
+      <img
+        src="../../assets/hazara/bamyanWallpaper508x660.jpg"
+        alt="Flowers"
+        style="width: 100%"
+      />
+    </picture>
+    <!-- 
+    <img
+    class="by-hero-bg img-fluid"
+    src="../../assets/hazara/bamyanWallpaper.jpg"
+    alt="background wallpaper"
+  /> -->
 
-              <li class="nav-item by-nav-item">
-                <a name="sports" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': sportsActive}" routerLink="./sports" (click)="disableMe($event)">Sports</a>
-              </li>
+    <img
+      class="by-hero-front img-fluid"
+      src="../../assets/brightestFront.png"
+      alt="background wallpaper"
+    />
 
-              <li class="nav-item by-nav-item">
-                <a name="entertainment" class="nav-link by-nav-link-menu by-bolder-font" aria-current="page" [ngClass]="{'activeMenu': entertainmentActive}" routerLink="./entertainment" (click)="disableMe($event)">Entertainment</a>
-              </li>
+    <!-- <br />
+      <span class="by-slogan"
+        ><i>Let's build our youth to the brightest.</i></span
+      > -->
 
-            </ul> <!-- ========== END OF NAVBAR - List -->
+    <div class="by-buttons">
+      <button class="btn by-btn-brightest by-primary-button">
+        Explore Brightests
+      </button>
+      <button class="btn by-btn-more-news by-orange-button">More News</button>
+    </div>
+    <!-- </div> -->
+    <!-- ========== END OF title -->
+  </div>
+  <!-- ========== END OF HERO -->
+  <div class="by-news-cards">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="by-news-card">
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-playIcon"
+              src="../../assets/playIcon.png"
+              alt="play icon"
+            />
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/accident1.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading by-right-to-left">
+              <span class="blue by-right-to-lef by-margin10">
+                دہ شہر کوئیتہ
+              </span>
+              <span class="orange byright-to-left">حادثہ ترافیکی یک طفل </span>
+            </p>
+            <p class="by-news-card-para by-right-to-left by-margin10" style="margin-top: 315px">
+              بہ اطلاع شمو قوما بیرسانوم کی دہ شہر کوئیتہ، پاکستان، د سرک میجر
+              محمدعلی شہید، یک طفل کمتر از 10 سال دوچار حادثہ ترافیکی موشہ و
+              خوشبختانہ ھیج ظرر نہ مینگرنہ ۔ <br />
+              بہ جائی افسوس کی موتر والا از امزو جائی فرار مونہ۔<br />
+              شاہدین ای قضیہ موگیہ کی او موتروان یک زن بودہ۔
+            </p>
 
-            
-          </div> <!-- ========== END OF NAVBAR - COLLAPSE -->
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 17, 2022</span>
 
-          <div class="d-flex by-date by-Text14">
-            <p class="me-3">{{today | date:'fullDate'}}</p>
-            <!-- <p class="me-3">{{todayGreg}}</p> -->
-            <!-- <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a> -->
-            <!-- <span class="me-3">{{today | date:'shortTime' }}</span> -->
-            <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a>
-            <span class="me-3 by-TextBold">{{todayPersian}}</span>
-            <a class="me-3 pipeSeparater" href="#" tabindex="-1"> | </a>
-            <span class="me-0 by-TextBold">{{todayArabic}}</span>
-          </div>  <!-- ========== END OF DATE - Div -->
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/AlamdarRoadQuetta72/posts/pfbid0K6tWff3KAy4s9n4Z5HFAhf4zmLJuGJFQqJN5ouJw12isZQ1FEPuvPnLVifaVWFqbl"
+                >
+                  facebook / AlamdarRoadQuetta72
+                </a>
+              </p>
+            </div>
 
-        </div> <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
-      </nav> <!-- ========== END OF NAVBAR -->
-
-      <div class="hero clip">
-        <div class="images">
-          <img class="babaMazari" src="../../assets/hazara/LeaderBabaMazari.jpg" alt="shaheed baba mazari picture">
-          <!-- <img class="budha" src="../../assets/hazara/budha.jpg" alt="budha picture"> -->
-          <!-- <img class="mariabad" src="../../assets/hazara/mariabad.jpg" alt="mariabad picture"> -->
-          <img class="simaSamar" src="../../assets/hazara/leaderSimaSamar.jpg" alt="sima samar picture">
-          <img class="yusufi" src="../../assets/hazara/politicsHussainAliYusufi.jpg" alt="shaheed Yusufi picture">
-          <img class="mohaqeq" src="../../assets/hazara/politicsMohaqiq2.jpg" alt="mohammad mohaqeq picture">
-          <img class="khalili" src="../../assets/hazara/politicsKhalili2.jpg" alt="karim khalili picture">
-          <img class="behjati" src="../../assets/hazara/religiousKazimBehjati.jpg" alt="kazim behjati picture">
-          <img class="khaliq" src="../../assets/hazara/politicsAbdulKhaliq3Cropped.jpg" alt="abdul khaliq picture">
-          <img class="tahirKhan" src="../../assets/hazara/politicsTahirKhanCropped.jpg" alt="marhoom tahir khan picture">
-
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+          <!-- ========== END OF News Cards -->
         </div>
-      </div> <!-- ========== END OF HERO -->
+        <!-- ========== END OF 1st Column -->
+        <div class="col-4">
+          <div class="by-news-card">
+            <!-- <img data-bs-toggle="modal"
+            data-bs-target="#exampleModalFullscreen"
+            class="by-playIcon"
+            src="../../assets/playIcon.png"
+            alt="play icon"
+          /> -->
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/brightest-Mr-Ezzat-Ali.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading" style="margin-left: 10px">
+              <span class="blue"> Mr. Ezzat Ali </span>
+              <span class="normal">
+                achieved his
+              </span>
+              <span class="orange">Bachelor of Commerce</span>
+              <span class="normal"> degree</span>
+            </p>
+            <p class="by-news-card-para" style="margin-top: 350px">
+              Mr. Ezzat Ali has achieved his Bachelor of Commerce from
+              <b>Baluchistan University</b>.
+            </p>
 
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 18, 2022</span>
+
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/photo/?fbid=139203522235551&set=a.116684387820798"
+                >
+                  facebook / Geo Hazara & Hazara Vibes
+                </a>
+              </p>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 2nd Column -->
+        <div class="col-4">
+          <div class="by-news-card">
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/brightest-Ms-Hajira-Batool.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading" style="margin-left: 10px">
+              <span class="blue"> Miss Hajira </span>
+              <span class="normal"> achieved her </span>
+              <span class="orange">Bachelor of Commerce</span>
+              <span class="normal" style="font-weight: 15px"> degree</span>
+            </p>
+            <p class="by-news-card-para" style="margin-top: 350px">
+              Miss Hajira has achieved her Bachelor of Commerce from
+              <b>Baluchistan University</b>.
+            </p>
+
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 18, 2022</span>
+
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/photo?fbid=139219945567242&set=a.116684387820798"
+                >
+                  facebook / Geo Hazara & Hazara Vibes
+                </a>
+              </p>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 3rd Column -->
+      </div>
+      <!-- ========== END OF News - Row 1 -->
+
+      <div class="row" style="margin-top: 20px">
+        <div class="col-4">
+          <div class="by-news-card">
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-playIcon"
+              src="../../assets/playIcon.png"
+              alt="play icon"
+            />
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/accident1.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading by-right-to-left">
+              <span class="blue by-right-to-lef by-margin10">
+                دہ شہر کوئیتہ
+              </span>
+              <span class="orange byright-to-left">حادثہ ترافیکی یک طفل </span>
+            </p>
+            <p class="by-news-card-para by-right-to-left by-margin10">
+              بہ اطلاع شمو قوما بیرسانوم کی دہ شہر کوئیتہ، پاکستان، د سرک میجر
+              محمدعلی شہید، یک طفل کمتر از 10 سال دوچار حادثہ ترافیکی موشہ و
+              خوشبختانہ ھیج ظرر نہ مینگرنہ ۔ <br />
+              بہ جائی افسوس کی موتر والا از امزو جائی فرار مونہ۔<br />
+              شاہدین ای قضیہ موگیہ کی او موتروان یک زن بودہ۔
+            </p>
+
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 17, 2022</span>
+
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/AlamdarRoadQuetta72/posts/pfbid0K6tWff3KAy4s9n4Z5HFAhf4zmLJuGJFQqJN5ouJw12isZQ1FEPuvPnLVifaVWFqbl"
+                >
+                  facebook / AlamdarRoadQuetta72
+                </a>
+              </p>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+        <div class="col-4">
+          <div class="by-news-card">
+            <!-- <img data-bs-toggle="modal"
+            data-bs-target="#exampleModalFullscreen"
+            class="by-playIcon"
+            src="../../assets/playIcon.png"
+            alt="play icon"
+          /> -->
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/brightest-Mr-Ezzat-Ali.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading" style="margin-left: 10px">
+              <span class="blue"> Mr. Ezzat Ali </span>
+              <span class="normal" style="font-weight: 15px">
+                achieved his
+              </span>
+              <span class="orange">Bachelor of Commerce</span>
+              <span class="normal" style="font-weight: 15px"> degree</span>
+            </p>
+            <p class="by-news-card-para" style="margin-top: 80px">
+              Mr. Ezzat Ali has achieved his Bachelor of Commerce from
+              <b>Baluchistan University</b>.
+            </p>
+
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 18, 2022</span>
+
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/photo/?fbid=139203522235551&set=a.116684387820798"
+                >
+                  facebook / Geo Hazara & Hazara Vibes
+                </a>
+              </p>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 2nd Column -->
+        <div class="col-4">
+          <div class="by-news-card">
+            <img
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalFullscreen"
+              class="by-news-card-img"
+              src="../../assets/hazara/news/brightest-Ms-Hajira-Batool.jpg"
+              alt="news picture"
+            />
+            <img
+              class="by-news-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            <p class="by-news-card-heading" style="margin-left: 10px">
+              <span class="blue"> Miss Hajira </span>
+              <span class="normal"> achieved her </span>
+              <span class="orange">Bachelor of Commerce</span>
+              <span class="normal" style="font-weight: 15px"> degree</span>
+            </p>
+            <p class="by-news-card-para" style="margin-top: 80px">
+              Miss Hajira has achieved her Bachelor of Commerce from
+              <b>Baluchistan University</b>.
+            </p>
+
+            <div class="by-border-top by-news-card-footer">
+              <span class="source">Dated:</span>
+              <span class="link">Nov 18, 2022</span>
+
+              <p class="by-news-card-source">
+                <span class="source">Source: </span>
+                <a
+                  class="link"
+                  href="https://www.facebook.com/photo?fbid=139219945567242&set=a.116684387820798"
+                >
+                  facebook / Geo Hazara & Hazara Vibes
+                </a>
+              </p>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary"
+             data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Watch Video</button> -->
+          </div>
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 3rd Column -->
+      </div>
+      <!-- ========== END OF News - Row 2 -->
+    </div>
+    <!-- ========== END OF News - Container -->
+  </div>
+  <!-- ========== END OF News Cards -->
+
+  <div class="by-categories-cards">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="by-categories-card">
+            <img
+              class="by-categories-card-img"
+              src="../../assets/hazara/thumbnails/hazaraCulture4.jpg"
+              alt="categories picture"
+            />
+
+            <span class="by-title">HAZARAGI CULTURE</span>
+          </div>
+          <!-- ========== END OF Category Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+
+        <div class="col">
+          <div class="by-categories-card">
+            <img
+              class="by-categories-card-img"
+              src="../../assets/hazara/thumbnails/muharramQuetta.jpg"
+              alt="categories picture"
+            />
+            <span class="by-title">RELIGIOUS EVENT</span>
+          </div>
+          <!-- ========== END OF Category Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+
+        <div class="col">
+          <div class="by-categories-card">
+            <img
+              class="by-categories-card-img"
+              src="../../assets/hazara/thumbnails/politics.jpg"
+              alt="categories picture"
+            />
+
+            <span class="by-title">POLITICS</span>
+          </div>
+          <!-- ========== END OF Category Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+
+        <div class="col">
+          <div class="by-categories-card">
+            <img
+              class="by-categories-card-img"
+              src="../../assets/hazara/thumbnails/education.jpg"
+              alt="categories picture"
+            />
+
+            <span class="by-title">EDUCATION</span>
+          </div>
+          <!-- ========== END OF Category Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+
+        <div class="col">
+          <div class="by-categories-card">
+            <img
+              class="by-categories-card-img"
+              src="../../assets/hazara/thumbnails/world.jpg"
+              alt="categories picture"
+            />
+
+            <span class="by-title">WORLD</span>
+          </div>
+          <!-- ========== END OF Category Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+      </div>
+      <!-- ========== END OF Categories - Row -->
+    </div>
+    <!-- ========== END OF Categories - Container -->
+  </div>
+  <!-- ========== END OF Categories Cards -->
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModalFullscreen"
+  tabindex="-1"
+  data-bs-backdrop="static"
+  aria-labelledby="exampleModalFullscreenLabel"
+  style="display: none"
+  aria-hidden="true"
+>
+  <!-- <div class="modal-dialog modal-fullscreen"> -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Video</h1>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body by-text-center">
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F100077982327183%2Fvideos%2F449922403887885%2F&show_text=false&width=319&t=0"
+          width="319"
+          height="476"
+          style="border: none; overflow: hidden"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen="true"
+        ></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

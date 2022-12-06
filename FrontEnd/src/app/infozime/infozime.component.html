@@ -1,3 +1,308 @@
-<p>infozime works!</p>
+<div class="by-container">
+  <nav class="navbar navbar-expand bg-light by-navbar by-Text18">
+    <div class="container-fluid by-navbar-container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerInfoZime"
+        aria-controls="navbarTogglerInfoZime"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<p>{{mydate | date:'long'}}</p>
+      <div
+        class="collapse navbar-collapse by-collapse"
+        id="navbarTogglerInfoZime"
+      >
+        <ul class="navbar-nav by-navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item by-nav-item">
+            <a
+              name="main"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: mainActive }"
+              routerLink="./main"
+              (click)="disableMe($event, '')"
+              >Main</a
+            >
+          </li>
+
+          <li class="nav-item by-nav-item">
+            <a
+              name="store"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: storeActive }"
+              routerLink="./store"
+              (click)="disableMe($event, '')"
+              >Store</a
+            >
+          </li>
+
+          <li class="nav-item by-nav-item">
+            <a
+              name="grancee"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: granceeActive }"
+              routerLink="./grancee"
+              (click)="disableMe($event, '')"
+              >Grancee</a
+            >
+          </li>
+
+          <li class="nav-item by-nav-item">
+            <a
+              name="knowKarachi"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: knowKarachiActive }"
+              routerLink="./knowKarachi"
+              (click)="disableMe($event, '')"
+              >Know Karachi</a
+            >
+          </li>
+
+          <li class="nav-item by-nav-item">
+            <a
+              name="bizMarketing"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: bizMarketingActive }"
+              routerLink="./bizMarketing"
+              (click)="disableMe($event, '')"
+              >Business and Marketing</a
+            >
+          </li>
+
+          <li class="nav-item by-nav-item">
+            <a
+              name="about"
+              class="nav-link by-nav-link-menu by-bolder-font"
+              aria-current="page"
+              [ngClass]="{ activeMenu: aboutActive }"
+              routerLink="./about"
+              (click)="disableMe($event, '')"
+              >About</a
+            >
+          </li>
+        </ul>
+        <!-- ========== END OF NAVBAR - List -->
+      </div>
+      <!-- ========== END OF NAVBAR - COLLAPSE -->
+    </div>
+    <!-- ========== END OF NAVBAR - CONTAINER FLUIDE -->
+  </nav>
+  <!-- ========== END OF NAVBAR -->
+
+  <div class="hero">
+    <img
+      class="gradientBG"
+      src="../../assets/HeroGradientBG.png"
+      alt="background shape"
+    />
+
+    <div class="title">
+      <span class="info">Info</span>
+      <span class="zime">Zime</span>
+      <br />
+      <br />
+      <span class="bright">towards</span>
+      <span class="information">BRIGHTNESS</span>
+
+      <br />
+
+      <button class="btn btnBrightest by-PrimaryButton">
+        Explore More
+      </button>
+      <!-- <button class="btn btnMoreNews by-OrangeButton">More News</button> -->
+    </div>
+    <!-- ========== END OF title -->
+  </div>
+  <!-- ========== END OF HERO -->
+
+  <div class="articleCards">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="by-article-card">
+            <div class="by-article-card-row-image">
+            <img
+              class="by-article-card-img"
+              src="../../assets/infozime/customers-needs-and-wants.jpeg"
+              alt="customer needs and wants picture"
+            />
+          </div>
+          <div class="by-article-card-row-svgbg">
+            <img
+              class="by-article-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+          </div>
+            <div class="container-fluid by-card-content">
+              <div class="by-article-card-heading">
+                <span class="orange">Customer's </span>
+                <span class="blue">Need and </span>
+                <span class="blue">Requirements </span>
+                <span class="orange2">at Peak</span>
+              </div>
+              <div class="by-article-card-row">
+                <div class="by-article-card-para">
+                  Know your customer's need and requirements: Life-Changing, Social Impact, 
+                  Emotions, Functions.  Remember! Never Trick or Cheat a Customer
+                </div>
+              </div>
+              <div class="by-article-card-source">
+                <span class="source">Continue Reading: </span>
+                <a
+                  class="link"
+                  href="https://brightyouth.org/infozime/blogCNAndRAtP"
+                  >Click Here</a
+                >
+              </div>
+            </div>
+            <!-- end of by-card-content -->
+          </div>
+          <!-- ========== END OF Card -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+        <div class="col-4">
+          <div class="by-article-card">
+            <div class="by-article-card-row-image">
+              <img
+                class="by-article-card-img"
+                src="../../assets/infozime/CRM.png"
+                alt="customer needs and wants picture"
+              />
+            </div>
+            <div class="by-article-card-row-svgbg">
+            <img
+              class="by-article-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+            </div>
+            <div class="container-fluid by-card-content">
+              <div class="by-article-card-heading">
+                <span class="orange">Introduction to  </span>
+                <span class="blue">Customer Management</span>
+                <!-- <span class="blue">Requirements </span> -->
+                <!-- <span class="orange2">at Peak</span> -->
+              </div>
+              <div class="by-article-card-row">
+                <div class="by-article-card-para">
+                  By Ali Haider ( Infozime) I live in Karachi, Pakistan , where you may find different 
+                  types of customers (age, behavior, a difference of gender, etc) at a single shop. 
+                  As being a customer I myself behaved like other customers in a timely manner at a 
+                  single shop. The daily life of a customer living in Pakistan.
+                </div>
+              </div>
+              <div class="by-article-card-source">
+                <span class="source">Continue Reading: </span>
+                <a
+                  class="link"
+                  href="https://brightyouth.org/infozime/blogCNAndRAtP"
+                  >Click Here</a
+                >
+              </div>
+            </div>
+            <!-- end of by-card-content -->
+          </div>
+          <!-- ========== END OF Card -->
+        </div>
+        <!-- ========== END OF 2nd Column -->
+        <div class="col-4">
+          <div class="by-article-card">
+            <div class="by-article-card-row-image">
+            <img
+              class="by-article-card-img"
+              src="../../assets/infozime/Thinking.jpg"
+              alt="customer needs and wants picture"
+            />
+          </div>
+          <div class="by-article-card-row-svgbg">
+            <img
+              class="by-article-card-svg"
+              src="../../assets/Shape_Horizontal_Upward.svg"
+              alt="shape"
+            />
+          </div>
+            <div class="container-fluid by-card-content">
+              <div class="by-article-card-heading">
+                <span class="orange">Customer's </span>
+                <span class="blue">Problem and Solutions </span>
+              </div>
+              <div class="by-article-card-row">
+                <div class="by-article-card-para">
+                  An amazing post for reading in a peaceful environment The amazing topic 
+                  I have decided to clear for everyone reading here on this post. Before 
+                  starting please like us on Facebook (AHF Platform - The Marketer). 
+                  Huh! customer's problem, I am tired of listening to ladies sitting at a shop of
+                </div>
+              </div>
+              <div class="by-article-card-source">
+                <span class="source">Continue Reading: </span>
+                <a
+                  class="link"
+                  href="https://brightyouth.org/infozime/blogCNAndRAtP"
+                  >Click Here</a
+                >
+              </div>
+            </div>
+            <!-- end of by-card-content -->
+          </div>
+          <!-- ========== END OF Card -->
+        </div>
+        <!-- ========== END OF 3rd Column -->
+      </div>
+      <!-- ========== END OF News - Row -->
+    </div>
+    <!-- ========== END OF News - Container -->
+  </div>
+  <!-- ========== END OF Articles Cards -->
+
+  <div class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="left-side">
+            <div class="by-about-us-text">about us</div>
+            <img
+              class="by-aboutus-shape"
+              src="../../assets/infozime/aboutUs_shape.png"
+              alt="picture"
+            />
+            <img
+              class="by-boutus-man"
+              src="../../assets/infozime/aboutUs_man.svg"
+              alt="picture"
+            />
+          </div>
+          <!-- ========== END OF News Cards -->
+        </div>
+        <!-- ========== END OF 1st Column -->
+        <div class="col-6">
+          <div class="right-side">
+            <p class="by-about-card-para">
+              Info on computers, Computer websites & applications, Softwares
+              (Earnings, Marketing SEO, PPC, Digital Marketing, Social Media
+              Management, Youtubing, Facebooking, Learning, Tutorials, latest
+              technologies, tips, tricks, reviews, feedback), and More,
+            </p>
+            <br />
+            <button class="btn btnMoreAbout by-OrangeButton">More about InfoZime</button>
+          </div>
+          <!-- ========== END OF 2nd Column -->
+        </div>
+        <!-- ========== END OF about - Row -->
+      </div>
+      <!-- ========== END OF about - Container -->
+    </div>
+    <!-- ========== END OF about -->
+  </div>
+  <!-- ========== END OF BY-CONTAINER -->
+</div>

@@ -1,0 +1,368 @@
+[
+    {
+      "serial": "0",
+      "active": "active-menu",
+      "lessonName": "toc",
+      "title": "Table of Content"
+    },
+    {
+      "serial": "1",
+      "active": "",
+      "lessonName": "BKeepFTransFEvent",
+      "title": "Bookeeping, Financial Transaction & Event"
+    },
+    {
+      "serial": "2",
+      "active": "",
+      "lessonName": "RecordingAndTrack",
+      "title": "Recording And Tracking"
+    },
+    {
+      "serial": "3",
+      "active": "",
+      "lessonName": "GAAP",
+      "title": "Gaap"
+    },
+    {
+      "serial": "4",
+      "active": "",
+      "lessonName": "AccPrinciples",
+      "title": "Accounting Principles"
+    },
+    {
+      "serial": "5",
+      "active": "",
+      "lessonName": "Assumptions",
+      "title": "Assumptions"
+    },
+    {
+      "serial": "6",
+      "active": "",
+      "lessonName": "Constraints",
+      "title": "Constraints"
+    },
+    {
+      "serial": "7",
+      "active": "",
+      "lessonName": "TheWordAcc",
+      "title": "The Word \"Account\""
+    },
+    {
+      "serial": "8",
+      "active": "",
+      "lessonName": "AccTypes",
+      "title": "Account Types"
+    },
+    {
+      "serial": "9",
+      "active": "",
+      "lessonName": "ChartOfAcc",
+      "title": "Chart Of Accounts"
+    },
+    {
+      "serial": "10",
+      "active": "",
+      "lessonName": "WhatIsAccounting",
+      "title": "What Is Accounting?"
+    },
+    {
+      "serial": "11",
+      "active": "",
+      "lessonName": "DefProcMethodSys",
+      "title": "Definitions Of Process, Method And System"
+    },
+    {
+      "serial": "12",
+      "active": "",
+      "lessonName": "AccSystem",
+      "title": "Accounting System"
+    },
+    {
+      "serial": "13",
+      "active": "",
+      "lessonName": "HistoryAcc",
+      "title": "History Of Accounting"
+    },
+    {
+      "serial": "14",
+      "active": "",
+      "lessonName": "TyesOfAccounting",
+      "title": "Types Of Accounting"
+    },
+    {
+      "serial": "15",
+      "active": "",
+      "lessonName": "CashAccrual",
+      "title": "Cash Vs. Accrual Basis Of Accounting"
+    },
+    {
+      "serial": "16",
+      "active": "",
+      "lessonName": "ImpactBusinessStra",
+      "title": "Impact Realizing And Business Strategy"
+    },
+    {
+      "serial": "17",
+      "active": "",
+      "lessonName": "AccCycle",
+      "title": "Accounting Cycle"
+    },
+    {
+      "serial": "18",
+      "active": "",
+      "lessonName": "AccEquation",
+      "title": "Accounting Equation"
+    },
+    {
+      "serial": "19",
+      "active": "",
+      "lessonName": "SalesNetIncome",
+      "title": "Sales, Net Sales And Net Income"
+    },
+    {
+      "serial": "20",
+      "active": "",
+      "lessonName": "AccEqForIS",
+      "title": "Accounting Equation For Income Statement"
+    },
+    {
+      "serial": "21",
+      "active": "",
+      "lessonName": "AccEqForAccP",
+      "title": "Accounting Equation for an Accounting Process"
+    },
+    {
+      "serial": "22",
+      "active": "",
+      "lessonName": "AccEqForCombAccP",
+      "title": "Accounting Equation for Combined Accounting Processes"
+    },
+    {
+      "serial": "23",
+      "active": "",
+      "lessonName": "AccEqExercise",
+      "title": "Accounting Equation - Exercise"
+    },
+    {
+      "serial": "24",
+      "active": "",
+      "lessonName": "DoubleESys",
+      "title": "Double Entry System"
+    },
+    {
+      "serial": "25",
+      "active": "",
+      "lessonName": "DoubleESysEx",
+      "title": "Double Entry System - Exercise"
+    },
+    {
+      "serial": "26",
+      "active": "",
+      "lessonName": "DoubleESysDC",
+      "title": "Double Entry System - Debit And Credit"
+    },
+    {
+      "serial": "27",
+      "active": "",
+      "lessonName": "DoubleESysDCEx",
+      "title": "Double Entry System - Debit And Credit - Exercise"
+    },
+    {
+      "serial": "28",
+      "active": "",
+      "lessonName": "BooksOfAcc",
+      "title": "Books Of Accounts"
+    },
+    {
+      "serial": "29",
+      "active": "",
+      "lessonName": "BooksOfAccJournal",
+      "title": "Books Of Accounts - Journal"
+    },
+    {
+      "serial": "30",
+      "active": "",
+      "lessonName": "SubJournal",
+      "title": "Subdivision Of Journal"
+    },
+    {
+      "serial": "31",
+      "active": "",
+      "lessonName": "SubJournalCR",
+      "title": "Sub-Journal - Cash Receipt"
+    },
+    {
+      "serial": "32",
+      "active": "",
+      "lessonName": "SubJournalCP",
+      "title": "Sub-Journal - Cash Payment"
+    },
+    {
+      "serial": "33",
+      "active": "",
+      "lessonName": "SubJournalPur",
+      "title": "Sub-Journal - Purchases"
+    },
+    {
+      "serial": "34",
+      "active": "",
+      "lessonName": "SubJournalPurRet",
+      "title": "Sub-Journal - Purchases Return"
+    },
+    {
+      "serial": "35",
+      "active": "",
+      "lessonName": "SubJournalSales",
+      "title": "Sub-Journal - Sales"
+    },
+    {
+      "serial": "36",
+      "active": "",
+      "lessonName": "SubJournalSalesRet",
+      "title": "Sub-Journal - Sales Return"
+    },
+    {
+      "serial": "37",
+      "active": "",
+      "lessonName": "SubJournalGJ",
+      "title": "Sub-Journal - General Journal"
+    },
+    {
+      "serial": "38",
+      "active": "",
+      "lessonName": "SubJournalPC",
+      "title": "Sub-Journal - Petty Cash"
+    },
+    {
+      "serial": "39",
+      "active": "",
+      "lessonName": "SubJournalPCRep",
+      "title": "Sub-Journal - Petty Cash Replanishment"
+    },
+    {
+      "serial": "40",
+      "active": "",
+      "lessonName": "CreditNotes",
+      "title": "Credit Notes"
+    },
+    {
+      "serial": "41",
+      "active": "",
+      "lessonName": "DebitNotes",
+      "title": "Debit Notes"
+    },
+    {
+      "serial": "42",
+      "active": "",
+      "lessonName": "BooksOfAccLedger",
+      "title": "Books Of Accounts - Ledger"
+    },
+    {
+      "serial": "43",
+      "active": "",
+      "lessonName": "BooksOfAccLedEx",
+      "title": "Books Of Accounts - Ledger - Exercise"
+    },
+    {
+      "serial": "44",
+      "active": "",
+      "lessonName": "TrialBalance",
+      "title": "Trial Balance"
+    },
+    {
+      "serial": "45",
+      "active": "",
+      "lessonName": "TrialBalanceEx",
+      "title": "Trial Balance - Exercise"
+    },
+    {
+      "serial": "46",
+      "active": "",
+      "lessonName": "FinStatement",
+      "title": "Financial Statement"
+    },
+    {
+      "serial": "47",
+      "active": "",
+      "lessonName": "FinStatementPL",
+      "title": "Financial Statement - Profit And Loss"
+    },
+    {
+      "serial": "48",
+      "active": "",
+      "lessonName": "FinStatementPLEx",
+      "title": "Financial Statement - Profit And Loss - Exercise"
+    },
+    {
+      "serial": "49",
+      "active": "",
+      "lessonName": "FinStatementBS",
+      "title": "Financial Statement - Balance Sheet"
+    },
+    {
+      "serial": "50",
+      "active": "",
+      "lessonName": "FinStatementBSEx",
+      "title": "Financial Statement - Balance Sheet - Exercise"
+    },
+    {
+      "serial": "51",
+      "active": "",
+      "lessonName": "FinStatementCF",
+      "title": "Financial Statement - Cash Flow"
+    },
+    {
+      "serial": "52",
+      "active": "",
+      "lessonName": "FinStatementCFD",
+      "title": "Financial Statement - Cash Flow - Direct Method"
+    },
+    {
+      "serial": "53",
+      "active": "",
+      "lessonName": "FinStatementCFI",
+      "title": "Financial Statement - Cash Flow - In-Direct Method"
+    },
+    {
+      "serial": "54",
+      "active": "",
+      "lessonName": "FinStatementCFDEx",
+      "title": "Financial Statement - Cash Flow - Direct Method - Exercise"
+    },
+    {
+      "serial": "55",
+      "active": "",
+      "lessonName": "FinStatementCFIEx",
+      "title": "Financial Statement - Cash Flow - In-Direct Method - Exercise"
+    },
+    {
+      "serial": "56",
+      "active": "",
+      "lessonName": "FinStatementOE",
+      "title": "Financial Statement - Owner's Equity"
+    },
+    {
+      "serial": "57",
+      "active": "",
+      "lessonName": "FinStatementOEEx",
+      "title": "Financial Statement - Owner's Equity - Exercise"
+    },
+    {
+      "serial": "58",
+      "active": "",
+      "lessonName": "ClosingEntries",
+      "title": "Closing Entries"
+    },
+    {
+      "serial": "59",
+      "active": "",
+      "lessonName": "ClosingEntriesEx",
+      "title": "Closing Entries - Exercise"
+    },
+    {
+      "serial": "60",
+      "active": "",
+      "lessonName": "ClosingEntriesEL",
+      "title": "Closing Entries - Effected Ledgers"
+    }
+  ]

@@ -1,0 +1,322 @@
+.by-container {
+    background-color: var(--Youth-Dim-Color) !important;
+    position: relative;
+    border-top: dashed 1.2px var(--Org-Color);
+
+    .activeMenu {
+        font-weight: bold;
+        color: var(--Bright-Color);
+    }
+
+    .by-navbar {
+        // position: absolute;
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        // opacity: 0.3;
+        top: 75px;
+        position: fixed;
+        width: 100% !important;
+        z-index: 80;
+
+
+        .by-navbar-container {
+            // position: relative;
+
+            background-color: rgba(255, 255, 255, 1) !important;
+            // opacity: 1;
+            padding: 1px 5px;
+
+            .by-collapse {
+                // margin-left: 350px;
+                // font-size: var(--BY-Text15);
+
+                // z-index: 82;
+
+                .by-navbar-nav {
+
+
+                    color: var(--Youth-Color);
+
+                    .by-nav-item {
+                        margin-right: 18px !important;
+
+                        .by-nav-link-menu {
+                            position: relative;
+
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                width: 30%;
+                                height: 2.5px !important;
+                                background: var(--Bright-Color);
+                                left: 0;
+                                bottom: 0;
+
+                                transform: scale(0, 1);
+                                transition: transform 0.3s ease;
+                            }
+
+                            &:hover::after {
+                                transform: scale(1, 1);
+                            }
+                        }
+
+                        .by-bolder-font {
+
+                            &:hover {
+                                color: var(--Bright-Color);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+
+        }
+
+
+    }
+
+    .hero {
+        width: 100%;
+        height: 670px;
+        background: url("../../assets/infozime/heroBg.jpg");
+        /* background-repeat: no-repeat; */
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        position: relative;
+
+        z-index: 5;
+
+        .gradientBG {
+            position: absolute;
+            margin: 140px 0 0 45px;
+            width: 580px;
+        }
+
+        .title {
+            padding-top: 160px;
+            margin-left: 80px;
+
+            position: relative;
+
+
+
+            .info {
+                color: var(--Youth-Color);
+                font-size: 80px;
+
+            }
+
+            .zime {
+                font-weight: bold;
+                font-size: 80px;
+                margin-left: 10px;
+                color: var(--Bright-Color);
+                text-shadow: 0 0 10px yellow;
+            }
+
+            .bright {
+                color: var(--Youth-Color);
+                font-size: 40px;
+                font-style: italic;
+                margin-top: 25px;
+            }
+
+            .information {
+                font-weight: bold;
+                font-style: italic;
+                font-size: 40px;
+                margin-top: 25px;
+                margin-left: 15px;
+                color: var(--Bright-Color);
+                text-shadow: 0 0 10px yellow;
+            }
+
+            .btnBrightest {
+                border: none;
+                padding: 0px 15px !important;
+                margin-top: 50px;
+
+                &:hover {
+                    color: var(--Bright-Color) !important;
+                }
+            }
+
+            .btnMorearticle {
+                border: none;
+                padding: 0px 20px !important;
+                margin-left: 20px;
+                margin-top: 50px;
+
+                &:hover {
+                    color: var(--Youth-Color) !important;
+                }
+            }
+
+            // padding: 0px 15px !important;
+            // margin-top: 50px;
+
+        }
+    }
+
+
+    .articleCards {
+        position: relative;
+        height: 565px;
+
+        margin-top: -55px;
+        z-index: 20;
+
+        .container {
+            // position: absolute;
+
+            .by-article-card {
+                background: white;
+                margin-top: 10px;
+                border: solid 4px white;
+                border-radius: 10px;
+                height: 497px;
+
+                .by-article-card-row-image {
+                    height: 220px;
+                    width: 100%;
+
+                    .by-article-card-img {
+                        border-radius: 10px;
+                        width: 100%;
+                    }
+                }
+
+                .by-article-card-row-svgbg {
+                    margin-top: -27px;
+                    width: 100%;
+
+                    .by-article-card-svg {
+                        width: 100%;
+                        // height: 100%;
+                    }
+                }
+
+                .by-card-content {
+                    height: 56%;
+                    margin-top: -187px;
+
+                    .row {
+                        margin: 0 !important;
+                    }
+
+                    .by-article-card-heading {
+                        display: flex;
+                        flex-wrap: wrap;
+                        z-index: 14;
+                        margin-left: 15px;
+                        height: 30%;
+                        font-size: 24px;
+                        font-weight: bold;
+
+                        .orange {
+                            color: var(--Bright-Color);
+                            margin-right: 5px;
+                        }
+
+                        .orange2 {
+                            color: var(--Bright-Color);
+                            margin-left: 5px;
+                        }
+
+                        .blue {
+                            text-decoration: none;
+                            color: var(--Youth-Color);
+                        }
+
+                    }
+
+                    .by-article-card-row {
+                        height: 55%;
+                        margin-top: 10px;
+
+                        .by-article-card-para {
+                            // width: 100% !important;
+                            // text-align: justify;
+                            margin-left: 15px;
+                            z-index: 14;
+                            // text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 5;
+                            overflow: hidden;
+
+                        }
+                    }
+
+                    .by-article-card-source {
+                        display: flex;
+                        flex-wrap: wrap;
+                        height: 30%;
+                        z-index: 14;
+                        margin-left: 15px;
+
+                        .source {
+                            color: var(--Youth-Color);
+                        }
+
+                        .link {
+                            text-decoration: none;
+                            color: var(--Bright-Color);
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+
+    .about {
+
+        margin-top: 80px;
+        padding-bottom: 130px;
+
+        .container {
+
+            .left-side {
+                position: relative;
+
+                .by-about-us-text {
+                    font-size: 115px;
+                    font-style: italic;
+                    transform: skew(34deg, -24deg);
+                }
+
+                .by-boutus-man {
+                    position: absolute;
+                    top: 49px;
+                    right: -67px;
+                    width: 298px;
+                    height: 222px;
+                }
+
+                .by-aboutus-shape {
+                    margin-top: -15px;
+                    width: 474px;
+                    height: 100px;
+                    transform: skew(10deg, -11deg);
+                }
+
+
+            }
+
+            .right-side {
+                padding: 0 50px;
+
+                .by-about-card-para {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+}

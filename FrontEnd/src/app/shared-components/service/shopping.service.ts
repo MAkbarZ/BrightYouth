@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../model/product.model';
 
-import { ApiShoppingService } from './api-shopping.service';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +13,7 @@ export class ShoppingService {
   public productsInCartArray: Product[] = [];
 
 
-  constructor(private api: ApiShoppingService) {
+  constructor() {
    }
 
   

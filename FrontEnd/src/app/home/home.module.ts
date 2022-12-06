@@ -12,7 +12,7 @@ import { HomeRoutingModule } from './home-routing.module';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent,
+    // FooterComponent,
     HomeComponent
   ],
   imports: [

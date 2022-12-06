@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseAccountingService } from '../shared-components/service/course-accounting.service';
+import { CourseService } from '../shared-components/service/course.service';
 
 @Component({
   selector: 'app-courses',
@@ -18,18 +18,7 @@ export class CoursesComponent implements OnInit {
   prevLessonActive: boolean = false;
   nextLessonActive: boolean = false;
 
-  courseNameArray = [
-    {
-      serial: '0',
-      active: 'activeMenu',
-      courseName: 'toc',
-      title: 'Table of Content',
-    },
-  ];
-
-
-
-
+  
   basicAccountingActive: boolean = true;
   aboutUsActive: boolean = false;
   shoppingActive: boolean = false;
@@ -38,7 +27,9 @@ export class CoursesComponent implements OnInit {
   infozimeActive: boolean = false;
 
 
-  constructor(private courseAccountingService: CourseAccountingService) { }
+  constructor(private courseService: CourseService) {
+    // console.log("COURES - localStorage.getItem('currentLessonSerial') = " + localStorage.getItem('currentLessonSerial'));
+   }
 
   ngOnInit(): void {
   
@@ -51,9 +42,9 @@ export class CoursesComponent implements OnInit {
 
     switch (event.target.name) {
       case navMenuNames.AccountingToc:
-        this.courseAccountingService.setTopicName('courseNamesArrayAccounting', '0');
+        // this.courseService.setBasicAccounting('0');
        
-        // this.courseAccountingService.setTopicName('Table of Contents', '', 'Bookeeping, Financial Transaction & Event', true, false);
+        // this.courseService.setTopicName('Table of Contents', '', 'Bookeeping, Financial Transaction & Event', true, false);
         this.basicAccountingActive = true;
         break;
       case navMenuNames.aboutUs:

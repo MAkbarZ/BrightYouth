@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 // import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './shared-components/guard/auth.guard';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'shopping', loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule) },
   { path: 'infozime', loadChildren: () => import('./infozime/infozime.module').then(m => m.InfozimeModule) },
   { path: 'tools', loadChildren: () => import('./tools/tools.module').then(m => m.ToolsModule) },
+  { path: 'aboutUs', component:AboutUsComponent },
   // { path: 'product', loadChildren: () => import('./business/product/product.module').then(m => m.ProductModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
